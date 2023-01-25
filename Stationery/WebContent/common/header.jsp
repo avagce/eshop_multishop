@@ -28,7 +28,7 @@
     
     <script src="${context}/js/jquery.js"></script>
     <script src="${context}/js/common.js"></script>
-   
+    
     
    
 </head>
@@ -100,7 +100,7 @@
         </div>
         <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
             <div class="col-lg-4">
-                <a href="" class="text-decoration-none">
+                <a href="${gomain}" class="text-decoration-none">
                     <img alt="로고 이미지" src="${context}/img/GKYK_logo2.png" style="width: 160px">
                 </a>
             </div>

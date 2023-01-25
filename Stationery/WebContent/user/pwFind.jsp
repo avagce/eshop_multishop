@@ -53,7 +53,7 @@
 </script>
 </head>
 <body>
-	<jsp:include page="../common/top.jsp"></jsp:include>
+	<jsp:include page="../common/header.jsp"></jsp:include>
 	<div class="container">
 		<div class="jumbotron jumbotron-info" style="background-color: lightgray;">
 			<h1><font color="black"><strong>PW찾기</strong>&nbsp;<span class="glyphicon glyphicon glyphicon-pencil"></span></font></h1>
@@ -65,18 +65,18 @@
 
 			<div class="form-group" style="margin-top: 5%;">
 				<label for="email" class="control-label col-md-2">아이디</label>
-				<div class="col-md-4">
-					<input class="form-control" type="text" name="id" id="id" autofocus="autofocus"/>
+				<div class="col-md-12">
+					<input class="form-control" type="text" name="id" id="id" autofocus="autofocus" placeholder="아이디를 입력해주세요"/>
 				</div>
 			</div>
 
 			<div class="form-group">
 				<label for="email" class="control-label col-md-2">이메일</label>
-				<div class="col-md-4">
+				<div class="col-md-12">
 					<input class="form-control" type="email" name="email" id="email"/>
 				</div>
-				<div class="col-md-2">
-					<input class="btn btn-default" type="button" name="btnSubmit" id="btnSubmit" value="확인" onclick="retrieveUserPw()"/>
+				<div class="col-md-12">
+					<input class="btn btn-info" style="margin-top: 5%; border-radius: 5px; float: right;" type="button" name="btnSubmit" id="btnSubmit" value="비밀번호찾기" onclick="retrieveUserPw()"/>
 				</div>
 			</div>
 			<div class="form-group" id="message">
@@ -84,6 +84,6 @@
 			</div>
 		</div>
 	</div>
-	<jsp:include page="../common/foot.jsp"></jsp:include>
+	<jsp:include page="../common/footer.jsp"></jsp:include>
 </body>
 </html>

@@ -5,6 +5,21 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+ 
+ 
+
+.login_form{
+    text-align: center;
+    width: 700px;
+    margin: 0 auto;
+    height: 350px;
+ }
+.login-panel{
+ 	margin-top: 30px !important;
+ }
+ .panel-body a{
+ color: #000000;
+ }
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -2365,14 +2380,10 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #212529;
-  background-color: #FFD333;
-  border-color: #FFD333;
 }
 
 .btn-primary:hover {
   color: #212529;
-  background-color: #ffcb0d;
-  border-color: #ffc800;
 }
 
 .btn-primary:focus, .btn-primary.focus {
