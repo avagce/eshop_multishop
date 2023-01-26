@@ -10,7 +10,7 @@
 <title>Travel Interact</title>
     <link href="${context}/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	
-	<script src="${context}/js/jquery.js"></script>
+	<script src="${context}/js/jquery-1.9.1.js"></script>
 	<script src="${context}/js/plugins/metisMenu/metisMenu.min.js"></script>
 
     
@@ -42,7 +42,7 @@
 	
 </script>
 <body>
-
+<jsp:include page="../common/header.jsp"></jsp:include>
 	<div id="jumbotron" class="container">
 		<div class="jumbotron jumbotron-info" style="background-color: lightgreen;">
 			<h1><font color="green"><strong>Travel Interact</strong>&nbsp;<span class="glyphicon glyphicon-blackboard"></span></font></h1>
