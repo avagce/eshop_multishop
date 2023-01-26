@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="">
 
-    <title>HS ELECTRIC LOGIN</title>
+    <title>GKYK Login</title>
 
     <link href="${context}/css/bootstrap.min.css" rel="stylesheet">
     <link href="${context}/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
@@ -74,12 +74,12 @@
 	<div id="jumbotron" class="container">
 		<div class="jumbotron jumbotron-info" style="background-color: lightgray;">
 			<h1><font color="black"><strong>LOGIN</strong>&nbsp;<span class="glyphicon glyphicon glyphicon-pencil"></span></font></h1>
-			<p>HS STATIONERY에 오신것을 진심으로 환영합니다.</p>
+			<p>GKYK mall에 오신것을 진심으로 환영합니다.</p>
 		</div>
 	</div>
     <div class="container">
         <div class="row">
-            <div class="col-md-4 col-md-offset-4">
+            <div class="login_form">
                 <div class="login-panel panel panel-default"  style="margin-bottom: 57%;">
                     <div class="panel-heading">
                         <h3 class="panel-title">Please Sign In</h3>
