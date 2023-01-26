@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-		<meta name="description" content="boardRegisterU.jsp">
+	<meta name="description" content="boardRegisterC.jsp">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Travel Interact</title>
 	<link href="${context}/css/bootstrap.min.css" rel="stylesheet">
@@ -16,30 +16,18 @@
 	<link href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" rel="stylesheet" >
     <link href="${context}/css/process.css" rel="stylesheet">
 
-	<!--  <script src="${context}/js/jquery-1.9.1.js"></script>-->
-	<script src="${context}/js/jquery.form.js"></script>
-    <script src="${context}/js/plugins/metisMenu/metisMenu.min.js"></script>
+	
+	
 
-    <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+ <script src="${context}/js/jquery.js"></script>
+    <script src="${context}/js/common.js"></script>
+   
 	<script type="text/javascript">
 
 	$(document).ready(function(){
 		fn_init();
 
-		//U페이지 해당
-		fn_setDetailInfo();
 	});
-
-	function fn_setDetailInfo(){
-		$("#boardTitle").val('${dsBoard.BOARD_TITLE}');
-		$("#boardNo").val('${dsBoard.BOARD_NO}');
-
-		var boardContents = '${dsBoard.BOARD_CONTENTS}';
-
-		boardContents = boardContents.replace(/<br ?\/?>/gi, "\n");
-
-		$("#boardContents").val(boardContents);
-	}
 
 	function fn_save(){
 		if(!fn_validation()){
@@ -51,28 +39,24 @@
 
 			$("#boardContents").val(boardContents);
 
-	 		$("#updateBoard").submit();
+	 		$("#createBoard").submit();
 		}
 	}
 
 </script>
-<style type="text/css">
-</style>
+
 </head>
 <body>
-<jsp:include page="../common/header.jsp"></jsp:include>
+	
+	
 	<div class="container" style="margin-top: 2%; margin-bottom: 10%;">
 	<div class="page-header">
-		<h1>글 수정하기</h1>
+		<h1>새 글 쓰기</h1>
 	</div>
-	<c:if test="${sessionScope.grade == 'A'}">
 	
-	<form id="updateBoard" method="post" action="${context}/work/board/updateBoard.do" role="form">
-	</c:if>
-	<c:if test="${sessionScope.grade == 'M'}">
 	
-	<form id="updateBoard" method="post" action="${context}/work/board/updateBoard2.do" role="form">
-	</c:if>
+	<form id="createBoard" method="post" action="${context}/work/board/createBoard2.do" role="form">
+	
 		<div class="form-horizontal">
 			<div class="form-group">
 				<label for="boardTitle" class="control-label col-md-1"><b>제목</b></label>
@@ -86,7 +70,6 @@
 				<div class="col-md-11">
 					<textarea class="form-control" name="boardContents" id="boardContents" cols="10" rows="15" required="required" placeholder="본문을 입력해주세요"></textarea>
 				</div>
-				<input class="form-control" type="hidden" name="boardNo" id="boardNo"/>
 			</div>
 		<div class="form-group">
 			<div class="col-md-offset-1 col-md-2">
@@ -99,6 +82,6 @@
 		</div>
 	</form>
 	</div>
-<jsp:include page="../common/footer.jsp"></jsp:include>
+	
 </body>
 </html>

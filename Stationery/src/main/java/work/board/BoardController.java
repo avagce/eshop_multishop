@@ -69,7 +69,7 @@ public class BoardController {
 		String flag = board.getBoardTitle(); //BoardBean 존재여부
 
 		if(flag == null){
-			mv.setViewName("/board/boardRegisterC");
+			mv.setViewName("/board/boardRegisterC_user");
 		}else if(flag != null){
 			//게시글 생성
 			board.setUserCode(userCode);
@@ -151,7 +151,7 @@ public class BoardController {
 
 		mv.addObject("dsBoard", dsBoard);
 
-		mv.setViewName("/board/boardR");
+		mv.setViewName("/board/boardR_user");
 
 		return mv;
 	}

@@ -18,7 +18,7 @@ function fn_isLogin(sessionValue, loginUrl, toUrl){
 
 function fn_validation(){
 	var obj = $("input[required=required],select[required=required],textarea[required=required]");
-	var objSize = obj.size();
+	var objSize = obj.length();
 	var selectedObj;
 	var alertMsg;
 
@@ -58,17 +58,17 @@ $(document).keydown(function(e){
 
 function fn_init(){
 	var obj = $("input[required=required],select[required=required],textarea[required=required]");
-	var objSize = obj.size();
+	var objSize = obj.length();
 
 	var selectObj = $("select");
-	var selectObjSize = selectObj.size();
+	var selectObjSize = selectObj.length();
 	var divSize = 0;
 
 	for(var i = 0; i < objSize; i++){
 		obj.eq(i).parent().parent().find("label").eq(0).prepend("<font color='red'>*&nbsp;</font>");
 
 		if(obj.eq(i).prop("tagName") != "TEXTAREA"){
-			divSize = obj.eq(i).parent().parent().children("div").size();
+			divSize = obj.eq(i).parent().parent().children("div").length();
 			if(divSize > 1){
 				i += divSize - 1;
 				continue;

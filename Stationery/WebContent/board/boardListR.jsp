@@ -42,7 +42,7 @@
 	
 </script>
 <body>
-
+<jsp:include page="../common/header.jsp"></jsp:include>
 	<div id="jumbotron" class="container">
 		<div class="jumbotron jumbotron-info" style="background-color: lightgreen;">
 			<h1><font color="green"><strong>Travel Interact</strong>&nbsp;<span class="glyphicon glyphicon-blackboard"></span></font></h1>

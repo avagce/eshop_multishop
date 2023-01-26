@@ -48,21 +48,15 @@
 		</div>
 		
 		<div class="row">
-			<c:if test="${sessionScope.grade == 'A'}">
-			<div class="col-md-12">
-				<div class="page-header" style="float: right;">
-					  <button type="button" class="btn btn-success btn-lg" onclick="fn_createBoard()">새 글 쓰기</button>
-				</div>
-			</div>
-			</c:if>
 			
-			<c:if test="${sessionScope.grade == 'M'}">
+			
+			
 			<div class="col-md-12">
 				<div class="page-header" style="float: right;">
 					  <button type="button" class="btn btn-success btn-lg" onclick="fn_createBoard2()">새 글 쓰기</button>
 				</div>
 			</div>
-			</c:if>
+			
 			
 			
 			<div class="col-md-12">
