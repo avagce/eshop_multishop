@@ -18,7 +18,8 @@
     <link href="${context}/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- jQuery -->
-    <script src="${context}/js/jquery.js"></script>
+    
+    <script src="${context}/js/jquery-1.9.1.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="${context}/js/bootstrap.min.js"></script>

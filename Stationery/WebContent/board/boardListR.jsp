@@ -10,7 +10,7 @@
 <title>Travel Interact</title>
     <link href="${context}/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	
-	<script src="${context}/js/jquery.js"></script>
+	<script src="${context}/js/jquery-1.9.1.js"></script>
 	<script src="${context}/js/plugins/metisMenu/metisMenu.min.js"></script>
 
     
