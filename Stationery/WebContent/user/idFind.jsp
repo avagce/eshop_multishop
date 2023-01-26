@@ -63,11 +63,11 @@
 
 			<div class="form-group" style="margin-top: 5%;">
 				<label for="email" class="control-label col-md-2">이메일</label>
-				<div class="col-md-4">
+				<div class="col-md-12">
 					<input class="form-control" type="email" name="email" id="email" autofocus="autofocus"/>
 				</div>
-				<div class="col-md-2">
-					<input class="btn btn-default" type="button" name="btnSubmit" id="btnSubmit" value="확인" onclick="retrieveUserId()"/>
+				<div class="col-md-12">
+					<input class="btn btn-info" type="button" name="btnSubmit" id="btnSubmit" value="확인" onclick="retrieveUserId()" style="margin-top: 5%; float: right;"/>
 				</div>
 			</div>
 			<div class="form-group" id="message">
