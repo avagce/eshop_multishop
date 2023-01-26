@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="description" content="idFind.jsp">
 
-<title>Insert title here</title>
+<title>GKYK mall IDFind</title>
 <link href="../css/bootstrap.min.css" rel="stylesheet">
 <link href="../css/bootstrap-theme.css" rel="stylesheet">
 <link href="../css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
@@ -51,7 +51,7 @@
 </script>
 </head>
 <body>
-	<jsp:include page="../common/top.jsp"></jsp:include>
+	<jsp:include page="../common/header.jsp"></jsp:include>
 	<div class="container">
 		<div class="jumbotron jumbotron-info" style="background-color: lightgray;">
 			<h1><font color="black"><strong>ID찾기</strong>&nbsp;<span class="glyphicon glyphicon glyphicon-pencil"></span></font></h1>
@@ -75,6 +75,6 @@
 			</div>
 		</div>
 	</div>
-	<jsp:include page="../common/foot.jsp"></jsp:include>
+	<jsp:include page="../common/footer.jsp"></jsp:include>
 </body>
 </html>
