@@ -16,7 +16,7 @@
 	<link href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" rel="stylesheet" >
     <link href="${context}/css/process.css" rel="stylesheet">
 
-	<!--  <script src="${context}/js/jquery-1.9.1.js"></script>-->
+	 <script src="${context}/js/jquery-1.9.1.js"></script>
 	<script src="${context}/js/jquery.form.js"></script>
     <script src="${context}/js/plugins/metisMenu/metisMenu.min.js"></script>
 
