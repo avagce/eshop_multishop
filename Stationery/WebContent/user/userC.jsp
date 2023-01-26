@@ -7,7 +7,7 @@
 <head>
 		<meta name="description" content="userC.jsp">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Insert title here</title>
+	<title>GKYK mall Sing Up</title>
 	<link href="${context}/css/bootstrap.min.css" rel="stylesheet">
 	<link href="${context}/css/bootstrap-theme.css" rel="stylesheet">
 	<link href="${context}/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
@@ -164,18 +164,18 @@
 </script>
 </head>
 <body>
-<jsp:include page="../common/top.jsp"></jsp:include>
+<jsp:include page="../common/header.jsp"></jsp:include>
 	<div id="jumbotron" class="container">
 		<div class="jumbotron jumbotron-info" style="background-color: lightgray;">
 			<h1><font color="black"><strong>회원가입</strong>&nbsp;<span class="glyphicon glyphicon glyphicon-pencil"></span></font></h1>
-			<p>HS STATIONERY 회원가입을 진심으로 환영합니다.</p>
+			<p>GKYK mall 회원가입을 진심으로 환영합니다.</p>
 		</div>
 	</div>
 	<div class="container">
 	<form id="joinFrm" method="post" action="${context}/work/user/createUser.do" role="form">
 		<div class="form-horizontal">
 			<hr/>
-			<div class="form-group" style="margin-top: 5%;">
+			<div class="form-group" style="margin-top: 5%; display: flex;">
 				<label for="id" class="control-label col-md-2"><b>아이디</b></label>
 				<div class="col-md-4">
 					<input class="form-control" type="text" name="id" id="id" required="required" autofocus="autofocus" onkeyup="idCheck();"/>
@@ -183,105 +183,93 @@
 				<p id="message"></p>
 			</div>
 
-			<div class="form-group">
+			<div class="form-group" style="display: flex;">
 				<label for="pw" class="control-label col-md-2"><b>비밀번호</b></label>
 				<div class="col-md-4">
-					<input class="form-control" type="password" name="pw" id="pw" required="required"/>
+					<input class="form-control" style="display: flex;" type="password" name="pw" id="pw" required="required"/>
 				</div>
 			</div>
 
-			<div class="form-group">
+			<div class="form-group" style="display: flex;">
 				<label for="email" class="control-label col-md-2"><b>이메일</b></label>
 				<div class="col-md-4">
-					<input class="form-control" type="email" name="email" id="email" required="required"/>
+					<input class="form-control" style="display: flex;" type="email" name="email" id="email" required="required"/>
 				</div>
 			</div>
-			<div class="form-group">
+			<div class="form-group" style="display: flex;">
 				<label for="name" class="control-label col-md-2"><b>성명</b></label>
 				<div class="col-md-6">
-					<input class="form-control" type="text" id="name" name="name" autofocus="autofocus" required="required"/>
+					<input class="form-control" style="display: flex;" type="text" id="name" name="name" autofocus="autofocus" required="required"/>
 				</div>
 			</div>
 
-			<div class="form-group">
+			<div class="form-group" style="display: flex;">
 				<label for="birth" class="control-label col-md-2"><b>생년월일</b></label>
 				<div class="col-md-6">
-					<input class="form-control" type="text" id="birth" name="birth" required="required" maxlength="10"/>
+					<input class="form-control" style="display: flex;" type="text" id="birth" name="birth" required="required" maxlength="10"/>
 				</div>
 			</div>
 
-			<div class="form-group">
+			<div class="form-group" style="display: flex;">
 				<label for="phoneCd" class="control-label col-md-2"><b>연락처</b></label>
 				<div class="col-md-2">
-		        	<select class="form-control" id="phoneCd" name="phoneCd" required="required">
+		        	<select class="form-control" style="display: flex;" id="phoneCd" name="phoneCd" required="required">
 						<c:forEach items="${dsCode1}" var="code1">
 							<option value="${code1.commCd}">${code1.commCdNm}</option>
 						</c:forEach>
 		     		</select>
 	     		</div>
 				<div class="col-md-2">
-					<input class="form-control" type="text" id="phone1" maxlength="4" required="required" onkeydown="return fn_showKeyCode(event)"/>
+					<input class="form-control" style="display: flex;" type="text" id="phone1" maxlength="4" required="required" onkeydown="return fn_showKeyCode(event)"/>
 				</div>
 				<div class="col-md-2">
-					<input class="form-control" type="text" id="phone2" maxlength="4" required="required" onkeydown="return fn_showKeyCode(event)"/>
+					<input class="form-control" style="display: flex;" type="text" id="phone2" maxlength="4" required="required" onkeydown="return fn_showKeyCode(event)"/>
 				</div>
 				<input type="hidden" id="phoneNum" name="phoneNum">
 			</div>
 
-			<div class="form-group">
+			<div class="form-group" style="display: flex;">
 				<label for="postnum1" class="control-label col-md-2"><b>주소</b></label>
 				<div class="col-md-2">
-					<input class="form-control" type="text" id="postNum1" disabled="disabled" required="required"/>
+					<input class="form-control" style="display: flex;" type="text" id="postNum1" disabled="disabled" required="required"/>
 	     		</div>
 				<div class="col-md-2">
-					<input class="form-control" type="text" id="postNum2" disabled="disabled" required="required"/>
+					<input class="form-control" style="display: flex;" type="text" id="postNum2" disabled="disabled" required="required"/>
 				</div>
-				<span class="col-md-1">
-					<button type="button" class="btn btn-info" data-toggle="modal" data-target="#searchPost"><b>주소검색</b></button>
+				<span class="col-md-2">
+					<button type="button" class="btn btn-info" data-toggle="modal" data-target="#searchPost" style="width: 125px;"><b>주소검색</b></button>
 				</span>
 				<input type="hidden" id="postNum" name="postNum">
 			</div>
 
-			<div class="form-group">
+			<div class="form-group" style="display: flex;">
 				<label for="address1" class="control-label col-md-2"><b>상세주소</b></label>
 				<div class="col-md-6">
-					<input class="form-control" type="text" id="address1" disabled="disabled" required="required"/>
+					<input class="form-control" style="display: flex;" type="text" id="address1" disabled="disabled" required="required"/>
 				</div>
 			</div>
 
-			<div class="form-group">
+			<div class="form-group" style="display: flex;">
 				<label for="address2" class="control-label col-md-2"></label>
 				<div class="col-md-6">
-					<input class="form-control" type="text" id="address2"/>
+					<input class="form-control" style="display: flex;" type="text" id="address2"/>
 				</div>
 				<input type="hidden" id="address" name="address">
-			</div>
-
-			<div class="form-group">
-				<label class="control-label col-md-2"><b>사진</b></label>
-				<img id="pic" style="margin-left: 15px;" height="180px" width="150px" src="${context}/backgroundImage/defaultpic.png"><br/>
-				<div class="col-md-6">
-					<input type="hidden" id="userImage" name="userImage" required="required">
-				</div>
 			</div>
 
 			<input type="hidden" id="flag" name="flag" value="false">
 		</div>
 	</form>
 	<form id="ajaxform" action="${context}/work/product/saveFile.do" method="post" enctype="multipart/form-data" role="form">
-		<div class="form-group">
+		<div class="form-group" style="display: flex;">
 		<label class="control-label col-md-2"></label>
-			<div class="col-md-6">
-				<input class="form-control" type="file" id="imageFile" name="imageFile" onchange="fn_upload()"/>
-				<input type="hidden" id="imageFolder" name="imageFolder" value="userImg">
-			</div>
 		</div>
 		<br><br><br>
-		<div class="form-group">
-			<div class="col-md-offset-6 col-md-1">
+		<div class="form-group" style="display: flex; justify-content: flex-end;">
+			<div class="col-md-offset-6 col-md-2">
 				<button type="button" class="btn btn-success" onclick="fn_back()">뒤로가기</button>
 			</div>
-			<div class="col-md-1">
+			<div class="col-md-2">
 				<button class="btn btn-primary" type="button" name="btnSubmit" id="btnSubmit" onclick="fn_save()">등록하기</button>
 			</div>
 		</div>
@@ -296,12 +284,13 @@
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
 						<h4 class="modal-title">주소검색</h4>
 					</div>
-						<div class="modal-body" style="height: 50px;">
-							<div class="col-md-6">
+						<div class="modal-body" style="height: 50px; display: flex;
+    margin-bottom: 20px;">
+							<div class="col-md-9">
 								<input class="form-control" type="text" id="dong" name="dong" placeholder="동을 입력하세요.ex)역삼1동"/>
 							</div>
-							<div class="col-md-1">
-								<button id="postCheck" type="button" class="btn btn-primary" onclick = "fn_postCheck()">확인</button>
+							<div class="col-md-3">
+								<button id="postCheck" type="button" class="btn btn-info" onclick = "fn_postCheck()">확인</button>
 							</div>
 						</div>
 
@@ -331,6 +320,6 @@
 
 					</div>
 
-	<jsp:include page="../common/foot.jsp"></jsp:include>
+	<jsp:include page="../common/footer.jsp"></jsp:include>
 </body>
 </html>
