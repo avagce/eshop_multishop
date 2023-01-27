@@ -10,7 +10,7 @@
       
 
     <!-- Favicon -->
-    <link href="${context}/img/favicon.ico" rel="icon">
+    <link href="${context}/img/favicon.ico" rel="icon">d
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
