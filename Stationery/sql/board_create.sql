@@ -15,3 +15,10 @@ CREATE TABLE TB_BOARD(
 );
 
 commit;
+
+
+CREATE TABLE tb_board_user AS
+
+SELECT * FROM tb_board WHERE 1=2; 
+
+commit;
