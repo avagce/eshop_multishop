@@ -175,84 +175,84 @@
 	<form id="joinFrm" method="post" action="${context}/work/user/createUser.do" role="form">
 		<div class="form-horizontal">
 			<hr/>
-			<div class="form-group" style="margin-top: 5%; display: flex;">
+			<div class="form-group" style="margin-top: 5%; display: flex; justify-content: flex-end;" >
 				<label for="id" class="control-label col-md-2"><b>아이디</b></label>
-				<div class="col-md-4">
+				<div class="col-md-6">
 					<input class="form-control" type="text" name="id" id="id" required="required" autofocus="autofocus" onkeyup="idCheck();"/>
 				</div>
-				<p id="message"></p>
 			</div>
+			<p class="col-md-7" id="message" style="display: flex; justify-content: center;"></p>
 
-			<div class="form-group" style="display: flex;">
+			<div class="form-group" style="display: flex; justify-content: center;">
 				<label for="pw" class="control-label col-md-2"><b>비밀번호</b></label>
-				<div class="col-md-4">
+				<div class="col-md-6">
 					<input class="form-control" style="display: flex;" type="password" name="pw" id="pw" required="required"/>
 				</div>
 			</div>
 
-			<div class="form-group" style="display: flex;">
+			<div class="form-group" style="display: flex; justify-content: center;">
 				<label for="email" class="control-label col-md-2"><b>이메일</b></label>
-				<div class="col-md-4">
+				<div class="col-md-6">
 					<input class="form-control" style="display: flex;" type="email" name="email" id="email" required="required"/>
 				</div>
 			</div>
-			<div class="form-group" style="display: flex;">
+			<div class="form-group" style="display: flex; justify-content: center;">
 				<label for="name" class="control-label col-md-2"><b>성명</b></label>
 				<div class="col-md-6">
 					<input class="form-control" style="display: flex;" type="text" id="name" name="name" autofocus="autofocus" required="required"/>
 				</div>
 			</div>
 
-			<div class="form-group" style="display: flex;">
+			<div class="form-group" style="display: flex; justify-content: center;">
 				<label for="birth" class="control-label col-md-2"><b>생년월일</b></label>
 				<div class="col-md-6">
 					<input class="form-control" autocomplete="off" style="display: flex;" type="text" id="birth" name="birth" required="required" maxlength="10"/>
 				</div>
 			</div>
 
-			<div class="form-group" style="display: flex;">
+			<div class="form-group" style="display: flex; justify-content: center;">
 				<label for="phoneCd" class="control-label col-md-2"><b>연락처</b></label>
 				<div class="col-md-2">
-		        	<select class="form-control" style="display: flex;" id="phoneCd" name="phoneCd" required="required">
+		        	<select class="form-control" style="display: flex; justify-content: center;" id="phoneCd" name="phoneCd" required="required">
 						<c:forEach items="${dsCode1}" var="code1">
 							<option value="${code1.commCd}">${code1.commCdNm}</option>
 						</c:forEach>
 		     		</select>
 	     		</div>
 				<div class="col-md-2">
-					<input class="form-control" style="display: flex;" type="text" id="phone1" maxlength="4" required="required" onkeydown="return fn_showKeyCode(event)"/>
+					<input class="form-control" style="display: flex; justify-content: center;" type="text" id="phone1" maxlength="4" required="required" onkeydown="return fn_showKeyCode(event)"/>
 				</div>
 				<div class="col-md-2">
-					<input class="form-control" style="display: flex;" type="text" id="phone2" maxlength="4" required="required" onkeydown="return fn_showKeyCode(event)"/>
+					<input class="form-control" style="display: flex; justify-content: center;" type="text" id="phone2" maxlength="4" required="required" onkeydown="return fn_showKeyCode(event)"/>
 				</div>
 				<input type="hidden" id="phoneNum" name="phoneNum">
 			</div>
 
-			<div class="form-group" style="display: flex;">
+			<div class="form-group" style="display: flex; justify-content: center;">
 				<label for="postnum1" class="control-label col-md-2"><b>주소</b></label>
 				<div class="col-md-2">
-					<input class="form-control" style="display: flex;" type="text" id="postNum1" disabled="disabled" required="required"/>
+					<input class="form-control" style="display: flex; justify-content: center;" type="text" id="postNum1" disabled="disabled" required="required"/>
 	     		</div>
 				<div class="col-md-2">
-					<input class="form-control" style="display: flex;" type="text" id="postNum2" disabled="disabled" required="required"/>
+					<input class="form-control" style="display: flex; justify-content: center;" type="text" id="postNum2" disabled="disabled" required="required"/>
 				</div>
 				<span class="col-md-2">
-					<button type="button" class="btn btn-info" data-toggle="modal" data-target="#searchPost" style="width: 125px;"><b>주소검색</b></button>
+					<button type="button" class="btn btn-info" data-toggle="modal" data-target="#searchPost" style="width: 100%;"><b>주소검색</b></button>
 				</span>
 				<input type="hidden" id="postNum" name="postNum">
 			</div>
 
-			<div class="form-group" style="display: flex;">
+			<div class="form-group" style="display: flex; justify-content: center;">
 				<label for="address1" class="control-label col-md-2"><b>상세주소</b></label>
 				<div class="col-md-6">
 					<input class="form-control" style="display: flex;" type="text" id="address1" disabled="disabled" required="required"/>
 				</div>
 			</div>
 
-			<div class="form-group" style="display: flex;">
+			<div class="form-group" style="display: flex; justify-content: center;">
 				<label for="address2" class="control-label col-md-2"></label>
 				<div class="col-md-6">
-					<input class="form-control" style="display: flex;" type="text" id="address2"/>
+					<input class="form-control" style="display: flex; justify-content: center;" type="text" id="address2"/>
 				</div>
 				<input type="hidden" id="address" name="address">
 			</div>
@@ -284,8 +284,7 @@
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
 						<h4 class="modal-title">주소검색</h4>
 					</div>
-						<div class="modal-body" style="height: 50px; display: flex;
-    margin-bottom: 20px;">
+						<div class="modal-body" style="height: 50px; display: flex; margin-bottom: 20px;">
 							<div class="col-md-9">
 								<input class="form-control" type="text" id="dong" name="dong" placeholder="동을 입력하세요.ex)역삼1동"/>
 							</div>
