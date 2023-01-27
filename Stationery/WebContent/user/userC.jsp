@@ -17,14 +17,14 @@
 		<link href="${context}/css/plugins/dataTables.bootstrap.css" rel="stylesheet">
     <link href="${context}/css/process.css" rel="stylesheet">
 
-	<script src="${context}/js/jquery-1.9.1.js"></script>
+	<script src="${context}/js/jquery-1.9.1.js">
 	<script src="${context}/js/jquery.form.js"></script>
     <script src="${context}/js/plugins/metisMenu/metisMenu.min.js"></script>
 
 	<script src="${context}/js/plugins/dataTables/jquery.dataTables.js"></script>
     <script src="${context}/js/plugins/dataTables/dataTables.bootstrap.js"></script>
 
-    <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
 	<script type="text/javascript">
 
 	var dong;
@@ -37,10 +37,10 @@
 		imageFolder = "userImg";
 
 		$( "#birth" ).datepicker({
-	    	dateFormat: 'yy-mm-dd',
+	    	dateFormat: "yy-mm-dd",
 	    	changeMonth: true,
 	        changeYear: true,
-	        yearRange: "1980:2015"
+	        yearRange: "1980:2023"
 	    });
 
 		$("#dong").keydown(function (key){
@@ -164,7 +164,7 @@
 </script>
 </head>
 <body>
-<jsp:include page="../common/header.jsp"></jsp:include>
+<jsp:include page="../common/header_userc.jsp"></jsp:include>
 	<div id="jumbotron" class="container">
 		<div class="jumbotron jumbotron-info" style="background-color: lightgray;">
 			<h1><font color="black"><strong>회원가입</strong>&nbsp;<span class="glyphicon glyphicon glyphicon-pencil"></span></font></h1>
