@@ -75,8 +75,15 @@
                     <div class="btn-group">
                         <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">My Account</button>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button">Sign in</button>
-                            <button class="dropdown-item" type="button">Sign up</button>
+                        <c:if test="${sessionScope.id == null}">
+                            <button class="dropdown-item" type="button" onclick="location.href='${context}/user/login.jsp'">LOGIN</button>
+                            <button class="dropdown-item" type="button" onclick="location.href='${context}/work/user/createUser.do'">Sign up</button>
+                    	</c:if>
+             	        <c:if test="${sessionScope.id != null}">
+                            <button class="dropdown-item" type="button" onclick="location.href='${context}/work/user/updateUser.do'">정보수정</button>
+                            <button class="dropdown-item" type="button" onclick="location.href='${context}/work/user/logout.do'">LOGOUT</button>
+                    	</c:if>
+                    	
                         </div>
                     </div>
                     <div class="btn-group mx-2">

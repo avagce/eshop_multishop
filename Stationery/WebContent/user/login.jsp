@@ -99,7 +99,7 @@
                                 	<span style="float: right;"><a href="${context}/work/user/createUser.do">회원가입</a></span><br>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
-                                <button type="button" class="btn btn-lg btn-success btn-block" onclick="ajaxLoginCheck();">Login</button>
+                                <button type="submit" class="btn btn-lg btn-success btn-block" onclick="ajaxLoginCheck();">Login</button>
                             </fieldset>
                         </form>
                     </div>

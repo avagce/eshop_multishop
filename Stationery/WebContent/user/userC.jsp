@@ -206,7 +206,7 @@
 			<div class="form-group" style="display: flex;">
 				<label for="birth" class="control-label col-md-2"><b>생년월일</b></label>
 				<div class="col-md-6">
-					<input class="form-control" style="display: flex;" type="text" id="birth" name="birth" required="required" maxlength="10"/>
+					<input class="form-control" autocomplete="off" style="display: flex;" type="text" id="birth" name="birth" required="required" maxlength="10"/>
 				</div>
 			</div>
 
