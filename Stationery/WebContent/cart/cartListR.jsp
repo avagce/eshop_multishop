@@ -55,7 +55,7 @@
     </script>
 </head>
 <body>
-<jsp:include page="/common/top.jsp"></jsp:include>
+<jsp:include page="/common/header.jsp"></jsp:include>
 	<div id="jumbotron" class="container">
 		<div class="jumbotron jumbotron-info" style="background-color: lightgray;">
 			<h1><font color="black"><strong>장바구니</strong>&nbsp;<span class="glyphicon glyphicon-shopping-cart"></span></font></h1>
@@ -130,6 +130,6 @@
 			<!-- /.col-lg-12 -->
 		</div>
 	</div>
-<jsp:include page="/common/foot.jsp"></jsp:include>
+<jsp:include page="/common/footer.jsp"></jsp:include>
 </body>
 </html>
