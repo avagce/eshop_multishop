@@ -56,7 +56,7 @@
         <div class="row bg-secondary py-1 px-xl-5">
             <div class="col-lg-6 d-none d-lg-block">
                 <div class="d-inline-flex align-items-center h-100">
-                    <a class="text-body mr-3" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${gomain}')">About</a>
+                 <a class="text-body mr-3" onclick="location.href='${context}/user/login.jsp'" style="cursor: pointer;">About</a>
                     <!-- 메뉴를 누를때마다 user 의 등급과 로긴체크,로긴 됐을때 어디로 이동할지를 넣어준다 -->
                    
                     <a class="text-body mr-3" href="">Contact</a>
@@ -176,7 +176,7 @@
             </div>
             <div class="col-lg-9">
                 <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-0">
-                    <a href="" class="text-decoration-none d-block d-lg-none">
+                    <a href="${gomain}" class="text-decoration-none d-block d-lg-none">
                         <img alt="로고 이미지" src="${context}/img/GKYK_logo2.png" style="width: 160px">
                     </a>
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
