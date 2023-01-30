@@ -17,7 +17,7 @@
 		<link href="${context}/css/plugins/dataTables.bootstrap.css" rel="stylesheet">
     <link href="${context}/css/process.css" rel="stylesheet">
 
-	<script src="${context}/js/jquery-1.9.1.js">
+	<script src="${context}/js/jquery-1.9.1.js"></script>
 	<script src="${context}/js/jquery.form.js"></script>
     <script src="${context}/js/plugins/metisMenu/metisMenu.min.js"></script>
 
@@ -37,10 +37,10 @@
 		imageFolder = "userImg";
 
 		$( "#birth" ).datepicker({
-	    	dateFormat: "yy-mm-dd",
+	    	dateFormat: 'yy-mm-dd',
 	    	changeMonth: true,
 	        changeYear: true,
-	        yearRange: "1980:2023"
+	        yearRange: "1980:2015"
 	    });
 
 		$("#dong").keydown(function (key){
