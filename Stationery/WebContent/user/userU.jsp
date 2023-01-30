@@ -176,7 +176,7 @@
 </script>
 </head>
 <body>
-<jsp:include page="../common/header.jsp"></jsp:include>
+<jsp:include page="../common/header_userc.jsp"></jsp:include>
 	<div class="container">
 		<div class="jumbotron jumbotron-info" style="background-color: lightgray;">
 			<h1><font color="black"><strong>정보수정</strong>&nbsp;<span class="glyphicon glyphicon glyphicon-pencil"></span></font></h1>
@@ -186,7 +186,7 @@
 	<form id="joinFrm" method="post" action="${context}/work/user/updateUser.do" role="form">
 		<div class="form-horizontal">
 			<hr/>
-			<div class="form-group" style="margin-top: 5%; display: flex; justify-content: center;">
+			<div class="form-group" style="margin-top: 5%; display: flex; justify-content: center; flex-wrap: wrap;">
 				<label for="id" class="control-label col-md-2"><b>아이디</b></label>
 				<div class="col-md-6">
 					<input class="form-control" type="text" name="id" id="id" disabled="disabled" required="required" autofocus="autofocus" onkeyup="idCheck();"/>
@@ -194,27 +194,27 @@
 				<p id="message"></p>
 			</div>
 
-			<div class="form-group" style="display: flex; justify-content: center;">
+			<div class="form-group" style="display: flex; justify-content: center; flex-wrap: wrap;">
 				<label for="pw" class="control-label col-md-2"><b>비밀번호</b></label>
 				<div class="col-md-6">
 					<input class="form-control" type="password" name="pw" id="pw" disabled="disabled" required="required"/>
 				</div>
 			</div>
 
-			<div class="form-group"style="display: flex; justify-content: center;">
+			<div class="form-group"style="display: flex; justify-content: center; flex-wrap: wrap;">
 				<label for="email" class="control-label col-md-2"><b>이메일</b></label>
 				<div class="col-md-6">
 					<input class="form-control" type="email" name="email" id="email" required="required"/>
 				</div>
 			</div>
-			<div class="form-group" style="display: flex; justify-content: center;">
+			<div class="form-group" style="display: flex; justify-content: center; flex-wrap: wrap;">
 				<label for="name" class="control-label col-md-2"><b>성명</b></label>
 				<div class="col-md-6">
 					<input class="form-control" type="text" id="name" name="name" autofocus="autofocus" required="required"/>
 				</div>
 			</div>
 
-			<div class="form-group" style="display: flex; justify-content: center;">
+			<div class="form-group" style="display: flex; justify-content: center; flex-wrap: wrap;">
 				<label for="birth" class="control-label col-md-2"><b>생년월일</b></label>
 				<div class="col-md-6">
 					<input class="form-control" type="text" id="birth" name="birth" required="required" maxlength="10"/>
@@ -253,14 +253,14 @@
 				<input type="hidden" id="postNum" name="postNum">
 			</div>
 
-			<div class="form-group" style="display: flex; justify-content: center;">
+			<div class="form-group" style="display: flex; justify-content: center; flex-wrap: wrap;">
 				<label for="address1" class="control-label col-md-2"><b>상세주소</b></label>
 				<div class="col-md-6">
 					<input class="form-control" type="text" id="address1" disabled="disabled" required="required"/>
 				</div>
 			</div>
 
-			<div class="form-group" style="display: flex; justify-content: center;">
+			<div class="form-group" style="display: flex; justify-content: center; flex-wrap: wrap;">
 				<label for="address2" class="control-label col-md-2"></label>
 				<div class="col-md-6">
 					<input class="form-control" type="text" id="address2"/>

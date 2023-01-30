@@ -174,7 +174,7 @@
             </div>
             <div class="col-lg-9">
                 <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-0">
-                    <a href="" class="text-decoration-none d-block d-lg-none">
+                    <a href="${gomain}" class="text-decoration-none d-block d-lg-none">
                         <img alt="로고 이미지" src="${context}/img/GKYK_logo2.png" style="width: 160px">
                     </a>
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
