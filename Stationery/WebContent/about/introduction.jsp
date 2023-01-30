@@ -6,4 +6,4 @@
 <html lang="en">
 
 <%@ include file="../common/header.jsp" %>
-<c:set var="loginUrl">${context}/user/login.jsp</c:set>
+<c:set var="loginUrl">${context}/user/login.jsp</c:set>  
