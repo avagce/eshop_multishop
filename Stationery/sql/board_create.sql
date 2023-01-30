@@ -21,4 +21,8 @@ CREATE TABLE tb_board_user AS
 
 SELECT * FROM tb_board WHERE 1=2; 
 
+create table tb_board_comu as select * from tb_board_user where 1=2;
+ 
+create table tb_board_producqus as select * from tb_board_user where 1=2;
+
 commit;

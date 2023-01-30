@@ -1,4 +1,4 @@
-package work.board;
+ package work.board;
 
 import java.io.File;
 import java.io.IOException;
@@ -83,6 +83,56 @@ public class BoardController {
 		return mv;
 	}
 	
+	@RequestMapping(value="/work/board/createBoard3.do", method = {RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView createBoard3(@ModelAttribute BoardBean board, HttpServletRequest request){
+		HttpSession session = request.getSession();
+
+		String userCode = (String)session.getAttribute("userCode");
+
+		ModelAndView mv = new ModelAndView();
+
+		String flag = board.getBoardTitle(); //BoardBean 존재여부
+
+		if(flag == null){
+			mv.setViewName("/board/boardRegisterC_comu");
+		}else if(flag != null){
+			//게시글 생성
+			board.setUserCode(userCode);
+			boardService.createBoard3(board);
+
+			String maxBoardNo = boardService.retrieveMaxBoardNo3();
+
+			mv.setViewName("redirect:/work/board/retrieveBoard3.do?maxBoardNo=" + maxBoardNo + "&fromCreate=true");
+		}
+
+		return mv;
+	}
+	
+	@RequestMapping(value="/work/board/createBoard4.do", method = {RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView createBoard4(@ModelAttribute BoardBean board, HttpServletRequest request){
+		HttpSession session = request.getSession();
+
+		String userCode = (String)session.getAttribute("userCode");
+
+		ModelAndView mv = new ModelAndView();
+
+		String flag = board.getBoardTitle(); //BoardBean 존재여부
+
+		if(flag == null){
+			mv.setViewName("/board/boardRegisterC_producqus");
+		}else if(flag != null){
+			//게시글 생성
+			board.setUserCode(userCode);
+			boardService.createBoard4(board);
+
+			String maxBoardNo = boardService.retrieveMaxBoardNo4();
+
+			mv.setViewName("redirect:/work/board/retrieveBoard4.do?maxBoardNo=" + maxBoardNo + "&fromCreate=true");
+		}
+
+		return mv;
+	}
+	
 	@RequestMapping(value="/work/board/goMain.do", method = {RequestMethod.GET, RequestMethod.POST})
 	public String goMain(){
 //		ModelAndView mv = new ModelAndView();
@@ -155,6 +205,70 @@ public class BoardController {
 
 		return mv;
 	}
+	
+	@RequestMapping(value="/work/board/retrieveBoard3.do", method = {RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView retrieveBoard3(HttpServletRequest request){
+		ModelAndView mv = new ModelAndView();
+
+		String boardNo = request.getParameter("maxBoardNo");
+		String fromRating = request.getParameter("fromRating");
+		String fromCreate = request.getParameter("fromCreate");
+		String fromReply = request.getParameter("fromReply");
+
+		if(boardNo == null) boardNo = request.getParameter("boardNo");
+
+		Map<String, String> boardParam = new HashMap<String, String>();
+		Map<String, String> replyParam = new HashMap<String, String>();
+
+		boardParam.put("boardNo", boardNo);
+		replyParam.put("boardNo", boardNo);
+
+		//조회수 증가
+		if(!"true".equals(fromRating) && !"true".equals(fromCreate) && !"true".equals(fromReply) ){
+			boardService.updateBoardHits2(boardParam);
+		}
+
+		Map<String, String> dsBoard = boardService.retrieveBoard3(boardParam);
+
+
+		mv.addObject("dsBoard", dsBoard);
+
+		mv.setViewName("/board/boardR_comu");
+
+		return mv;
+	}
+	
+	@RequestMapping(value="/work/board/retrieveBoard4.do", method = {RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView retrieveBoard4(HttpServletRequest request){
+		ModelAndView mv = new ModelAndView();
+
+		String boardNo = request.getParameter("maxBoardNo");
+		String fromRating = request.getParameter("fromRating");
+		String fromCreate = request.getParameter("fromCreate");
+		String fromReply = request.getParameter("fromReply");
+
+		if(boardNo == null) boardNo = request.getParameter("boardNo");
+
+		Map<String, String> boardParam = new HashMap<String, String>();
+		Map<String, String> replyParam = new HashMap<String, String>();
+
+		boardParam.put("boardNo", boardNo);
+		replyParam.put("boardNo", boardNo);
+
+		//조회수 증가
+		if(!"true".equals(fromRating) && !"true".equals(fromCreate) && !"true".equals(fromReply) ){
+			boardService.updateBoardHits4(boardParam);
+		}
+
+		Map<String, String> dsBoard = boardService.retrieveBoard4(boardParam);
+
+
+		mv.addObject("dsBoard", dsBoard);
+
+		mv.setViewName("/board/boardR_PRODUCQUS");
+
+		return mv;
+	}
 
 	@RequestMapping(value="/work/board/retrieveBoardList.do", method = {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView retrieveBoardList(HttpServletRequest request){
@@ -180,6 +294,34 @@ public class BoardController {
 
 		mv.addObject("dsBoardList", dsBoardList);
 		mv.setViewName("/board/boardListR_user");
+
+		return mv;
+	}
+	
+	@RequestMapping(value="/work/board/retrieveBoardList3.do", method = {RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView retrieveBoardList3(HttpServletRequest request){
+		ModelAndView mv = new ModelAndView();
+
+		Map<String, String> boardParam = new HashMap<String, String>();
+
+		List<Map<String, String>> dsBoardList = boardService.retrieveBoardList3(boardParam);
+
+		mv.addObject("dsBoardList", dsBoardList);
+		mv.setViewName("/board/boardListR_comu");
+
+		return mv;
+	}
+	
+	@RequestMapping(value="/work/board/retrieveBoardList4.do", method = {RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView retrieveBoardList4(HttpServletRequest request){
+		ModelAndView mv = new ModelAndView();
+
+		Map<String, String> boardParam = new HashMap<String, String>();
+
+		List<Map<String, String>> dsBoardList = boardService.retrieveBoardList4(boardParam);
+
+		mv.addObject("dsBoardList", dsBoardList);
+		mv.setViewName("/board/boardListR_PRODUCQUS");
 
 		return mv;
 	}
@@ -239,6 +381,63 @@ public class BoardController {
 
 		return mv;
 	}
+	
+	@RequestMapping(value="/work/board/deleteBoard4.do", method=RequestMethod.GET)
+	public ModelAndView deleteBoard4(HttpServletRequest request){
+		ModelAndView mv = new ModelAndView();
+
+		Map<String, String> boardParam = new HashMap<String, String>();
+		Map<String, String> replyParam = new HashMap<String, String>();
+		Map<String, String> markParam = new HashMap<String, String>();
+
+		HttpSession session = request.getSession();
+
+		String userCode = (String)session.getAttribute("userCode");
+		String boardNo = request.getParameter("boardNo");
+
+		boardParam.put("userCode", userCode);
+		boardParam.put("boardNo", boardNo);
+
+		replyParam.put("boardNo", boardNo);
+
+		markParam.put("boardNo", boardNo);
+
+		//글 삭제
+		boardService.deleteBoard3(boardParam);
+
+		mv.setViewName("redirect:/work/board/retrieveBoardList3.do");
+
+		return mv;
+	}
+	
+	@RequestMapping(value="/work/board/deleteBoard5.do", method=RequestMethod.GET)
+	public ModelAndView deleteBoard5(HttpServletRequest request){
+		ModelAndView mv = new ModelAndView();
+
+		Map<String, String> boardParam = new HashMap<String, String>();
+		Map<String, String> replyParam = new HashMap<String, String>();
+		Map<String, String> markParam = new HashMap<String, String>();
+
+		HttpSession session = request.getSession();
+
+		String userCode = (String)session.getAttribute("userCode");
+		String boardNo = request.getParameter("boardNo");
+
+		boardParam.put("userCode", userCode);
+		boardParam.put("boardNo", boardNo);
+
+		replyParam.put("boardNo", boardNo);
+
+		markParam.put("boardNo", boardNo);
+
+		//글 삭제
+		boardService.deleteBoard3(boardParam);
+
+		mv.setViewName("redirect:/work/board/retrieveBoardList4.do");
+
+		return mv;
+	}
+
 
 	@RequestMapping(value="/work/board/updateBoardRating.do", method=RequestMethod.GET)
 	public ModelAndView updateBoardRating(HttpServletRequest request){
@@ -283,6 +482,50 @@ public class BoardController {
 
 		return mv;
 	}
+	
+	@RequestMapping(value="/work/board/updateBoardRating3.do", method=RequestMethod.GET)
+	public ModelAndView updateBoardRating3(HttpServletRequest request){
+		ModelAndView mv = new ModelAndView();
+
+		HttpSession session = request.getSession();
+
+		Map<String, String> boardParam = new HashMap<String, String>();
+		Map<String, String> markParam = new HashMap<String, String>();
+
+		String userCode = (String)session.getAttribute("userCode");
+		String boardNo = request.getParameter("boardNo");
+
+		boardParam.put("boardNo", boardNo);
+
+		markParam.put("userCode", userCode);
+		markParam.put("boardNo", boardNo);
+
+		mv.setViewName("redirect:/work/board/retrieveBoard3.do?boardNo=" + boardNo + "&fromRating=true");
+
+		return mv;
+	}
+	
+	@RequestMapping(value="/work/board/updateBoardRating4.do", method=RequestMethod.GET)
+	public ModelAndView updateBoardRating4(HttpServletRequest request){
+		ModelAndView mv = new ModelAndView();
+
+		HttpSession session = request.getSession();
+
+		Map<String, String> boardParam = new HashMap<String, String>();
+		Map<String, String> markParam = new HashMap<String, String>();
+
+		String userCode = (String)session.getAttribute("userCode");
+		String boardNo = request.getParameter("boardNo");
+
+		boardParam.put("boardNo", boardNo);
+
+		markParam.put("userCode", userCode);
+		markParam.put("boardNo", boardNo);
+
+		mv.setViewName("redirect:/work/board/retrieveBoard4.do?boardNo=" + boardNo + "&fromRating=true");
+
+		return mv;
+	}
 
 	@RequestMapping(value="/work/board/updateBoard.do", method = {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView updateBoard(HttpServletRequest request, @ModelAttribute BoardBean bean){
@@ -322,6 +565,48 @@ public class BoardController {
 		}else{
 			boardService.updateBoard2(bean);
 			mv.setViewName("/work/board/retrieveBoard2.do?boardNo=" + boardNo + "&fromUpdate=true");
+		}
+		return mv;
+	}
+	
+	@RequestMapping(value="/work/board/updateBoard3.do", method = {RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView updateBoard3(HttpServletRequest request, @ModelAttribute BoardBean bean){
+		Map<String, String> boardParam = new HashMap<String, String>();
+		ModelAndView mv = new ModelAndView();
+        String boardNo = request.getParameter("boardNo"); //없으면 GET(create안함), 있으면 POST(create)
+
+        String flag = bean.getBoardTitle();
+        boardParam.put("boardNo", boardNo);
+
+        Map<String, String> dsBoard = boardService.retrieveBoard3(boardParam);
+
+		if(flag == null){
+			mv.addObject("dsBoard", dsBoard);
+			mv.setViewName("/board/boardRegisterU");
+		}else{
+			boardService.updateBoard2(bean);
+			mv.setViewName("/work/board/retrieveBoard3.do?boardNo=" + boardNo + "&fromUpdate=true");
+		}
+		return mv;
+	}
+	
+	@RequestMapping(value="/work/board/updateBoard4.do", method = {RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView updateBoard4(HttpServletRequest request, @ModelAttribute BoardBean bean){
+		Map<String, String> boardParam = new HashMap<String, String>();
+		ModelAndView mv = new ModelAndView();
+        String boardNo = request.getParameter("boardNo"); //없으면 GET(create안함), 있으면 POST(create)
+
+        String flag = bean.getBoardTitle();
+        boardParam.put("boardNo", boardNo);
+
+        Map<String, String> dsBoard = boardService.retrieveBoard4(boardParam);
+
+		if(flag == null){
+			mv.addObject("dsBoard", dsBoard);
+			mv.setViewName("/board/boardRegisterU");
+		}else{
+			boardService.updateBoard2(bean);
+			mv.setViewName("/work/board/retrieveBoard4.do?boardNo=" + boardNo + "&fromUpdate=true");
 		}
 		return mv;
 	}

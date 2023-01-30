@@ -19,6 +19,14 @@ public class BoardServiceImpl implements BoardService{
 	public List<Map<String, String>> retrieveBoardList2(Map<String, String> boardParam){
 		return boardDAO.retrieveBoardList2(boardParam);
 	}
+	
+	public List<Map<String, String>> retrieveBoardList3(Map<String, String> boardParam){
+		return boardDAO.retrieveBoardList3(boardParam);
+	}
+	
+	public List<Map<String, String>> retrieveBoardList4(Map<String, String> boardParam){
+		return boardDAO.retrieveBoardList4(boardParam);
+	}
 
 	public Map<String, String> retrieveBoard(Map<String, String> boardParam){
 		return boardDAO.retrieveBoard(boardParam);
@@ -27,12 +35,28 @@ public class BoardServiceImpl implements BoardService{
 	public Map<String, String> retrieveBoard2(Map<String, String> boardParam){
 		return boardDAO.retrieveBoard2(boardParam);
 	}
+	
+	public Map<String, String> retrieveBoard3(Map<String, String> boardParam){
+		return boardDAO.retrieveBoard2(boardParam);
+	}
+	
+	public Map<String, String> retrieveBoard4(Map<String, String> boardParam){
+		return boardDAO.retrieveBoard2(boardParam);
+	}
 
 	public String retrieveMaxBoardNo(){
 		return boardDAO.retrieveMaxBoardNo();
 	}
 	
 	public String retrieveMaxBoardNo2(){
+		return boardDAO.retrieveMaxBoardNo2();
+	}
+	
+	public String retrieveMaxBoardNo3(){
+		return boardDAO.retrieveMaxBoardNo2();
+	}
+	
+	public String retrieveMaxBoardNo4(){
 		return boardDAO.retrieveMaxBoardNo2();
 	}
 
@@ -44,12 +68,28 @@ public class BoardServiceImpl implements BoardService{
 		boardDAO.createBoard2(board);
 	}
 	
+	public void createBoard3(BoardBean board){
+		boardDAO.createBoard2(board);
+	}
+	
+	public void createBoard4(BoardBean board){
+		boardDAO.createBoard2(board);
+	}
+	
 	
 	public void updateBoard(BoardBean board){
 		boardDAO.updateBoard(board);
 	}
 	
 	public void updateBoard2(BoardBean board){
+		boardDAO.updateBoard2(board);
+	}
+	
+	public void updateBoard3(BoardBean board){
+		boardDAO.updateBoard2(board);
+	}
+	
+	public void updateBoard4(BoardBean board){
 		boardDAO.updateBoard2(board);
 	}
 
@@ -60,6 +100,14 @@ public class BoardServiceImpl implements BoardService{
 	public void updateBoardHits2(Map<String, String> boardParam){
 		boardDAO.updateBoardHits2(boardParam);
 	}
+	
+	public void updateBoardHits3(Map<String, String> boardParam){
+		boardDAO.updateBoardHits3(boardParam);
+	}
+	
+	public void updateBoardHits4(Map<String, String> boardParam){
+		boardDAO.updateBoardHits4(boardParam);
+	}
 
 	public void deleteBoard(Map<String, String> boardParam){
 		boardDAO.deleteBoard(boardParam);
@@ -67,6 +115,14 @@ public class BoardServiceImpl implements BoardService{
 	
 	public void deleteBoard3(Map<String, String> boardParam){
 		boardDAO.deleteBoard3(boardParam);
+	}
+	
+	public void deleteBoard4(Map<String, String> boardParam){
+		boardDAO.deleteBoard4(boardParam);
+	}
+	
+	public void deleteBoard5(Map<String, String> boardParam){
+		boardDAO.deleteBoard5(boardParam);
 	}
 
 	public void deleteBoard2(Map<String, String> boardParam){
