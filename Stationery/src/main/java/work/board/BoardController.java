@@ -265,7 +265,7 @@ public class BoardController {
 
 		mv.addObject("dsBoard", dsBoard);
 
-		mv.setViewName("/board/boardR_PRODUCQUS");
+		mv.setViewName("/board/boardR_producqus");
 
 		return mv;
 	}

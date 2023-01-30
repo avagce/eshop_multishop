@@ -37,11 +37,11 @@ public class BoardServiceImpl implements BoardService{
 	}
 	
 	public Map<String, String> retrieveBoard3(Map<String, String> boardParam){
-		return boardDAO.retrieveBoard2(boardParam);
+		return boardDAO.retrieveBoard3(boardParam);
 	}
 	
 	public Map<String, String> retrieveBoard4(Map<String, String> boardParam){
-		return boardDAO.retrieveBoard2(boardParam);
+		return boardDAO.retrieveBoard4(boardParam);
 	}
 
 	public String retrieveMaxBoardNo(){
@@ -53,11 +53,11 @@ public class BoardServiceImpl implements BoardService{
 	}
 	
 	public String retrieveMaxBoardNo3(){
-		return boardDAO.retrieveMaxBoardNo2();
+		return boardDAO.retrieveMaxBoardNo3();
 	}
 	
 	public String retrieveMaxBoardNo4(){
-		return boardDAO.retrieveMaxBoardNo2();
+		return boardDAO.retrieveMaxBoardNo4();
 	}
 
 	public void createBoard(BoardBean board){
@@ -69,11 +69,11 @@ public class BoardServiceImpl implements BoardService{
 	}
 	
 	public void createBoard3(BoardBean board){
-		boardDAO.createBoard2(board);
+		boardDAO.createBoard3(board);
 	}
 	
 	public void createBoard4(BoardBean board){
-		boardDAO.createBoard2(board);
+		boardDAO.createBoard4(board);
 	}
 	
 	
@@ -86,11 +86,11 @@ public class BoardServiceImpl implements BoardService{
 	}
 	
 	public void updateBoard3(BoardBean board){
-		boardDAO.updateBoard2(board);
+		boardDAO.updateBoard3(board);
 	}
 	
 	public void updateBoard4(BoardBean board){
-		boardDAO.updateBoard2(board);
+		boardDAO.updateBoard4(board);
 	}
 
 	public void updateBoardHits(Map<String, String> boardParam){

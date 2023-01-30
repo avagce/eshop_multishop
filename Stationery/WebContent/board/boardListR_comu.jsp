@@ -53,7 +53,7 @@
 			
 			<div class="col-md-12">
 				<div class="page-header" style="float: right;">
-					  <button type="button" class="btn btn-success btn-lg" onclick="fn_createBoard3()">새 글 쓰기</button>
+					  <button type="button" class="btn btn-success btn-lg" onclick="fn_createBoard2()">새 글 쓰기</button>
 				</div>
 			</div>
 			

@@ -22,11 +22,11 @@ public class BoardDAO {
 	}
 	
 	public List<Map<String, String>> retrieveBoardList3(Map<String, String> boardParam){
-		return sqlSession.selectList("board.retrieveBoardList2", boardParam);
+		return sqlSession.selectList("board.retrieveBoardList3", boardParam);
 	}
 	
 	public List<Map<String, String>> retrieveBoardList4(Map<String, String> boardParam){
-		return sqlSession.selectList("board.retrieveBoardList2", boardParam);
+		return sqlSession.selectList("board.retrieveBoardList4", boardParam);
 	}
 
 	public Map<String, String> retrieveBoard(Map<String, String> boardParam){
@@ -38,11 +38,11 @@ public class BoardDAO {
 	}
 	
 	public Map<String, String> retrieveBoard3(Map<String, String> boardParam){
-		return sqlSession.selectOne("board.retrieveBoard2", boardParam);
+		return sqlSession.selectOne("board.retrieveBoard3", boardParam);
 	}
 	
 	public Map<String, String> retrieveBoard4(Map<String, String> boardParam){
-		return sqlSession.selectOne("board.retrieveBoard2", boardParam);
+		return sqlSession.selectOne("board.retrieveBoard4", boardParam);
 	}
 
 	public String retrieveMaxBoardNo(){
@@ -54,11 +54,11 @@ public class BoardDAO {
 	}
 	
 	public String retrieveMaxBoardNo3(){
-		return sqlSession.selectOne("board.retrieveMaxBoardNo2");
+		return sqlSession.selectOne("board.retrieveMaxBoardNo3");
 	}
 	
 	public String retrieveMaxBoardNo4(){
-		return sqlSession.selectOne("board.retrieveMaxBoardNo2");
+		return sqlSession.selectOne("board.retrieveMaxBoardNo4");
 	}
 
 	public void createBoard(BoardBean board){
@@ -118,11 +118,11 @@ public class BoardDAO {
 	}
 	
 	public void deleteBoard4(Map<String, String> boardParam){
-		sqlSession.delete("board.deleteBoard3", boardParam);
+		sqlSession.delete("board.deleteBoard4", boardParam);
 	}
 	
 	public void deleteBoard5(Map<String, String> boardParam){
-		sqlSession.delete("board.deleteBoard3", boardParam);
+		sqlSession.delete("board.deleteBoard5", boardParam);
 	}
 
 	public void deleteBoard2(Map<String, String> boardParam){
