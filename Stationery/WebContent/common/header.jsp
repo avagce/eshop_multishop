@@ -56,7 +56,7 @@
         <div class="row bg-secondary py-1 px-xl-5">
             <div class="col-lg-6 d-none d-lg-block">
                 <div class="d-inline-flex align-items-center h-100">
-                    <a class="text-body mr-3" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${gomain}')">About</a>
+                 <button class="dropdown-item" type="button" onclick="location.href='${context}/user/login.jsp'">>About</a>
                     <!-- 메뉴를 누를때마다 user 의 등급과 로긴체크,로긴 됐을때 어디로 이동할지를 넣어준다 -->
                    
                     <a class="text-body mr-3" href="">Contact</a>
