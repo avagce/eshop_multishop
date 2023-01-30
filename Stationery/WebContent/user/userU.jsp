@@ -272,12 +272,12 @@
 	</form>
 		<form id="ajaxform" action="${context}/work/product/saveFile.do" method="post" enctype="multipart/form-data" role="form">
 		<br><br><br>
-		<div class="form-group" style="display: flex; justify-content: flex-end;">
+		<div class="form-group" style="display: flex;justify-content: flex-end;flex-wrap: wrap;">
 			<div class="col-md-offset-6 col-md-2">
-				<button type="button" class="btn btn-success" onclick="fn_back()">뒤로가기</button>
+				<button type="button" class="btn btn-success" onclick="fn_back()" style="width: 100%">뒤로가기</button>
 			</div>
 			<div class="col-md-2">
-				<button class="btn btn-primary" type="button" name="btnSubmit" id="btnSubmit" onclick="fn_save()">등록하기</button>
+				<button class="btn btn-primary" type="button" name="btnSubmit" id="btnSubmit" onclick="fn_save()" style="width: 100%">회원가입</button>
 			</div>
 		</div>
 	</form>
