@@ -175,35 +175,35 @@
 	<form id="joinFrm" method="post" action="${context}/work/user/createUser.do" role="form">
 		<div class="form-horizontal">
 			<hr/>
-			<div class="form-group" style="margin-top: 5%; display: flex; justify-content: flex-end;" >
+			<div class="form-group" style="margin-top: 5%; display: flex; justify-content: center; flex-wrap: wrap;" >
 				<label for="id" class="control-label col-md-2"><b>아이디</b></label>
 				<div class="col-md-6">
 					<input class="form-control" type="text" name="id" id="id" required="required" autofocus="autofocus" onkeyup="idCheck();"/>
 				</div>
 			</div>
-			<p class="col-md-7" id="message" style="display: flex; justify-content: center;"></p>
+			<p class="col-md-7" id="message" style="display: flex; justify-content: flex-end;"></p>
 
-			<div class="form-group" style="display: flex; justify-content: center;">
+			<div class="form-group" style="display: flex; justify-content: center; flex-wrap: wrap;">
 				<label for="pw" class="control-label col-md-2"><b>비밀번호</b></label>
 				<div class="col-md-6">
 					<input class="form-control" style="display: flex;" type="password" name="pw" id="pw" required="required"/>
 				</div>
 			</div>
 
-			<div class="form-group" style="display: flex; justify-content: center;">
+			<div class="form-group" style="display: flex; justify-content: center; flex-wrap: wrap;">
 				<label for="email" class="control-label col-md-2"><b>이메일</b></label>
 				<div class="col-md-6">
 					<input class="form-control" style="display: flex;" type="email" name="email" id="email" required="required"/>
 				</div>
 			</div>
-			<div class="form-group" style="display: flex; justify-content: center;">
+			<div class="form-group" style="display: flex; justify-content: center; flex-wrap: wrap;">
 				<label for="name" class="control-label col-md-2"><b>성명</b></label>
 				<div class="col-md-6">
 					<input class="form-control" style="display: flex;" type="text" id="name" name="name" autofocus="autofocus" required="required"/>
 				</div>
 			</div>
 
-			<div class="form-group" style="display: flex; justify-content: center;">
+			<div class="form-group" style="display: flex; justify-content: center; flex-wrap: wrap;">
 				<label for="birth" class="control-label col-md-2"><b>생년월일</b></label>
 				<div class="col-md-6">
 					<input class="form-control" autocomplete="off" style="display: flex;" type="text" id="birth" name="birth" required="required" maxlength="10"/>
@@ -242,14 +242,14 @@
 				<input type="hidden" id="postNum" name="postNum">
 			</div>
 
-			<div class="form-group" style="display: flex; justify-content: center;">
+			<div class="form-group" style="display: flex; justify-content: center; flex-wrap: wrap;">
 				<label for="address1" class="control-label col-md-2"><b>상세주소</b></label>
 				<div class="col-md-6">
 					<input class="form-control" style="display: flex;" type="text" id="address1" disabled="disabled" required="required"/>
 				</div>
 			</div>
 
-			<div class="form-group" style="display: flex; justify-content: center;">
+			<div class="form-group" style="display: flex; justify-content: center; flex-wrap: wrap;">
 				<label for="address2" class="control-label col-md-2"></label>
 				<div class="col-md-6">
 					<input class="form-control" style="display: flex; justify-content: center;" type="text" id="address2"/>
@@ -261,16 +261,13 @@
 		</div>
 	</form>
 	<form id="ajaxform" action="${context}/work/product/saveFile.do" method="post" enctype="multipart/form-data" role="form">
-		<div class="form-group" style="display: flex;">
-		<label class="control-label col-md-2"></label>
-		</div>
 		<br><br><br>
-		<div class="form-group" style="display: flex; justify-content: flex-end;">
+		<div class="form-group" style="display: flex;justify-content: flex-end;flex-wrap: wrap;">
 			<div class="col-md-offset-6 col-md-2">
-				<button type="button" class="btn btn-success" onclick="fn_back()">뒤로가기</button>
+				<button type="button" class="btn btn-success" onclick="fn_back()" style="width: 100%">뒤로가기</button>
 			</div>
 			<div class="col-md-2">
-				<button class="btn btn-primary" type="button" name="btnSubmit" id="btnSubmit" onclick="fn_save()">등록하기</button>
+				<button class="btn btn-primary" type="button" name="btnSubmit" id="btnSubmit" onclick="fn_save()" style="width: 100%">회원가입</button>
 			</div>
 		</div>
 	</form>
