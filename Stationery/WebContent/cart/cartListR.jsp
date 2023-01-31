@@ -28,7 +28,6 @@
     <script src="${context}/js/plugins/dataTables/jquery.dataTables.js"></script>
     <script src="${context}/js/plugins/dataTables/dataTables.bootstrap.js"></script>
 
-    <script src="${context}/js/sb-admin-2.js"></script>
 
     <script>
 	var existFolder = '';
@@ -55,7 +54,7 @@
     </script>
 </head>
 <body>
-<jsp:include page="/common/header.jsp"></jsp:include>
+<jsp:include page="/common/header_userc.jsp"></jsp:include>
 	<div id="jumbotron" class="container">
 		<div class="jumbotron jumbotron-info" style="background-color: lightgray;">
 			<h1><font color="black"><strong>장바구니</strong>&nbsp;<span class="glyphicon glyphicon-shopping-cart"></span></font></h1>
