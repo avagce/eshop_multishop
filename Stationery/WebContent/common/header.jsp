@@ -64,11 +64,13 @@
                     <a class="text-body mr-3" href="">Contact</a>
                     <a class="text-body mr-3" href="">Help</a>
                     <a class="text-body mr-3" href="">FAQs</a>
-                    <a class="text-body mr-3" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/board/retrieveBoardList.do')">공지사항</a>
-                    <a class="text-body mr-3" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/board/retrieveBoardList2.do')">자유게시판</a>
-                    <a class="text-body mr-3" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/board/retrieveBoardList3.do')">커뮤니티게시판</a>
-                    <a class="text-body mr-3" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/board/retrieveBoardList4.do')">상담신청게시판</a>
-                          
+                    <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">게시판</button>
+                  	<div class="dropdown-menu dropdown-menu-right">
+                    <a class="text-body mr-3 dropdown-item" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/board/retrieveBoardList.do')">공지사항</a>
+                    <a class="text-body mr-3 dropdown-item" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/board/retrieveBoardList2.do')">자유게시판</a>
+                    <a class="text-body mr-3 dropdown-item" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/board/retrieveBoardList3.do')">커뮤니티게시판</a>
+                    <a class="text-body mr-3 dropdown-item" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/board/retrieveBoardList4.do')">상담신청게시판</a>
+                   	</div>
                 </div>
             </div>
             <div class="col-lg-6 text-center text-lg-right">
