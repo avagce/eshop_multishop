@@ -64,7 +64,7 @@
                     <a class="text-body mr-3" href="">Contact</a>
                     <a class="text-body mr-3" href="">Help</a>
                     <a class="text-body mr-3" href="">FAQs</a>
-                    <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">게시판</button>
+                    <button type="button" class="btn btn-sm btn-light dropdown-toggle text-body mr-3" data-toggle="dropdown"><strong>NOTICE</strong></button>
                   	<div class="dropdown-menu dropdown-menu-right">
                     <a class="text-body mr-3 dropdown-item" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/board/retrieveBoardList.do')">공지사항</a>
                     <a class="text-body mr-3 dropdown-item" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/board/retrieveBoardList2.do')">자유게시판</a>
