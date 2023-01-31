@@ -3,6 +3,9 @@
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <c:set var ="context"><%=request.getContextPath()%></c:set>
 <head>
+<style type="text/css">
+	a{cursor: pointer;}
+</style>
     <meta charset="utf-8">
     <title>MultiShop - Online Shop Website Template</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -58,51 +61,27 @@
                 <div class="d-inline-flex align-items-center h-100">
                  <a class="text-body mr-3" onclick="location.href='${context}/user/login.jsp'" style="cursor: pointer;">About</a>
                     <!-- 메뉴를 누를때마다 user 의 등급과 로긴체크,로긴 됐을때 어디로 이동할지를 넣어준다 -->
-                   
                     <a class="text-body mr-3" href="">Contact</a>
                     <a class="text-body mr-3" href="">Help</a>
                     <a class="text-body mr-3" href="">FAQs</a>
-                    
-                          <li><a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/board/retrieveBoardList.do')">공지사항</a></li>
-                         
-                          
-                          <li><a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/board/retrieveBoardList2.do')">자유게시판</a></li>
-                          <li><a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/board/retrieveBoardList3.do')">커뮤니티게시판</a></li>
-                          <li><a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/board/retrieveBoardList4.do')">상담신청게시판</a></li>
+                    <a class="text-body mr-3" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/board/retrieveBoardList.do')">공지사항</a>
+                    <a class="text-body mr-3" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/board/retrieveBoardList2.do')">자유게시판</a>
+                    <a class="text-body mr-3" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/board/retrieveBoardList3.do')">커뮤니티게시판</a>
+                    <a class="text-body mr-3" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/board/retrieveBoardList4.do')">상담신청게시판</a>
                           
                 </div>
             </div>
             <div class="col-lg-6 text-center text-lg-right">
                 <div class="d-inline-flex align-items-center">
                     <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">My Account</button>
-                        <div class="dropdown-menu dropdown-menu-right">
                         <c:if test="${sessionScope.id == null}">
-                            <button class="dropdown-item" type="button" onclick="location.href='${context}/user/login.jsp'">LOGIN</button>
-                            <button class="dropdown-item" type="button" onclick="location.href='${context}/work/user/createUser.do'">Sign up</button>
+                            <button class="dropdown-item" type="button" onclick="location.href='${context}/user/login.jsp'"><strong>LOGIN</strong></button>
+                            <button class="dropdown-item" type="button" onclick="location.href='${context}/work/user/createUser.do'"><strong>Sign up</strong></button>
                     	</c:if>
              	        <c:if test="${sessionScope.id != null}">
-                            <button class="dropdown-item" type="button" onclick="location.href='${context}/work/user/updateUser.do'">정보수정</button>
-                            <button class="dropdown-item" type="button" onclick="location.href='${context}/work/user/logout.do'">LOGOUT</button>
+                            <button class="dropdown-item" type="button" onclick="location.href='${context}/work/user/updateUser.do'"><strong>정보수정</strong></button>
+                            <button class="dropdown-item" type="button" onclick="location.href='${context}/work/user/logout.do'"><strong>LOGOUT</strong></button>
                     	</c:if>
-                    	
-                        </div>
-                    </div>
-                    <div class="btn-group mx-2">
-                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">USD</button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button">EUR</button>
-                            <button class="dropdown-item" type="button">GBP</button>
-                            <button class="dropdown-item" type="button">CAD</button>
-                        </div>
-                    </div>
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">EN</button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button">FR</button>
-                            <button class="dropdown-item" type="button">AR</button>
-                            <button class="dropdown-item" type="button">RU</button>
-                        </div>
                     </div>
                 </div>
                 <div class="d-inline-flex align-items-center d-block d-lg-none">
