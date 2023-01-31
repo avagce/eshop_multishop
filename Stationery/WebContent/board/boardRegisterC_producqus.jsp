@@ -38,6 +38,7 @@
 			boardContents = boardContents.replace(/\n/gi, "<br/>");
 
 			$("#boardContents").val(boardContents);
+			$("#boardPhone").val(boardPhone);
 
 	 		$("#createBoard").submit();
 		}
@@ -71,6 +72,13 @@
 					<textarea class="form-control" name="boardContents" id="boardContents" cols="10" rows="15" required="required" placeholder="본문을 입력해주세요"></textarea>
 				</div>
 			</div>
+			<div class="form-group">
+				<label for="boardContents" class="control-label col-md-1"><b>연락처</b></label>
+				<div class="col-md-11">
+					<textarea class="form-control" name="boardPhone" id="boardPhone" cols="5" rows="5" required="required" placeholder="연락처를 입력해주세요"></textarea>
+				</div>
+			</div>
+			
 		<div class="form-group">
 			<div class="col-md-offset-1 col-md-2">
 				<button type="button" class="btn btn-default" onclick="fn_back()">취소</button>

@@ -9,13 +9,14 @@ public class BoardBean implements Serializable{
 	private String boardContents;   //게시글내용
 	private String boardDate;       //게시글작성일자
 	private String boardHits;       //게시글조회수
+	private String boardPhone;		//문의게시판 연락처
 
 	public BoardBean() {
 		super();
 	}
 
 	public BoardBean(String boardNo, String userCode, String boardTitle,
-			String boardContents, String boardDate, String boardHits) {
+			String boardContents, String boardDate, String boardHits, String boardPhone) {
 		super();
 		this.boardNo = boardNo;
 		this.userCode = userCode;
@@ -23,8 +24,17 @@ public class BoardBean implements Serializable{
 		this.boardContents = boardContents;
 		this.boardDate = boardDate;
 		this.boardHits = boardHits;
+		this.boardPhone = boardPhone;
 	}
 
+	public String getboardphone() {
+		return boardPhone;
+	}
+	
+	public void setBoardphone(String boardphone) {
+		this.boardPhone= boardphone;
+	}
+	
 	public String getBoardNo() {
 		return boardNo;
 	}
@@ -88,6 +98,8 @@ public class BoardBean implements Serializable{
 		builder.append(boardDate);
 		builder.append(", boardHits=");
 		builder.append(boardHits);
+		builder.append(", boardphone=");
+		builder.append(boardPhone);
 		builder.append("]");
 		return builder.toString();
 	}

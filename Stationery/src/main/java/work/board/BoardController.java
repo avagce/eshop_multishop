@@ -113,6 +113,7 @@ public class BoardController {
 		HttpSession session = request.getSession();
 
 		String userCode = (String)session.getAttribute("userCode");
+		String boardphone = (String)session.getAttribute("phoneNum");
 
 		ModelAndView mv = new ModelAndView();
 
@@ -123,6 +124,7 @@ public class BoardController {
 		}else if(flag != null){
 			//게시글 생성
 			board.setUserCode(userCode);
+			board.setBoardphone(boardphone);
 			boardService.createBoard4(board);
 
 			String maxBoardNo = boardService.retrieveMaxBoardNo4();

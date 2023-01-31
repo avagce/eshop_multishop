@@ -25,4 +25,6 @@ create table tb_board_comu as select * from tb_board_user where 1=2;
  
 create table tb_board_producqus as select * from tb_board_user where 1=2;
 
+alter table tb_board_producqus add board_phone default '-' null;
+
 commit;
