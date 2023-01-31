@@ -28,10 +28,49 @@
     <script src="${context}/js/plugins/metisMenu/metisMenu.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="${context}/js/sb-admin-2.js"></script>
-	<script type="text/javascript">
+</head>
+
+<body>
+	<jsp:include page="../common/header.jsp"></jsp:include>
+	<div id="jumbotron" class="container">
+		<div class="jumbotron jumbotron-info" style="background-color: lightgray;">
+			<h1><font color="black"><strong>LOGIN</strong>&nbsp;<span class="glyphicon glyphicon glyphicon-pencil"></span></font></h1>
+			<p>GKYK mall에 오신것을 진심으로 환영합니다.</p>
+		</div>
+	</div>
+    <div class="container">
+        <div class="row">
+            <div class="login_form">
+                <div class="login-panel panel panel-default"  style="margin-bottom: 57%; padding: 0 10%;">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Please Sign In</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form action="${context}/work/user/login.do" method="post" role="form" id="loginFrm">
+                            <fieldset>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="ID" id="id" name="id" type="text" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Password" id="pw" name="pw" type="password">
+                                </div>
+                                <div class="form-group">
+                                	<span style="float: left;"><a href="${context}/user/idFind.jsp">ID찾기</a>|<a href="pwFind.jsp">PW찾기</a></span>
+                                	<span style="float: right;"><a href="${context}/work/user/createUser.do">회원가입</a></span><br>
+                                </div>
+                                <!-- Change this to a button or input when using this as a form -->
+                                <button type="button" class="btn btn-lg btn-success btn-block" onclick="ajaxLoginCheck();">Login</button>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<jsp:include page="../common/footer.jsp"></jsp:include>
+		<script type="text/javascript">
 		$(document).ready(function(){
-			$("#pw").keydown(function (key){
+			$("#loginFrm").keypress(function (key){
 				if(key.keyCode == 13){
 					ajaxLoginCheck();
 				}
@@ -68,46 +107,6 @@
 
 
 	</script>
-</head>
-
-<body>
-	<jsp:include page="../common/header.jsp"></jsp:include>
-	<div id="jumbotron" class="container">
-		<div class="jumbotron jumbotron-info" style="background-color: lightgray;">
-			<h1><font color="black"><strong>LOGIN</strong>&nbsp;<span class="glyphicon glyphicon glyphicon-pencil"></span></font></h1>
-			<p>GKYK mall에 오신것을 진심으로 환영합니다.</p>
-		</div>
-	</div>
-    <div class="container">
-        <div class="row">
-            <div class="login_form">
-                <div class="login-panel panel panel-default"  style="margin-bottom: 57%;">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Please Sign In</h3>
-                    </div>
-                    <div class="panel-body">
-                        <form action="${context}/work/user/login.do" method="post" role="form" id="loginFrm">
-                            <fieldset>
-                                <div class="form-group">
-                                    <input class="form-control" placeholder="ID" id="id" name="id" type="text" autofocus>
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" placeholder="Password" id="pw" name="pw" type="password">
-                                </div>
-                                <div class="form-group">
-                                	<span style="float: left;"><a href="${context}/user/idFind.jsp">ID찾기</a>|<a href="pwFind.jsp">PW찾기</a></span>
-                                	<span style="float: right;"><a href="${context}/work/user/createUser.do">회원가입</a></span><br>
-                                </div>
-                                <!-- Change this to a button or input when using this as a form -->
-                                <button type="submit" class="btn btn-lg btn-success btn-block" onclick="ajaxLoginCheck();">Login</button>
-                            </fieldset>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-	<jsp:include page="../common/footer.jsp"></jsp:include>
 
 </body>
 </html>
