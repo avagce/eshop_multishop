@@ -82,7 +82,7 @@ li{
 </style>
 </head>
 <body>
-<jsp:include page="../common//header.jsp"></jsp:include>
+<jsp:include page="../common/header.jsp"></jsp:include>
 <c:if test="${sessionScope.grade == 'A'}">
 	<div class="container" style="margin-top: 2%; margin-bottom: 10%;">
 	<h1>Board<button class="btn btn-success" type="button" style="float: right;" onclick="fn_moveToBoard()">목록</button></h1>

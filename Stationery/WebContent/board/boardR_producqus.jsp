@@ -99,7 +99,9 @@ li{
 	  	<br><br><font size="10px" color="gray">${dsBoard.BOARD_TITLE}</font>
 	</li>
 	  <li class="list-group-item" style="min-height: 250px;">${dsBoard.BOARD_CONTENTS}</li>
+	  <c:if test="${sessionScope.grade == 'A'}">
 	  <li class="list-group-item" style="min-height: 30px;">${dsBoard.BOARD_PHONE }</li>
+	  </c:if>
 	</ul>
 
 	<c:if test="${sessionScope.userCode == dsBoard.USER_CODE}">

@@ -111,9 +111,10 @@ public class BoardController {
 	@RequestMapping(value="/work/board/createBoard4.do", method = {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView createBoard4(@ModelAttribute BoardBean board, HttpServletRequest request){
 		HttpSession session = request.getSession();
-
+		String phoneNum = request.getParameter("phoneNum");
+		
 		String userCode = (String)session.getAttribute("userCode");
-		String boardphone = (String)session.getAttribute("phoneNum");
+		//String boardphone = (String)session.getAttribute("phoneNum");
 
 		ModelAndView mv = new ModelAndView();
 
@@ -124,7 +125,7 @@ public class BoardController {
 		}else if(flag != null){
 			//게시글 생성
 			board.setUserCode(userCode);
-			board.setBoardphone(boardphone);
+			//board.setBoardphone(boardphone);
 			boardService.createBoard4(board);
 
 			String maxBoardNo = boardService.retrieveMaxBoardNo4();

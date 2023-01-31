@@ -313,14 +313,14 @@
 			, USER_CODE
 			, BOARD_TITLE
 			, BOARD_CONTENTS
-			 , BOARD_PHONE
+			, BOARD_PHONE
 			, BOARD_DATE
 			) VALUES (
 			  'B' || LPAD(BOARD_SEQ.NEXTVAL, 5, 0)
 			, #{userCode}
 			, #{boardTitle}
 			, #{boardContents}
-			, #{boardPhone}
+			,(select phone_num from tb_com_user where USER_CODE=#{userCode})
 			, TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI')
 			)
 			
