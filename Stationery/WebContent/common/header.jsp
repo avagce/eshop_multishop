@@ -81,6 +81,7 @@
              	        <c:if test="${sessionScope.id != null}">
                             <button class="dropdown-item" type="button" onclick="location.href='${context}/work/user/updateUser.do'"><strong>정보수정</strong></button>
                             <button class="dropdown-item" type="button" onclick="location.href='${context}/work/user/logout.do'"><strong>LOGOUT</strong></button>
+                            <button class="dropdown-item" type="button" onclick="location.href='${context}/work/cart/retrieveCartList.do'"><strong>장바구니</strong></button>
                     	</c:if>
                     </div>
                 </div>
