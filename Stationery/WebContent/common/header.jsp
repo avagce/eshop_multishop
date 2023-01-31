@@ -77,13 +77,13 @@
                 <div class="d-inline-flex align-items-center">
                     <div class="btn-group">
                         <c:if test="${sessionScope.id == null}">
-                            <button class="dropdown-item" type="button" onclick="location.href='${context}/user/login.jsp'"><strong>LOGIN</strong></button>
-                            <button class="dropdown-item" type="button" onclick="location.href='${context}/work/user/createUser.do'"><strong>Sign up</strong></button>
+                            <button class="btn btn-default" type="button" onclick="location.href='${context}/user/login.jsp'"><strong>LOGIN</strong></button>
+                            <button class="btn btn-default" type="button" onclick="location.href='${context}/work/user/createUser.do'"><strong>Sign up</strong></button>
                     	</c:if>
              	        <c:if test="${sessionScope.id != null}">
-                            <button class="dropdown-item" type="button" onclick="location.href='${context}/work/user/updateUser.do'"><strong>정보수정</strong></button>
-                            <button class="dropdown-item" type="button" onclick="location.href='${context}/work/user/logout.do'"><strong>LOGOUT</strong></button>
-                            <button class="dropdown-item" type="button" onclick="location.href='${context}/work/cart/retrieveCartList.do'"><strong>장바구니</strong></button>
+                            <button class="btn btn-default" type="button" onclick="location.href='${context}/work/user/updateUser.do'"><strong>정보수정</strong></button>
+                            <button class="btn btn-default" type="button" onclick="location.href='${context}/work/user/logout.do'"><strong>LOGOUT</strong></button>
+                            <button class="btn btn-default" type="button" onclick="location.href='${context}/work/cart/retrieveCartList.do'"><strong>장바구니</strong></button>
                     	</c:if>
                     </div>
                 </div>
