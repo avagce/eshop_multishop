@@ -20,6 +20,7 @@
     <link href="${context}/css/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <link href="${context}/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<script src="${context}/js/jquery-1.9.1.js"></script>
 	<script src="${context}/js/bootstrap.min.js"></script>
@@ -79,7 +80,7 @@
     </script>
 </head>
 <body>
-<jsp:include page="/common/top.jsp"></jsp:include>
+<jsp:include page="/common/header_userc.jsp"></jsp:include>
 	<div class="container">
 		<div class="jumbotron jumbotron-info" style="background-color: lightgray;">
 			<h1><font color="black"><strong>매출통계</strong>&nbsp;<span class="glyphicon glyphicon-signal"></span></font></h1>
@@ -110,6 +111,6 @@
 		<div id="printArea" style="display: none;">
 		</div>
 	</div>
-<jsp:include page="/common/foot.jsp"></jsp:include>
+<jsp:include page="/common/footer.jsp"></jsp:include>
 </body>
 </html>
