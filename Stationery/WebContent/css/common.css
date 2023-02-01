@@ -1,4 +1,4 @@
-@charset="euc-kr";
+@charset-8 "euc-kr";
 
 body {
 	background: url('../backgroundImage/blueSky.jpg');
@@ -113,7 +113,7 @@ a{
 	margin: 0;
 }
 
-/* 댓글 관련 CSS */
+/* �뙎湲� 愿��젴 CSS */
  .animated {
     -webkit-transition: height 0.2s;
     -moz-transition: height 0.2s;
@@ -129,7 +129,7 @@ a{
 
 
 
-/* 결제완료 페이지 CSS*/
+/* 寃곗젣�셿猷� �럹�씠吏� CSS*/
 
 .shape{
 	border-style: solid; border-width: 0 100px 60px 0; float:right; height: 0px; width: 0px;
