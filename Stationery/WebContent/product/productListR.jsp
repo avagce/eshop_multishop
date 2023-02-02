@@ -94,7 +94,7 @@
     </script>
 </head>
 <body>
-<jsp:include page="../common/top.jsp"></jsp:include>
+<jsp:include page="../common/header.jsp"></jsp:include>
 	<br><br><br>
 	<div class="container">
 		<div class="page-header">
@@ -118,7 +118,10 @@
 								imageFolder = "designImg";
 							}else if(productCategoryCd == 'B'){
 								imageFolder = "binderImg";
+							}else if(productCategoryCd == 'R'){
+								imageFolder = "dressImg";
 							}
+								
 							path = $("img[name='image']").eq('${dsProductIdx.index}').attr("src");
 
 							existFolder = path.split("/")[2];
@@ -143,6 +146,6 @@
 				</div>
 		</div>
 	</div>
-	<jsp:include page="../common/foot.jsp"></jsp:include>
+	<jsp:include page="../common/footer.jsp"></jsp:include>
 </body>
 </html>

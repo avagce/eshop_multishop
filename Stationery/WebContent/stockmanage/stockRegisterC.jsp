@@ -67,7 +67,8 @@
 			imageFolder = "designImg";
 		}else if(productCategoryCd == 'B'){
 			imageFolder = "binderImg";
-		}
+		}else if(productCategoryCd == 'DR'){
+			imageFolder = "dressImg";
 
 		$("#imageFolder").val(imageFolder);
 	}

@@ -158,6 +158,13 @@
                         <a href="" class="nav-item nav-link">Blazers</a>
                         <a href="" class="nav-item nav-link">Jackets</a>
                         <a href="" class="nav-item nav-link">Shoes</a>
+                        <a href="${context}/work/product/retrieveProductList.do?category=${dsProductList[0].PRODUCT_CATEGORY_CD}" class="nav-item nav-link">office</a>
+                        <a href="${context}/work/product/retrieveProductList.do?category=${dsProductList[1].PRODUCT_CATEGORY_CD}" class="nav-item nav-link">Pen</a>
+                        <a href="${context}/work/product/retrieveProductList.do?category=${dsProductList[2].PRODUCT_CATEGORY_CD}" class="nav-item nav-link">Binder</a>
+                        <a href="${context}/work/product/retrieveProductList.do?category=${dsProductList[3].PRODUCT_CATEGORY_CD}" class="nav-item nav-link">Design</a>
+                        <a href="${context}/work/product/retrieveProductList.do?category=${dsProductList[4].PRODUCT_CATEGORY_CD}" class="nav-item nav-link">Storage</a>
+                        <a href="${context}/work/product/retrieveProductList.do?category=${dsProductList[6].PRODUCT_CATEGORY_CD}" class="nav-item nav-link">Dress</a>
+                        
                     </div>
                 </nav>
             </div>

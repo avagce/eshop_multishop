@@ -89,6 +89,28 @@
 			  ORDER BY PRODUCT_REG_DATE DESC
 			) T
 			WHERE ROWNUM = 1
+				UNION ALL
+			SELECT T.PRODUCT_IMAGE, T.PRODUCT_CATEGORY_CD
+			FROM
+			(
+			  SELECT PRODUCT_IMAGE, PRODUCT_CATEGORY_CD
+			  FROM TB_PRODUCT
+			  WHERE 1=1
+			  AND PRODUCT_CATEGORY_CD = 'D'
+			  ORDER BY PRODUCT_REG_DATE DESC
+			) T
+			WHERE ROWNUM = 1
+						UNION ALL
+			SELECT T.PRODUCT_IMAGE, T.PRODUCT_CATEGORY_CD
+			FROM
+			(
+			  SELECT PRODUCT_IMAGE, PRODUCT_CATEGORY_CD
+			  FROM TB_PRODUCT
+			  WHERE 1=1
+			  AND PRODUCT_CATEGORY_CD = 'R'
+			  ORDER BY PRODUCT_REG_DATE DESC
+			) T
+			WHERE ROWNUM = 1
 			]]>
 	</select>
 
@@ -171,6 +193,25 @@
 			WHERE ROWNUM <= 6
 			]]>
 	</select>
+	
+		<select id="retrieveProductListForDress" resultType="map">
+		<![CDATA[
+			/*	retrieveProductListForStorage	*/
+			SELECT T.PRODUCT_IMAGE, T.PRODUCT_CATEGORY_CD
+			FROM
+			(
+			  SELECT PRODUCT_IMAGE, PRODUCT_CATEGORY_CD
+			  FROM TB_PRODUCT
+			  WHERE 1=1
+			  AND PRODUCT_CATEGORY_CD = 'R'
+			  ORDER BY PRODUCT_REG_DATE DESC
+			) T
+			WHERE ROWNUM <= 3
+			]]>
+	</select>
+	
+	
+
 
 	<select id="retrieveProduct" parameterType="map" resultType="map">
 		/*	retrieveProduct	*/

@@ -99,6 +99,8 @@
 													imageFolder = "designImg";
 												}else if(productCategoryCd == 'B'){
 													imageFolder = "binderImg";
+												}else if(productCategoryCd == 'DR'){
+													imageFolder = "dressImg";
 												}
 												path = $("img[name='image']").eq('${productIdx.index}').attr("src");
 

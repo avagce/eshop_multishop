@@ -4,7 +4,7 @@
 <c:set var ="context"><%=request.getContextPath()%></c:set>
 <!DOCTYPE html>
 <html lang="en">
-
+<c:set var="officeUrl">${context}/work/product/retrieveProductList.do?category=${dsProductList[0].PRODUCT_CATEGORY_CD}</c:set>
 <%@ include file="../common/header.jsp" %>
 <c:set var="loginUrl">${context}/user/login.jsp</c:set>
     <!-- Carousel Start -->
