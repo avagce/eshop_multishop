@@ -1,5 +1,5 @@
 
-SQL*Loader: Release 11.2.0.1.0 - Production on 목 1월 5 14:02:57 2023
+SQL*Loader: Release 11.2.0.1.0 - Production on 목 2월 2 21:01:33 2023
 
 Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
 
@@ -29,26 +29,4 @@ DONG                                 NEXT     *   ,       CHARACTER
 BUNJI                                NEXT     *   ,       CHARACTER            
 SEQ                                  NEXT     *   ,       CHARACTER            
 
-레코드 1: 기각됨 - 테이블 TB_POST, 열 SEQ에 오류
-ORA-01722: 수치가 부적합합니다
-
-테이블 TB_POST:
-  49893 행 로드되었습니다.
-  데이터 오류 때문에 1 행(이)가 로드되지 않았습니다
-  모든 WHEN절이 실패하여 0 행(이)가 로드되지 않았습니다
-  모든 필드가 NULL이어서 0 행(이)가 로드되지 않았습니다
-
-
-바인드 배열에 할당된 영역:             99072바이트(64 행)
-읽기 버퍼 바이트: 1048576
-
-생략된 논리 레코드의 합계:         0
-읽어낸 논리 레코드의 합계:     49894
-거부된 논리 레코드의 합계:         1
-폐기된 논리 레코드의 합계:         0
-
-목 1월  05 14:02:57 2023에 실행 개시
-목 1월  05 14:02:57 2023에 실행 종료
-
-경과 시간:        00:00:00.45
-CPU 시간:         00:00:00.11
+SQL*Loader-601: INSERT 옵션을 사용하려면 테이블이 비어 있어야 합니다.  TB_POST 테이블에 오류
