@@ -277,7 +277,7 @@
 				<button type="button" class="btn btn-success" onclick="fn_back()" style="width: 100%; height: 50px; border-radius: 10px; margin-top: 5%; ">뒤로가기</button>
 			</div>
 			<div class="col-md-3">
-				<button class="btn btn-primary" type="button" name="btnSubmit" id="btnSubmit" onclick="fn_save()" style="width: 100%; height: 50px; border-radius: 10px; margin-top: 5%;">회원가입</button>
+				<button class="btn btn-primary" type="button" name="btnSubmit" id="btnSubmit" onclick="fn_save()" style="width: 100%; height: 50px; border-radius: 10px; margin-top: 5%;">정보수정</button>
 			</div>
 		</div>
 	</form>
