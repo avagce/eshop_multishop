@@ -4,13 +4,23 @@
 <c:set var ="context"><%=request.getContextPath()%></c:set>
 <!DOCTYPE html>
 <html lang="en">
-<c:set var="officeUrl">${context}/work/product/retrieveProductList.do?category=${dsProductList[0].PRODUCT_CATEGORY_CD}</c:set>
+
 <%@ include file="../common/header.jsp" %>
 <c:set var="loginUrl">${context}/user/login.jsp</c:set>
     <!-- Carousel Start -->
     <div class="container-fluid mb-3">
         <div class="row px-xl-5">
-            <div class="col-lg-8">
+        <div class="col-lg-2 main-carousel">
+                <div class="product-offer mb-30" style="height: 430px;">
+                    <img class="img-fluid" src="/Stationery//img//offer-1.jpg" alt="">
+                    <div class="offer-text">
+                        <h6 class="text-white text-uppercase">Save 20%</h6>
+                        <h3 class="text-white mb-3">Special Offer</h3>
+                        <a href="" class="btn btn-primary">Shop Now</a>
+                    </div>
+                </div>
+                </div>
+            <div class="col-lg-7 main-carousel">
                 <div id="header-carousel" class="carousel slide carousel-fade mb-30 mb-lg-0" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
@@ -51,8 +61,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="product-offer mb-30" style="height: 200px;">
+            <div class="col-lg-3 main-carousel">
+                <div class="product-offer carousel-right" style="height: 215px;">
                     <img class="img-fluid" src="/Stationery//img//offer-1.jpg" alt="">
                     <div class="offer-text">
                         <h6 class="text-white text-uppercase">Save 20%</h6>
@@ -60,7 +70,7 @@
                         <a href="" class="btn btn-primary">Shop Now</a>
                     </div>
                 </div>
-                <div class="product-offer mb-30" style="height: 200px;">
+                <div class="product-offer carousel-right" style="height: 215px;">
                     <img class="img-fluid" src="/Stationery//img//offer-2.jpg" alt="">
                     <div class="offer-text">
                         <h6 class="text-white text-uppercase">Save 20%</h6>

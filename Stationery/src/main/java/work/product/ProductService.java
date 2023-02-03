@@ -12,8 +12,6 @@ public interface ProductService {
 	public List<Map<String, String>> retrieveProductListForOffice();
 	public List<Map<String, String>> retrieveProductListForPen();
 	public List<Map<String, String>> retrieveProductListForStorage();
-	// 여기서부터 추가된 부분
-	public List<Map<String, String>> retrieveProductListForDress();
 
 	public Map<String, String> retrieveProduct(Map<String, String> productParam);
 

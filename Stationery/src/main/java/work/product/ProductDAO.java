@@ -24,11 +24,6 @@ public class ProductDAO {
 	public List<Map<String, String>> retrieveProductListForBinder(){
 		return sqlSession.selectList("product.retrieveProductListForBinder");
 	}
-	//추가 부분
-	public List<Map<String, String>> retrieveProductListForDress(){
-		return sqlSession.selectList("product.retrieveProductListForDress");
-	}
-	
 
 	public List<Map<String, String>> retrieveProductListForDesign(){
 		return sqlSession.selectList("product.retrieveProductListForDesign");

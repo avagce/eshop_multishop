@@ -43,11 +43,7 @@ public class ProductServiceImpl implements ProductService{
 	public Map<String, String> retrieveProduct(Map<String, String> productParam){
 		return productDAO.retrieveProduct(productParam);
 	}
-// 여기서 부터 추가된 부분
-	public List<Map<String, String>> retrieveProductListForDress(){
-		return productDAO.retrieveProductListForDress();
-	}
-	// List Map 으로 추가할것
+
 	public void createProduct(ProductBean product){
 		productDAO.createProduct(product);
 	}

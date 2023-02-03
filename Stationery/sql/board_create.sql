@@ -28,18 +28,3 @@ create table tb_board_producqus as select * from tb_board_user where 1=2;
 alter table tb_board_producqus add board_phone varchar(50)  null;
 
 commit;
-
-insert into tb_product values('dr001','dr1.jpg','dress01',1000,20,'R',TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'));
-insert into tb_product values('dr002','dr2.jpg','dress02',1000,20,'R',TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'));
-insert into tb_product values('dr003','dr3.jpg','dress03',1000,20,'R',TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'));
-insert into tb_product values('dr004','dr4.jpg','dress04',1000,20,'R',TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'));
-insert into tb_product values('dr005','dr5.jpg','dress05',1000,20,'R',TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'));
-insert into tb_product values('dr006','dr6.jpg','dress06',1000,20,'R',TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'));
-insert into tb_product values('dr007','dr7.jpg','dress07',1000,20,'R',TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'));
-insert into tb_product values('dr008','dr8.jpg','dress08',1000,20,'R',TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'));
-insert into tb_product values('dr009','dr9.jpg','dress09',1000,20,'R',TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'));
-insert into tb_product values('dr010','dr10.jpg','dress10',1000,20,'R',TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'));
-
-insert into tb_com_code values('CODE0101','R','드레스');
-
---서버 경로가 /Stationery 돼있어야 이미지를 제대로 가져옴
