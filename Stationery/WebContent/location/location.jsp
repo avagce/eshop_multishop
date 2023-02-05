@@ -52,9 +52,9 @@
                         <div class="col-md-12">
                             <h3>GKYK mall 오시는 길</h3>
                             <p>
-                                이메일 : GKYKmall@gmail.com<br>
-                                전화번호 : 02-1234-5678<br>
-                                주소 : 행복시 행복동 123번지 2층
+                               	 이메일 : GKYKmall@gmail.com<br>
+                               	 전화번호 : 02-1234-5678<br>
+                              	  주소 : 행복시 행복동 123번지 2층
                             </p>
                         </div>
                     </div>
