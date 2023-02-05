@@ -11,10 +11,8 @@
 
     <title>GKYK 찾아오시는 길</title>
 
-    <link href="${context}/css/introduction.css" rel="stylesheet">
     <link href="${context}/css/bootstrap.min.css" rel="stylesheet">
     <link href="${context}/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
-    <!--  <link href="${context}/css/sb-admin-2.css" rel="stylesheet">-->
     <link href="${context}/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
    
     <style>
@@ -26,29 +24,11 @@
     text-decoration: none;
     margin:0px;
     padding:0px;
+	align-items: center;
+	text-align: center;
 }
 
-.intro_bg{
-    width: 1280px;
-    height: 700px;
-}
-    
 
-.header{
-    display: flex;
-    width: 1280px;
-    margin: auto;
-    background: lightblue;
-    height: 86px;
-}
-
-.searcharea{
-    width: 300px;
-    height: 40px;
-    background: rgb(255, 255, 255);
-    border-radius: 5px;
-    margin-top: 24px;
-}
 
 .searcharea>form>input{
     border: none;
@@ -75,66 +55,15 @@
     line-break: auto;
 
 }
-
-.nav>li{
-    margin-left: 72px;
-}
-
-.nav>li>a{
-    color: #fff;
-}
-
-.amount{
-    position: relative;
-    top:-66px;
-    display: flex;
-    width:1280px;
-    background: #fff;
-    margin:auto;
-    
-}
-
-.intro_bg{
-    background-image:url(../img/map_background.jpg);
-    width: 1280px;
-    height: 700px;
-}
-
-.amount>li>div{
-    text-align: top;
-}
-
-.amount>li>div:not(:last-child){
-    border-right: 1px solid gray;
-}
-
-
-
-.main_text0{
-    width: 100%;
-    height: 600px;
-    background: #f1f2f3;
-    margin-top: -66px;
-}
-
-
-
-
-.text>li{
-    color: #fff;
-    border: #f1f2f3;
-    margin-left: 42px;
-    font-size: 55px;
-}
     
 
 
 #map{
-    width:400px;
-    height:250px; 
-    margin: 50px 400px; 
+    width:600px;
+    height:400px; 
+    margin: 50px 270px; 
     padding: 50px;
-    
+	display: center;    
 }
 
 p{
