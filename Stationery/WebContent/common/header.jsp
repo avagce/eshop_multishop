@@ -60,7 +60,7 @@
                  
                     <!-- 메뉴를 누를때마다 user 의 등급과 로긴체크,로긴 됐을때 어디로 이동할지를 넣어준다 -->
                    
-                    <a class="text-body mr-3" href="">Contact</a>
+                     <a class="text-body mr-3" onclick="location.href='${context}/location/location.jsp'" style="cursor: pointer;">location</a>
                     <a class="text-body mr-3" href="">Help</a>
                     <a class="text-body mr-3" href="">FAQs</a>
                     
