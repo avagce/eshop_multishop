@@ -58,7 +58,7 @@
 		</div>
 	</div>
 	<div class="container">
-		<div class="form-horizontal" style="margin-bottom: 30%;">
+		<div class="form-horizontal" style="margin-bottom: 30%; padding: 3%;">
 			<hr/>
 
 			<div class="form-group" style="margin-top: 5%;">

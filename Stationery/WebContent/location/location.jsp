@@ -38,7 +38,7 @@
     <script src="${context}/js/plugins/metisMenu/metisMenu.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="${context}/js/sb-admin-2.js"></script>
+    <script src="${context}/js/sb-admin-2.js"></script> 
 	<script type="text/javascript">
 
 	</script>

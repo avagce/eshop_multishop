@@ -189,6 +189,8 @@
 							imageFolder = "designImg";
 						}else if(productCategoryCd == 'B'){
 							imageFolder = "binderImg";
+						}else if(productCategoryCd == 'R'){
+							imageFolder = "dressImg";
 						}
 						path = $("#image").attr("src");
 
