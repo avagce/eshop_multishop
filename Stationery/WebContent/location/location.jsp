@@ -85,6 +85,8 @@ h3{
     margin-bottom: 1px;
 }
 	</style>
+      <link rel="stylesheet" href="/css/vegas.min.css">
+    <script src="../javascript/vegas.min.js"></script>
     
 
     <!-- jQuery -->
@@ -101,7 +103,35 @@ h3{
     <script src="${context}/js/sb-admin-2.js"></script> 
 	<script type="text/javascript">
 
-	</script>
+	</script><script>
+        $(document).ready(function() {
+            //문서 전체(body 태그)에 플러그인 적용함
+            $('body').vegas({
+            slides: [
+                //초반이미지 나타나게 함. 주석처리하면 안 나타남
+                // {src: '/videos/sea.jpg'},
+                {
+                    //video{}안에 배경 동영상과 옵션값 지정함
+            video: {
+                //src 속성을 사용해 동영상 지정해 줌
+                src: [
+                    '/resources/images/videos/kbh_sea2.mp4'],
+                    //loop 속성을 사용해 동영상 반복 여부 지정함
+                loop: true,
+                //동영상을 무음상태로 만들어 줌
+                mute: true
+            }
+        }
+    ]
+ });
+});
+        <p>
+        <!--  vagas를 활용하여 풀스크린 배경화면을 구성 -->
+        <strong>
+            <a href="https://vegas.jaysalvat.com"></a>
+        </strong>
+    </p>
+    </script>
 </head>
 
 <body>
