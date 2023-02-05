@@ -118,12 +118,19 @@
 								imageFolder = "designImg";
 							}else if(productCategoryCd == 'B'){
 								imageFolder = "binderImg";
+							}else if(productCategoryCd == 'R'){
+								imageFolder = "dressImg";
 							}
 							path = $("img[name='image']").eq('${dsProductIdx.index}').attr("src");
 
 							existFolder = path.split("/")[2];
 							$("img[name='image']").eq('${dsProductIdx.index}').attr("src", path.replace(existFolder, imageFolder));
 						</script>
+						<!--   <c:if test="${sessionScope.id == null}">
+		                            <button class="btn btn-default" type="button" onclick="location.href='${context}/user/login.jsp'"><strong>LOGIN</strong></button>
+		                            <button class="btn btn-default" type="button" onclick="location.href='${context}/work/user/createUser.do'"><strong>Sign up</strong></button>
+		                    	</c:if>
+		                  -->
 						<div class="row" style="background-color: white; margin-left: 0.01%; width: 93%; height:130px; border:1px solid lightgray;">
 							<div class="col-md-12">
 								<h4><font color="red"><b>${dsProductList.PRODUCT_NAME}</b></font></h4>

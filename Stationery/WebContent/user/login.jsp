@@ -19,7 +19,8 @@
 
     <!-- jQuery -->
     
-    <script src="${context}/js/jquery-1.9.1.js"></script>
+      <script src="${context}/js/jquery-1.9.1.js"></script> 
+   
 
     <!-- Bootstrap Core JavaScript -->
     <script src="${context}/js/bootstrap.min.js"></script>
