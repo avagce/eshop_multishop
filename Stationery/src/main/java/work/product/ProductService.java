@@ -12,6 +12,8 @@ public interface ProductService {
 	public List<Map<String, String>> retrieveProductListForOffice();
 	public List<Map<String, String>> retrieveProductListForPen();
 	public List<Map<String, String>> retrieveProductListForStorage();
+	public List<Map<String, String>> retrieveProductListForDress();
+	public List<Map<String, String>> retrieveProductListForShirts();
 
 	public Map<String, String> retrieveProduct(Map<String, String> productParam);
 

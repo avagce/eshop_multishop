@@ -39,6 +39,14 @@ public class ProductServiceImpl implements ProductService{
 	public List<Map<String, String>> retrieveProductListForStorage(){
 		return productDAO.retrieveProductListForStorage();
 	}
+	
+	public List<Map<String, String>> retrieveProductListForDress(){
+		return productDAO.retrieveProductListForDress();
+	}
+	
+	public List<Map<String, String>> retrieveProductListForShirts(){
+		return productDAO.retrieveProductListForShirts();
+	}
 
 	public Map<String, String> retrieveProduct(Map<String, String> productParam){
 		return productDAO.retrieveProduct(productParam);

@@ -40,6 +40,14 @@ public class ProductDAO {
 	public List<Map<String, String>> retrieveProductListForStorage(){
 		return sqlSession.selectList("product.retrieveProductListForStorage");
 	}
+	
+	public List<Map<String, String>> retrieveProductListForDress(){
+		return sqlSession.selectList("product.retrieveProductListForDress");
+	}
+	
+	public List<Map<String, String>> retrieveProductListForShirts(){
+		return sqlSession.selectList("product.retrieveProductListForShirts");
+	}
 
 	public Map<String, String> retrieveProduct(Map<String, String> productParam){
 		return sqlSession.selectOne("product.retrieveProduct", productParam);

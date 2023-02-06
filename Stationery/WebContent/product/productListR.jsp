@@ -120,6 +120,8 @@
 								imageFolder = "binderImg";
 							}else if(productCategoryCd == 'R'){
 								imageFolder = "dressImg";
+							}else if(productCategoryCd == 'SH'){
+								imageFolder = "shirtsImg";
 							}
 							path = $("img[name='image']").eq('${dsProductIdx.index}').attr("src");
 
