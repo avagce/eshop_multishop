@@ -50,7 +50,7 @@
     </script>
 </head>
 <body>
-<jsp:include page="/common/top.jsp"></jsp:include>
+<jsp:include page="/common/header_userc.jsp"></jsp:include>
 	<div id="jumbotron" class="container">
 		<div class="jumbotron jumbotron-info" style="background-color: lightgray;">
 			<h1><font color="black"><strong>재고관리</strong>&nbsp;<span class="glyphicon glyphicon-list-alt"></span></font></h1>
@@ -130,6 +130,6 @@
 			</div>
 		</div>
 	</div>
-<jsp:include page="/common/foot.jsp"></jsp:include>
+<jsp:include page="/common/footer.jsp"></jsp:include>
 </body>
 </html>
