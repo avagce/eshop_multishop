@@ -94,7 +94,7 @@
     </script>
 </head>
 <body>
-<jsp:include page="../common/top.jsp"></jsp:include>
+<jsp:include page="../common/header_userc.jsp"></jsp:include>
 	<br><br><br>
 	<div class="container">
 		<div class="page-header">
@@ -150,6 +150,6 @@
 				</div>
 		</div>
 	</div>
-	<jsp:include page="../common/foot.jsp"></jsp:include>
+	<jsp:include page="../common/footer.jsp"></jsp:include>
 </body>
 </html>

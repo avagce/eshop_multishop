@@ -91,7 +91,7 @@
     </script>
 </head>
 <body>
-<jsp:include page="/common/top.jsp"></jsp:include>
+<jsp:include page="/common/header_userc.jsp"></jsp:include>
 	<div class="container">
 		<div class="jumbotron jumbotron-info" style="background-color: lightgray;">
 			<h1><font color="black"><strong>재고현황</strong>&nbsp;<span class="glyphicon glyphicon-signal"></span></font></h1>
@@ -126,6 +126,6 @@
 		<div id="printArea" style="display: none;">
 		</div>
 	</div>
-<jsp:include page="/common/foot.jsp"></jsp:include>
+<jsp:include page="/common/footer.jsp"></jsp:include>
 </body>
 </html>

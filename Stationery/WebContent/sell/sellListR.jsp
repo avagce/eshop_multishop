@@ -91,7 +91,7 @@
     </script>
 </head>
 <body>
-<jsp:include page="/common/top.jsp"></jsp:include>
+<jsp:include page="/common/header_userc.jsp"></jsp:include>
 	<div id="jumbotron" class="container">
 		<div class="jumbotron jumbotron-info" style="background-color: lightgray;">
 			<h1><font color="black"><strong>주문정보</strong>&nbsp;<i class="fa fa-credit-card fa-1x"></i></font></h1>
@@ -166,6 +166,6 @@
 			</div>
 		</div>
 	</div>
-<jsp:include page="/common/foot.jsp"></jsp:include>
+<jsp:include page="/common/footer.jsp"></jsp:include>
 </body>
 </html>

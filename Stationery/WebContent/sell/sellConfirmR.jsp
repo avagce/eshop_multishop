@@ -100,7 +100,7 @@
     </script>
 </head>
 <body>
-<jsp:include page="/common/top.jsp"></jsp:include>
+<jsp:include page="/common/header_userc.jsp"></jsp:include>
 	<div id="jumbotron" class="container">
 		<div class="row" style="margin-bottom: 10%;">
 			<div class="col-md-12">
@@ -136,6 +136,6 @@
 
 		</div>
 	</div>
-<jsp:include page="/common/foot.jsp"></jsp:include>
+<jsp:include page="/common/footer.jsp"></jsp:include>
 </body>
 </html>
