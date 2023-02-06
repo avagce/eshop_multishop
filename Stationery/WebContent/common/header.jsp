@@ -56,17 +56,17 @@
 
 <body>
     <!-- Topbar Start -->
+		
     <div class="BKYK-header">
     <div class="container-fluid">
-<<<<<<< HEAD
         <div class="row bg-secondary py-1 px-xl-5">
             <div class="col-lg-6 d-none d-lg-block">
                 <div class="d-inline-flex align-items-center h-100">
                  <a class="text-body mr-3" onclick="location.href='${context}/about/introduction.jsp'" style="cursor: pointer;">About</a>
-                 
+           
                     <!-- 메뉴를 누를때마다 user 의 등급과 로긴체크,로긴 됐을때 어디로 이동할지를 넣어준다 -->
-                   
-                     <a class="text-body mr-3" onclick="location.href='${context}/location/location.jsp'" style="cursor: pointer;">location</a>
+                  
+                    <a class="text-body mr-3" onclick="location.href='${context}/location/location.jsp'" style="cursor: pointer;">location</a>
                     <a class="text-body mr-3" href="">Help</a>
                     <a class="text-body mr-3" href="">FAQs</a>
                     
@@ -122,12 +122,13 @@
                 </div>
             </div>
         </div>
+         
         <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
             <div class="col-lg-4">
-=======
+
         <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex outside-search-box">
             <div class="col-lg-2">
->>>>>>> refs/remotes/origin/master
+
                 <a href="${gomain}" class="text-decoration-none">
                     <img alt="로고 이미지" src="${context}/img/GKYK_logo2.png" style="width: 160px">
                 </a>
@@ -264,12 +265,12 @@
                             </div>
                         </div>
                         <a href="" class="nav-item nav-link">Shirts</a>
-                        <a href="${context}/work/product/retrieveProductList.do?category=${dsProductList[0].PRODUCT_CATEGORY_CD}" class="nav-item nav-link">office</a>
-                        <a href="${context}/work/product/retrieveProductList.do?category=${dsProductList[1].PRODUCT_CATEGORY_CD}" class="nav-item nav-link">Pen</a>
-                        <a href="${context}/work/product/retrieveProductList.do?category=${dsProductList[2].PRODUCT_CATEGORY_CD}" class="nav-item nav-link">Binder</a>
-                        <a href="${context}/work/product/retrieveProductList.do?category=${dsProductList[3].PRODUCT_CATEGORY_CD}" class="nav-item nav-link">Design</a>
-                        <a href="${context}/work/product/retrieveProductList.do?category=${dsProductList[4].PRODUCT_CATEGORY_CD}" class="nav-item nav-link">Storage</a>
-                        <a href="${context}/work/product/retrieveProductList.do?category=${dsProductList[6].PRODUCT_CATEGORY_CD}" class="nav-item nav-link">Dress</a>
+                        <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/product/retrieveProductList.do?category=${dsProductList[0].PRODUCT_CATEGORY_CD}')" class="nav-item nav-link">office</a>
+                        <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/product/retrieveProductList.do?category=${dsProductList[1].PRODUCT_CATEGORY_CD}')" class="nav-item nav-link">Pen</a>
+                        <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/product/retrieveProductList.do?category=${dsProductList[2].PRODUCT_CATEGORY_CD}')" class="nav-item nav-link">Binder</a>
+                        <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/product/retrieveProductList.do?category=${dsProductList[3].PRODUCT_CATEGORY_CD}')" class="nav-item nav-link">Design</a>
+                        <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/product/retrieveProductList.do?category=${dsProductList[4].PRODUCT_CATEGORY_CD}')" class="nav-item nav-link">Storage</a>
+                        <a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/product/retrieveProductList.do?category=${dsProductList[6].PRODUCT_CATEGORY_CD}')" class="nav-item nav-link">Dress</a>
                     </div>
                 </nav>
             </div>
