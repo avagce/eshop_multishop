@@ -23,6 +23,12 @@
     list-style: none;
     text-align: center;
 	}
+	
+	h2{
+	font-size: 20px; 
+	font-weight: bold;
+	}
+	
 	</style>
     
 
@@ -46,9 +52,9 @@
 <body>
 	<jsp:include page="../common/header.jsp"></jsp:include>
 	<div id="jumbotron" class="container">
-		<div class="jumbotron jumbotron-info" style="background-color: lightgray; font-size: 40px; font-weight: bold;">
+		<div class="jumbotron jumbotron-info" style="background-color: lightgray; font-size: 45px; font-weight: bold;">
 			<p>GKYK mall 회사 소개</p><br>
-				<h1>GKYK은 커머스의 미래를 만들어 가고 있습니다.<br><br> GKYK은 고객 감동 실현을 위해 존재합니다. 고객들이 "GKYK 없이 그동안 어떻게 살았을까?" 라고 말할 때, 비로소 우리의 미션을 실현하고 있음을 알 수 있습니다. 고객들의 쇼핑과 식사, 생활 전반을 편하게 만들겠다는 유일한 집념으로 GKYK은 수억 달러 규모의 이커머스 산업 전반의 혁신을 이끌고 있습니다. GKYK은 가장 빠르게 성장하는 이커머스 기업 중 하나로, 국내 커머스 업계에서의 독보적인 입지와, 고객 신뢰를 구축했습니다.</h1>
+				<h2>"GKYK은 커머스의 미래를 만들어 가고 있습니다."<br><br> GKYK은 고객 감동 실현을 위해 존재합니다. 고객들이 "GKYK 없이 그동안 어떻게 살았을까?" 라고 말할 때, 비로소 우리의 미션을 실현하고 있음을 알 수 있습니다. 고객들의 쇼핑과 식사, 생활 전반을 편하게 만들겠다는 유일한 집념으로 GKYK은 수억 달러 규모의 이커머스 산업 전반의 혁신을 이끌고 있습니다. GKYK은 가장 빠르게 성장하는 이커머스 기업 중 하나로, 국내 커머스 업계에서의 독보적인 입지와, 고객 신뢰를 구축했습니다.</h2>
 			 <img class="img-fluid w-100" src="../img//company.jpg" alt="">
 		</div>
 	</div>
