@@ -160,6 +160,71 @@
 	        }
 	    });
 	}
+	<%-- 주소검색 팝업 호출 콜백 callback_openAddressPopup() 메서드 입니다  --%>
+	function callback_openAddressPopup(aParam) {
+		document.getElementById("mainAddress").value = aParam["roadAddr"];
+	}
+	<%-- 도로명 주소로 검색 api 연동을 ajax로 처리 합니다. --%>
+	function fn_search(){
+		$.ajax({
+			 url :"http://www.juso.go.kr/addrlink/addrLinkApiJsonp.do"
+			,type:"post"
+			,data:$("#searchForm").serialize()
+			,dataType:"jsonp"
+			,crossDomain:true
+			,success:function(jsonStr){
+				var errCode = jsonStr.results.common.errorCode;
+				var errDesc = jsonStr.results.common.errorMessage;
+				if(errCode != "0"){
+					alert(errCode+"="+errDesc);
+				}else{
+					if(jsonStr != null){
+						fn_makeListJson(jsonStr);
+					}
+				}
+			}
+		    ,error: function(xhr,status, error){
+		    	alert("에러발생");
+		    }
+		});
+		
+	}
+
+	<%-- 결과 테이블 생성 --%>
+	function fn_makeListJson(jsonStr){
+		var htmlStr = "";
+		$(jsonStr.results.juso).each(function(){
+			htmlStr += "<tr onclick=\"javascript:chooseAddress('"+this.roadAddr+"', '"+this.jibunAddr+"', '"+this.zipNo+"');\">";
+			htmlStr += "<td>";
+			htmlStr += "<dl>"+this.roadAddr+"</dl>";
+			htmlStr += "<dl>"+this.jibunAddr+"</dl>";
+			htmlStr += "</td>";
+			htmlStr += "<td>"+this.zipNo+"</td>";
+			htmlStr += "</tr>";
+		});
+		$("#addressTableTbody").html(htmlStr);
+		
+	}
+
+	<%-- Enter 키 이벤트 --%>
+	function enterSearch() {
+		var evt_code = (window.netscape) ? ev.which : event.keyCode;
+		if (evt_code == 13) {    
+			event.keyCode = 0;  
+			fn_search(); //jsonp사용하여 enter키 입력 확인 
+		} 
+	}
+
+	<%-- 주소 선택 --%>
+	function chooseAddress(roadAddr, jibunAddr, zipNo){
+		var aParam = [];
+		aParam["roadAddr"] = roadAddr;
+		aParam["jibunAddr"] = roadAddr;
+		aParam["zipNo"] = roadAddr;
+
+		opener.callback_openAddressPopup(aParam);
+		$('#searchPost').modal('hide');
+	}
 
 </script>
 </head>
@@ -230,12 +295,10 @@
 
 			<div class="form-group" style="display: flex; justify-content: center;">
 				<label for="postnum1" class="control-label col-md-2"><b>주소</b></label>
-				<div class="col-md-2">
-					<input class="form-control" style="display: flex; justify-content: center;" type="text" id="postNum1" disabled="disabled" required="required"/>
+				<div class="col-md-4">
+					<input class="form-control" style="display: flex; justify-content: center;" type="text" id="mainAddress" name="mainAddress" placeholder="주소를 선택하세요."
+			readonly="readonly" required="required"/>
 	     		</div>
-				<div class="col-md-2">
-					<input class="form-control" style="display: flex; justify-content: center;" type="text" id="postNum2" disabled="disabled" required="required"/>
-				</div>
 				<span class="col-md-2">
 					<button type="button" class="btn btn-info" data-toggle="modal" data-target="#searchPost" style="width: 100%;"><b>주소검색</b></button>
 				</span>
@@ -245,7 +308,7 @@
 			<div class="form-group" style="display: flex; justify-content: center; flex-wrap: wrap;">
 				<label for="address1" class="control-label col-md-2"><b>상세주소</b></label>
 				<div class="col-md-6">
-					<input class="form-control" style="display: flex;" type="text" id="address1" disabled="disabled" required="required"/>
+					<input class="form-control" style="display: flex;" type="text" id="subAddress" name="subAddress" placeholder="나머지 주소를 입력하세요." required="required"/>
 				</div>
 			</div>
 
@@ -277,44 +340,39 @@
 		<div class="modal fade" id="searchPost" role="dialog">
 			<div class="modal-dialog">
 				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<h4 class="modal-title">주소검색</h4>
+					<div id="memberSearchDiv" class="text-center">
+						<form id="searchForm" name="searchForm" method="post" class="navbar-form navbar-left" role="search" onsubmit="event.preventDefault();">
+							<input type="hidden" name="currentPage" value="1"/>
+							<input type="hidden" name="countPerPage" value="100"/>
+							<input type="hidden" name="resultType" value="json"/>
+							<input type="hidden" id="confmKey" name="confmKey" value="devU01TX0FVVEgyMDIzMDExMTEyMTM0MTExMzQxODE="/>
+						
+							<div class="form-group">
+								<input type="text" id="keyword" name="keyword" class="form-control" placeholder="도로명+건물번호, 건물명, 지번을 입력하세요." onkeypress="javascript:enterSearch();" />
+							</div>
+							<button type="button" class="btn btn-default" onclick="javascript:fn_search();">검색</button>
+						</form>
+						
 					</div>
-						<div class="modal-body" style="height: 50px; display: flex; margin-bottom: 20px;">
-							<div class="col-md-9">
-								<input class="form-control" type="text" id="dong" name="dong" placeholder="동을 입력하세요.ex)역삼1동"/>
-							</div>
-							<div class="col-md-3">
-								<button id="postCheck" type="button" class="btn btn-info" onclick = "fn_postCheck()">확인</button>
-							</div>
-						</div>
-
-					<div class="modal-footer">
-						<div class="col-md-12">
-			            <div class="table-responsive">
-			                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-			                    <thead>
-			                        <tr>
-			                        	<th style="text-align: center; vertical-align: middle; ">주소</th>
-			                        </tr>
-			                    </thead>
-			                    <tbody id="postBody">
-			                    </tbody>
-			                </table>
-			            </div>
-			            <!-- /.table-responsive -->
-			        </div>
-			        <!-- /.panel-body -->
-			        <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
-			    </div>
-			    <!-- /.panel -->
+					
+					<div>
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th>주소</th>
+									<th>우편번호</th>
+								</tr>
+							</thead>
+							<tbody id="addressTableTbody">
+								
+							</tbody>
+						</table>	
+					</div>
+				</div>
 			</div>
+			    <!-- /.panel -->
 		</div>
-			    <!-- /.panel -->
-			</div>
-
-					</div>
+	</div>
 
 	<jsp:include page="../common/footer.jsp"></jsp:include>
 </body>
