@@ -17,7 +17,7 @@
 		<link href="${context}/css/plugins/dataTables.bootstrap.css" rel="stylesheet">
     <link href="${context}/css/process.css" rel="stylesheet">
 
-	<script src="${context}/js/jquery-1.9.1.js"></script>
+    <script src="${context}/js/jquery-3.5.1.min.js"></script>
 	<script src="${context}/js/jquery.form.js"></script>
     <script src="${context}/js/plugins/metisMenu/metisMenu.min.js"></script>
 
@@ -123,7 +123,8 @@
 
 
 		$("#phoneNum").val($("#phone1").val() + "-" + $("#phone2").val());
- 		$("#postNum").val($("#postNum1").val() + "-" + $("#postNum2").val());
+ 		//$("#postNum").val($("#postNum1").val() + "-" + $("#postNum2").val());
+ 		$("#postNum").val($("#postNum1").val());
  		$("#address").val($("#address1").val() + "/" + $("#address2").val());
 
  		$("#joinFrm").submit();
@@ -143,89 +144,18 @@
 		});
 	}
 
-	function fn_upload(){
-		$("#ajaxform").ajaxSubmit({
-	        type: "POST",
-	        dataType: 'text',
-	        url: $("#ajaxform").attr("action"),
-	        data: $("#ajaxform").serialize(),
-	        success: function (data) {
-	        	data2 = data.replace(/"/gi, "");
-	        	var imageUrl = "${context}/userImg/" + data2;
-	        	$("#pic").attr("src", imageUrl);
-	        	$("#userImage").val(data2);
-	        },
-	        error: function (xhr, status, error) {
-	            alert(error);
-	        }
-	    });
+	<%-- 주소검색 팝업을 호출합니다 --%>
+	function fn_openAddressPopup() {
+		var url = "${context}/user/addressAPIPopup.jsp";
+		var name = "AddressPopup";
+		var option = "width=650, height=500, top=100, left=200, location=no"
+		window.open(url, name, option);
 	}
 	<%-- 주소검색 팝업 호출 콜백 callback_openAddressPopup() 메서드 입니다  --%>
 	function callback_openAddressPopup(aParam) {
-		document.getElementById("mainAddress").value = aParam["roadAddr"];
+		document.getElementById("address1").value = aParam["roadAddr"];
+		document.getElementById("postNum1").value = aParam["zipNo"];
 	}
-	<%-- 도로명 주소로 검색 api 연동을 ajax로 처리 합니다. --%>
-	function fn_search(){
-		$.ajax({
-			 url :"http://www.juso.go.kr/addrlink/addrLinkApiJsonp.do"
-			,type:"post"
-			,data:$("#searchForm").serialize()
-			,dataType:"jsonp"
-			,crossDomain:true
-			,success:function(jsonStr){
-				var errCode = jsonStr.results.common.errorCode;
-				var errDesc = jsonStr.results.common.errorMessage;
-				if(errCode != "0"){
-					alert(errCode+"="+errDesc);
-				}else{
-					if(jsonStr != null){
-						fn_makeListJson(jsonStr);
-					}
-				}
-			}
-		    ,error: function(xhr,status, error){
-		    	alert("에러발생");
-		    }
-		});
-		
-	}
-
-	<%-- 결과 테이블 생성 --%>
-	function fn_makeListJson(jsonStr){
-		var htmlStr = "";
-		$(jsonStr.results.juso).each(function(){
-			htmlStr += "<tr onclick=\"javascript:chooseAddress('"+this.roadAddr+"', '"+this.jibunAddr+"', '"+this.zipNo+"');\">";
-			htmlStr += "<td>";
-			htmlStr += "<dl>"+this.roadAddr+"</dl>";
-			htmlStr += "<dl>"+this.jibunAddr+"</dl>";
-			htmlStr += "</td>";
-			htmlStr += "<td>"+this.zipNo+"</td>";
-			htmlStr += "</tr>";
-		});
-		$("#addressTableTbody").html(htmlStr);
-		
-	}
-
-	<%-- Enter 키 이벤트 --%>
-	function enterSearch() {
-		var evt_code = (window.netscape) ? ev.which : event.keyCode;
-		if (evt_code == 13) {    
-			event.keyCode = 0;  
-			fn_search(); //jsonp사용하여 enter키 입력 확인 
-		} 
-	}
-
-	<%-- 주소 선택 --%>
-	function chooseAddress(roadAddr, jibunAddr, zipNo){
-		var aParam = [];
-		aParam["roadAddr"] = roadAddr;
-		aParam["jibunAddr"] = roadAddr;
-		aParam["zipNo"] = roadAddr;
-
-		opener.callback_openAddressPopup(aParam);
-		$('#searchPost').modal('hide');
-	}
-
 </script>
 </head>
 <body>
@@ -292,15 +222,20 @@
 				</div>
 				<input type="hidden" id="phoneNum" name="phoneNum">
 			</div>
-
+			<div class="form-group" style="display: flex; justify-content: center; flex-wrap: wrap;">
+				<label for="postnum" class="control-label col-md-2"><b>우편번호</b></label>
+				<div class="col-md-6">
+					<input class="form-control" style="display: flex;" type="text" id="postNum1" name="postNum1" readonly="readonly" required="required"/>
+				</div>
+			</div>
 			<div class="form-group" style="display: flex; justify-content: center;">
 				<label for="postnum1" class="control-label col-md-2"><b>주소</b></label>
 				<div class="col-md-4">
-					<input class="form-control" style="display: flex; justify-content: center;" type="text" id="mainAddress" name="mainAddress" placeholder="주소를 선택하세요."
+					<input class="form-control" style="display: flex; justify-content: center;" type="text" id="address1" name="address1" placeholder="주소를 선택하세요."
 			readonly="readonly" required="required"/>
 	     		</div>
 				<span class="col-md-2">
-					<button type="button" class="btn btn-info" data-toggle="modal" data-target="#searchPost" style="width: 100%;"><b>주소검색</b></button>
+					<button type="button" class="btn btn-info"onclick="javascript:fn_openAddressPopup();" data-target="#searchPost" style="width: 100%;"><b>주소검색</b></button>
 				</span>
 				<input type="hidden" id="postNum" name="postNum">
 			</div>
@@ -308,16 +243,8 @@
 			<div class="form-group" style="display: flex; justify-content: center; flex-wrap: wrap;">
 				<label for="address1" class="control-label col-md-2"><b>상세주소</b></label>
 				<div class="col-md-6">
-					<input class="form-control" style="display: flex;" type="text" id="subAddress" name="subAddress" placeholder="나머지 주소를 입력하세요." required="required"/>
+					<input class="form-control" style="display: flex;" type="text" id="address2" name="address2" placeholder="나머지 주소를 입력하세요." required="required"/>
 				</div>
-			</div>
-
-			<div class="form-group" style="display: flex; justify-content: center; flex-wrap: wrap;">
-				<label for="address2" class="control-label col-md-2"></label>
-				<div class="col-md-6">
-					<input class="form-control" style="display: flex; justify-content: center;" type="text" id="address2"/>
-				</div>
-				<input type="hidden" id="address" name="address">
 			</div>
 
 			<input type="hidden" id="flag" name="flag" value="false">
@@ -334,44 +261,6 @@
 			</div>
 		</div>
 	</form>
-	</div>
-		<div class="container">
-		<!-- Modal -->
-		<div class="modal fade" id="searchPost" role="dialog">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div id="memberSearchDiv" class="text-center">
-						<form id="searchForm" name="searchForm" method="post" class="navbar-form navbar-left" role="search" onsubmit="event.preventDefault();">
-							<input type="hidden" name="currentPage" value="1"/>
-							<input type="hidden" name="countPerPage" value="100"/>
-							<input type="hidden" name="resultType" value="json"/>
-							<input type="hidden" id="confmKey" name="confmKey" value="devU01TX0FVVEgyMDIzMDExMTEyMTM0MTExMzQxODE="/>
-						
-							<div class="form-group">
-								<input type="text" id="keyword" name="keyword" class="form-control" placeholder="도로명+건물번호, 건물명, 지번을 입력하세요." onkeypress="javascript:enterSearch();" />
-							</div>
-							<button type="button" class="btn btn-default" onclick="javascript:fn_search();">검색</button>
-						</form>
-						
-					</div>
-					
-					<div>
-						<table class="table table-hover">
-							<thead>
-								<tr>
-									<th>주소</th>
-									<th>우편번호</th>
-								</tr>
-							</thead>
-							<tbody id="addressTableTbody">
-								
-							</tbody>
-						</table>	
-					</div>
-				</div>
-			</div>
-			    <!-- /.panel -->
-		</div>
 	</div>
 
 	<jsp:include page="../common/footer.jsp"></jsp:include>
