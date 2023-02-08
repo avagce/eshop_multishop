@@ -6,6 +6,8 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import work.iamport.PaymentVO;
@@ -16,6 +18,10 @@ import work.iamport.PaymentVO;
 @Repository
 public class PaymentDAO {
 	
+	
+	@Autowired
+	private SqlSessionTemplate sqlSession;
+	/*
 	private static SqlSessionFactory sqlMapper;
 	private static SqlSessionFactory getInstance() {
 		if (sqlMapper == null) {
@@ -30,11 +36,12 @@ public class PaymentDAO {
 		}
 		return sqlMapper;
 	}
-	
+	*/
 	public void insertPaymentSuccess(PaymentVO vo) {
-		sqlMapper = getInstance();
+		/*sqlMapper = getInstance();
 		SqlSession session = sqlMapper.openSession();
 		session.insert("payment.insertPaymentSuccess",vo);
-		session.commit();
+		session.commit();*/
+		sqlSession.insert("payment.insertPaymentSuccess",vo);
 	}
 }

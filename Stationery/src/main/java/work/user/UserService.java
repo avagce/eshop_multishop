@@ -6,6 +6,7 @@ import java.util.Map;
 public interface UserService {
 	public List<UserBean> retrieveUserList();
 	public UserBean retrieveUser(String id);
+	public UserBean retrieveUser2(String usercode);
 	public String retrieveUserId(String email);
 	public String retrieveUserPw(String id, String email);
 	public boolean logincheck(String id, String pw);

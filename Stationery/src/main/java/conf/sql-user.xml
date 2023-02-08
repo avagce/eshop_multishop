@@ -28,6 +28,12 @@
 			SELECT * FROM TB_COM_USER WHERE ID = #{id}
 		]]>
 	</select>
+	
+	<select id="retrieveUser2" parameterType="string" resultMap="userResult">
+		<![CDATA[
+			SELECT * FROM TB_COM_USER WHERE USER_CODE = #{usercode}
+		]]>
+	</select>
 
 	<select id="retrieveUserId" parameterType="string" resultType="string">
 		<![CDATA[

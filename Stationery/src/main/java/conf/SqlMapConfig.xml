@@ -12,7 +12,7 @@
 		<typeAlias type="work.reply.ReplyBean" alias="reply"/>
 		<typeAlias type="work.code.CodeBean" alias="code"/>
 		<typeAlias type="work.board.BoardBean" alias="board"/>
-		 <typeAlias type="work.iamport.PaymentVO" alias="Payment" />
+		 <typeAlias type="work.iamport.PaymentVO" alias="payment" />
 	
 	</typeAliases>
 

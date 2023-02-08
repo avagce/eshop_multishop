@@ -1,5 +1,6 @@
 package work.sell;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -11,12 +12,14 @@ import javax.servlet.http.HttpSession;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import work.cart.CartService;
 import work.product.ProductService;
+import work.user.UserBean;
 import work.user.UserService;
 
 @Controller
@@ -35,9 +38,12 @@ public class SellController {
 
 
 	@RequestMapping(value="/work/sell/createSell.do", method=RequestMethod.GET)
-	public ModelAndView createSell(HttpServletRequest request){
+	public ModelAndView createSell( HttpServletRequest request){
 		ModelAndView mv = new ModelAndView();
 
+		
+		
+		
 		HttpSession session = request.getSession();
 
 		String productCode = request.getParameter("productCode");
@@ -47,6 +53,9 @@ public class SellController {
 		String fromCart = request.getParameter("fromCart");
 
 		String userCode = (String)session.getAttribute("userCode");
+		
+		
+		
 
 		Map<String, String> sellParam = new HashMap<String, String>();
 
@@ -127,7 +136,16 @@ public class SellController {
 		HttpSession session = request.getSession();
 
 		String userCode = (String)session.getAttribute("userCode");
+		
+		
 
+		
+		
+		
+		UserBean userparam = userService.retrieveUser2(userCode);
+		
+		mv.addObject("userparam", userparam);
+		
 		Map<String, String> sellParam = new HashMap<String, String>();
 
 		sellParam.put("userCode", userCode);

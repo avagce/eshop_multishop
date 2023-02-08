@@ -79,10 +79,21 @@ public class UserController implements HttpSessionListener{
 		String userCode = userBean.getUserCode();
 		String id = userBean.getId();
 		String grade = userBean.getGrade();
+		String name = userBean.getName();
+		String email = userBean.getEmail();
+		String phonenum = userBean.getPhoneNum();
+		String address = userBean.getAddress();
+		String postnum = userBean.getPostNum();
 
 		session.setAttribute("userCode", userCode);
 		session.setAttribute("grade", grade);
 		session.setAttribute("id", id);
+		
+		session.setAttribute("name", name);
+		session.setAttribute("email", email);
+		session.setAttribute("phonenum", phonenum);
+		session.setAttribute("address", address);
+		session.setAttribute("postnum", postnum);
 
 		session.setMaxInactiveInterval(-1); //세션 무한대
 		return "redirect:/work/product/goMain.do";
