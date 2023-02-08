@@ -29,6 +29,7 @@
     <script src="${context}/js/plugins/dataTables/dataTables.bootstrap.js"></script>
 
     <script src="${context}/js/sb-admin-2.js"></script>
+     <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
 
     <script>
 	var existFolder = '';
@@ -83,11 +84,63 @@
 		}
     }
 
-    function fn_finalBuy(paramSellCode, paramSellCount, paramProductCode){
+    function fn_finalBuy(paramSellCode, paramSellCount, paramProductCode,paramProductName,paramSellPrice){
 		if(confirm("결제하시겠습니까?")){
-			location.href = "${context}/work/sell/updateFinalBuy.do?sellCode=" + paramSellCode + "&sellCount=" + paramSellCount + "&productCode=" + paramProductCode;
-		}
+			//location.href = "${context}/work/sell/updateFinalBuy.do?sellCode=" + paramSellCode + "&sellCount=" + paramSellCount + "&productCode=" + paramProductCode;
+			
+			//========================================
+			
+			var IMP = window.IMP;  
+		    IMP.init("imp27037718");  // IMP.init( ) 메서드 가맹점코드 수정 바랍니다.
+		    IMP.request_pay({
+		        pg : 'html5_inicis', // version 1.1.0부터 지원.
+		        pay_method : 'card',
+		        merchant_uid : 'merchant_' + new Date().getTime(),
+		        name : '주문명:'+paramProductName,
+		        amount : paramSellPrice,
+		        buyer_email : 'iamport@siot.do',
+		        buyer_name : '구매자이름',
+		        buyer_tel : '010-1234-5678',
+		        buyer_addr : '서울특별시 강남구 삼성동',
+		        buyer_postcode : '123-456',
+		        m_redirect_url : "/paymentDone.do"//"${context}/work/sell/updateFinalBuy.do?sellCode=" + paramSellCode + "&sellCount=" + paramSellCount + "&productCode=" + paramProductCode
+		    }, function(rsp) {
+		        if ( rsp.success ) {
+		        	 var paymentInfo = {
+		            		  imp_uid : rsp.imp_uid,
+		            		  merchant_uid : rep.merchant_uid,
+		            		  paid_amount : rsp.paid_amound,
+		            		  apply_num : rsp.apply_num,
+		            		  paid_at : new Date()
+		              };
+		    		//location.href = "${context}/work/sell/updateFinalBuy.do?sellCode=" + paramSellCode + "&sellCount=" + paramSellCount + "&productCode=" + paramProductCode
+		        	 $.ajax({
+		            	  url :  "/iamport/paymentProcess.do",
+		            	  method : "post",
+		            	  contentTpye : "application/json",
+		            	  data :  JSON.stringify(paymentInfo),
+		            	  success : function (data, textStatus) {
+		            		  console.log(paymentInfo);
+		            		  location.href = "/iamport/paymentDone.do";
+							
+		            	  },
+		            	  error : function(e){
+		            		  console.log(e);
+		            	  
+						}
+		              });
+		        } else {
+		        	 alert("결제 실패:"+rsp.error_msg);
+		        }
+		    });	
+    	}
     }
+			  
+		  
+
+		
+		
+    
     </script>
 </head>
 <body>
@@ -151,7 +204,7 @@
 			                            <td style="text-align: center; vertical-align: middle;">${dsSellList.SELL_COUNT}</td>
 			                            <td style="text-align: center; vertical-align: middle;">${dsSellList.SELL_PRICE}원</td>
 			                            <td style="text-align: center; vertical-align: middle;">
-			                            	<button type="button" class="btn btn-primary" onclick="fn_finalBuy('${dsSellList.SELL_CODE}', '${dsSellList.SELL_COUNT}', '${dsSellList.PRODUCT_CODE}')">결제하기</button>
+			                            	<button type="button" class="btn btn-primary" onclick="fn_finalBuy('${dsSellList.SELL_PRICE}', '${dsSellList.SELL_COUNT}', '${dsSellList.PRODUCT_CODE}','${dsSellList.PRODUCT_NAME}','${dsSellList.SELL_PRICE}')">결제하기</button>
 			                            </td>
 			                         </tr>
 			                        </c:forEach>

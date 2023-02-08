@@ -30,7 +30,7 @@
     <script src="${context}/js/plugins/dataTables/dataTables.bootstrap.js"></script>
 
     <script src="${context}/js/sb-admin-2.js"></script>
-
+<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
     <script>
 	var existFolder = '';
 	var imageFolder = '';
@@ -41,9 +41,41 @@
 
     });
 
-    function fn_buy(paramCartCode, paramProductCode, paramSellPrice, paramSellCount){
-    	if(confirm("구매하시겠습니까?")){
-    		location.href = "${context}/work/sell/createSell.do?productCode=" + paramProductCode + "&sellPrice=" + paramSellPrice + "&sellCount=" + paramSellCount + "&cartCode=" + paramCartCode + "&fromCart=true";
+    function fn_buy(paramSellCode, paramSellCount, paramProductCode,paramProductName,paramSellPrice){
+		if(confirm("결제하시겠습니까?")){
+			//location.href = "${context}/work/sell/updateFinalBuy.do?sellCode=" + paramSellCode + "&sellCount=" + paramSellCount + "&productCode=" + paramProductCode;
+			
+			//========================================
+			
+			var IMP = window.IMP;  
+		    IMP.init("imp27037718");  // IMP.init( ) 메서드 가맹점코드 수정 바랍니다.
+		    IMP.request_pay({
+		        pg : 'html5_inicis', // version 1.1.0부터 지원.
+		        pay_method : 'card',
+		        merchant_uid : 'merchant_' + new Date().getTime(),
+		        name : '주문명:'+paramProductName,
+		        amount : paramSellPrice,
+		        buyer_email : 'iamport@siot.do',
+		        buyer_name : '구매자이름',
+		        buyer_tel : '010-1234-5678',
+		        buyer_addr : '서울특별시 강남구 삼성동',
+		        buyer_postcode : '123-456',
+		        m_redirect_url : "${context}/work/sell/updateFinalBuy.do?sellCode=" + paramSellCode + "&sellCount=" + paramSellCount + "&productCode=" + paramProductCode
+		    }, function(rsp) {
+		        if ( rsp.success ) {
+		            var msg = '결제가 완료되었습니다.';
+		            msg += '고유ID : ' + rsp.imp_uid;
+		            msg += '상점 거래ID : ' + rsp.merchant_uid;
+		            msg += '결제 금액 : ' + rsp.paid_amount;
+		            msg += '카드 승인번호 : ' + rsp.apply_num;
+			        alert(msg);
+		    		location.href = "${context}/work/sell/updateFinalBuy.do?sellCode=" + paramSellCode + "&sellCount=" + paramSellCount + "&productCode=" + paramProductCode
+		        } else {
+		            var msg = '결제에 실패하였습니다.';
+		            msg += '에러내용 : ' + rsp.error_msg;
+			        alert(msg);
+		        }
+		    });	
     	}
     }
 
@@ -102,6 +134,10 @@
 													imageFolder = "designImg";
 												}else if(productCategoryCd == 'B'){
 													imageFolder = "binderImg";
+												}else if(productCategoryCd == 'R'){
+													imageFolder = "dressImg";
+												}else if(productCategoryCd == 'SH'){
+													imageFolder = "shirtsImg";
 												}
 												path = $("img[name='image']").eq('${cartIdx.index}').attr("src");
 
@@ -114,7 +150,7 @@
 			                            <td style="text-align: center; vertical-align: middle;">${dsCartList.CART_COUNT}</td>
 			                            <td style="text-align: center; vertical-align: middle;">${dsCartList.CART_PRICE}원</td>
 			                            <td style="text-align: center; vertical-align: middle;">
-			                            	<button type="button" class="btn btn-primary" onclick="fn_buy('${dsCartList.CART_CODE}', '${dsCartList.PRODUCT_CODE}', '${dsCartList.CART_PRICE}', '${dsCartList.CART_COUNT}')">구매</button>
+			                            	<button type="button" class="btn btn-primary" onclick="fn_buy('${dsCartList.PRODUCT_CODE}', '${dsCartList.CART_COUNT}', '${dsCartList.PRODUCT_CODE}','${dsCartList.PRODUCT_NAME}','${dsCartList.CART_PRICE}')">구매</button>
 			                            	<button type="button" class="btn btn-danger" onclick="fn_delete('${dsCartList.CART_CODE}', '${dsCartList.PRODUCT_CODE}', '${dsCartList.CART_COUNT}')">삭제</button>
 			                            </td>
 			                         </tr>
