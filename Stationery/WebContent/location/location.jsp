@@ -27,26 +27,17 @@
 	<script type="text/javascript"></script>
 	
     <style>
-	*{
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 23px;
-    font-weight: bolder;
-    list-style: none;
-    text-decoration: none;
-    margin:0px;
-    padding:0px;
-	align-items: center;
-	text-align: center;
-}
 
 #map{
-	width: 600px;
+	max-width: 80%;
     height: 400px; 
-    margin: 50px 215px; 
+    margin: 0 auto; 
     padding: 50px;
-    
+    background: #ffffff;
 }
-
+.lctx{
+	text-align: center !important;
+}
 
 	
 	</style>
@@ -56,11 +47,10 @@
 <jsp:include page="../common/header_userc.jsp"></jsp:include>
 	<div id="jumbotron" class="container" >
 		<div class="jumbotron jumbotron-info" style="background-color: lightgray" >
-			<h1><font color="black">&nbsp;<span class="glyphicon glyphicon glyphicon-pencil"></span></font></h1>
 			<div class="container-fluid" >
                     <div id="map" ></div>
                     <div class="row mt-3" style="width:100%">
-                        <div class="col-md-12" >
+                        <div class="col-md-12 lctx" >
                             <h3>GKYK mall 오시는 길</h3>
                             <p>
                                	 이메일 : GKYKmall@gmail.com<br>
