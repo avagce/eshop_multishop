@@ -68,12 +68,12 @@
 
 		if(subDong == null) subDong = "";
 
-		var detailAddress = sido + " " + gugun + " " + dong + " " + subDong;
+		var detailAddress = address1 + address2;
 
 		$("#postNum1").val(postNum1);
 		$("#postNum2").val(postNum2);
 
-		$("#address1").val(detailAddress);
+		$("#address").val(detailAddress);
 
 		$("#searchPost").modal('hide');
 	}
@@ -171,7 +171,7 @@
 	}
 <%-- 주소검색 팝업 호출 콜백 callback_openAddressPopup() 메서드 입니다  --%>
 	function callback_openAddressPopup(aParam) {
-		document.getElementById("address").value = aParam["roadAddr"];
+		document.getElementById("address1").value = aParam["roadAddr"];
 		document.getElementById("postNum1").value = aParam["zipNo"];
 		
 	}
@@ -256,7 +256,7 @@
 			<div class="form-group" style="display: flex; justify-content: center; flex-wrap: wrap;">
 				<label for="address1" class="control-label col-md-2"><b>주소</b></label>
 				<div class="col-md-6">
-					<input class="form-control" type="text" id="address" disabled="disabled" required="required"/>
+					<input class="form-control" type="text" id="address1" disabled="disabled" required="required"/>
 				</div>
 			</div>
 
