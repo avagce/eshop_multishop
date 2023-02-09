@@ -207,61 +207,61 @@
 			<div class="form-group" style="display: flex; justify-content: center; flex-wrap: wrap;">
 				<label for="email" class="control-label col-md-2"><b>이메일</b></label>
 				<div class="col-md-6">
-					<input class="form-control" type="email" name="email" id="email" required="required"/>
+					<input class="form-control" style="display: flex;" type="email" name="email" id="email" required="required"/>
 				</div>
 			</div>
 			<div class="form-group" style="display: flex; justify-content: center; flex-wrap: wrap;">
 				<label for="name" class="control-label col-md-2"><b>성명</b></label>
 				<div class="col-md-6">
-					<input class="form-control" type="text" id="name" name="name" autofocus="autofocus" required="required"/>
+					<input class="form-control" style="display: flex;" type="text" id="name" name="name" autofocus="autofocus" required="required"/>
 				</div>
 			</div>
 
 			<div class="form-group" style="display: flex; justify-content: center; flex-wrap: wrap;">
 				<label for="birth" class="control-label col-md-2"><b>생년월일</b></label>
 				<div class="col-md-6">
-					<input class="form-control" type="text" id="birth" name="birth" required="required" maxlength="10"/>
+					<input class="form-control" autocomplete="off" style="display: flex;" type="text" id="birth" name="birth" required="required" maxlength="10"/>
 				</div>
 			</div>
 
-			<div class="form-group" style="display: flex; justify-content: center; flex-wrap: wrap;">
+			<div class="form-group" style="display: flex; justify-content: center;">
 				<label for="phoneCd" class="control-label col-md-2"><b>연락처</b></label>
 				<div class="col-md-2">
-		        	<select class="form-control" id="phoneCd" name="phoneCd" required="required">
+		        	<select class="form-control" style="display: flex; justify-content: center;" id="phoneCd" name="phoneCd" required="required">
 						<c:forEach items="${dsCode1}" var="code1">
 							<option value="${code1.commCd}">${code1.commCdNm}</option>
 						</c:forEach>
 		     		</select>
 	     		</div>
 				<div class="col-md-2">
-					<input class="form-control" type="text" id="phone1" maxlength="4" required="required" onkeydown="return fn_showKeyCode(event)"/>
+					<input class="form-control" style="display: flex; justify-content: center;" type="text" id="phone1" maxlength="4" required="required" onkeydown="return fn_showKeyCode(event)"/>
 				</div>
 				<div class="col-md-2">
-					<input class="form-control" type="text" id="phone2" maxlength="4" required="required" onkeydown="return fn_showKeyCode(event)"/>
+					<input class="form-control" style="display: flex; justify-content: center;" type="text" id="phone2" maxlength="4" required="required" onkeydown="return fn_showKeyCode(event)"/>
 				</div>
 				<input type="hidden" id="phoneNum" name="phoneNum">
 			</div>
 
-			<div class="form-group" style="display: flex; justify-content: center; flex-wrap: wrap;">
-				<label for="postnum1" class="control-label col-md-2"><b>주소</b></label>
-				<div class="col-md-2">
-					<input class="form-control" type="text" id="postNum1" disabled="disabled" required="required"/>
+			<div class="form-group" style="display: flex; justify-content: center;">
+				<label for="postnum1" class="control-label col-md-2"><b>우편번호</b></label>
+				<div class="col-md-3">
+					<input class="form-control" style="display: flex;" type="text" id="postNum1" disabled="disabled" required="required"/>
 	     		</div>
-				<span class="col-md-4">
+				<span class="col-md-3">
 					<button type="button" class="btn btn-info"onclick="javascript:fn_openAddressPopup();"data-target="#searchPost"><b>주소검색</b></button>
 				</span>
 				<input type="hidden" id="postNum" name="postNum">
 			</div>
 
 			<div class="form-group" style="display: flex; justify-content: center; flex-wrap: wrap;">
-				<label for="address1" class="control-label col-md-2"><b>상세주소</b></label>
+				<label for="address1" class="control-label col-md-2"><b>주소</b></label>
 				<div class="col-md-6">
 					<input class="form-control" type="text" id="address" disabled="disabled" required="required"/>
 				</div>
 			</div>
 
 			<div class="form-group" style="display: flex; justify-content: center; flex-wrap: wrap;">
-				<label for="address2" class="control-label col-md-2"></label>
+				<label for="address2" class="control-label col-md-2"><b>상세주소</b></label>
 				<div class="col-md-6">
 					<input class="form-control" type="text" id="address2"/>
 				</div>
@@ -270,8 +270,8 @@
 
 			<div class="form-group" style="display: flex; justify-content: center; flex-wrap: wrap;">
 				<label class="control-label col-md-2"><b>사진</b></label>
-				<img id="pic" style="margin-left: 15px;" height="180px" width="150px" src="${context}/backgroundImage/defaultpic.png"><br/>
-				<div class="col-md-6">
+				<img id="pic" class="col-md-2" height="180px" width="150px" src="${context}/backgroundImage/defaultpic.png"><br/>
+				<div class="col-md-4">
 					<input type="hidden" id="userImage" name="userImage" required="required">
 				</div>
 			</div>
@@ -280,7 +280,7 @@
 		</div>
 	</form>
 	<form id="ajaxform" action="${context}/work/product/saveFile.do" method="post" enctype="multipart/form-data" role="form">
-		<div class="form-group">
+		<div class="form-group" style="display: flex; justify-content: center; flex-wrap: wrap;">
 		<label class="control-label col-md-2"></label>
 			<div class="col-md-6">
 				<input class="form-control" type="file" id="imageFile" name="imageFile" onchange="fn_upload()"/>
@@ -288,12 +288,12 @@
 			</div>
 		</div>
 		<br><br><br>
-		<div class="form-group">
-			<div class="col-md-offset-6 col-md-1">
-				<button type="button" class="btn btn-success" onclick="fn_back()">뒤로가기</button>
+		<div class="form-group" style="display: flex;justify-content: center; flex-wrap: wrap;">
+			<div class="col-md-3">
+				<button type="button" class="btn btn-success" onclick="fn_back()" style="width: 100%; height: 50px; border-radius: 10px; margin-top: 5%; ">뒤로가기</button>
 			</div>
-			<div class="col-md-1">
-				<button class="btn btn-primary" type="button" name="btnSubmit" id="btnSubmit" onclick="fn_save()">등록하기</button>
+			<div class="col-md-3">
+				<button class="btn btn-primary" type="button" name="btnSubmit" id="btnSubmit" onclick="fn_save()" style="width: 100%; height: 50px; border-radius: 10px; margin-top: 5%;">등록하기</button>
 			</div>
 		</div>
 	</form>
