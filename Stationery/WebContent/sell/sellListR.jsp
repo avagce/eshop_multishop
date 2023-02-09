@@ -29,6 +29,7 @@
     <script src="${context}/js/plugins/dataTables/dataTables.bootstrap.js"></script>
 
     <script src="${context}/js/sb-admin-2.js"></script>
+     <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
 
     <script>
 	var existFolder = '';
@@ -83,11 +84,73 @@
 		}
     }
 
-    function fn_finalBuy(paramSellCode, paramSellCount, paramProductCode){
+    function fn_finalBuy(paramSellCode, paramSellCount, paramProductCode,paramProductName,paramSellPrice){
+    	
+    	var email = "${userparam.email}";
+		var name = "${userparam.name}";
+		var phonenum = "${userparam.phoneNum}";
+		var address = "${userparam.address}";
+		var postnum = "${userparam.postNum}";
+    	
+    	
 		if(confirm("결제하시겠습니까?")){
-			location.href = "${context}/work/sell/updateFinalBuy.do?sellCode=" + paramSellCode + "&sellCount=" + paramSellCount + "&productCode=" + paramProductCode;
-		}
+			//location.href = "${context}/work/sell/updateFinalBuy.do?sellCode=" + paramSellCode + "&sellCount=" + paramSellCount + "&productCode=" + paramProductCode;
+			
+			//========================================
+		
+				
+				
+			var IMP = window.IMP;  
+		    IMP.init("imp27037718");  // IMP.init( ) 메서드 가맹점코드 수정 바랍니다.
+		    IMP.request_pay({
+		        pg : 'html5_inicis', // version 1.1.0부터 지원.
+		        pay_method : 'card',
+		        merchant_uid : 'merchant_' + new Date().getTime(),
+		        name : '주문명:'+paramProductName,
+		        amount : paramSellPrice,
+		        buyer_email :email,
+		        buyer_name : name,
+		        buyer_tel : phonenum,
+		        buyer_addr :address,
+		        buyer_postcode : postnum,
+		        m_redirect_url :"${context}/work/sell/updateFinalBuy.do?sellCode=" + paramSellCode + "&sellCount=" + paramSellCount + "&productCode=" + paramProductCode
+		    }, function(rsp) {
+		        if ( rsp.success ) {
+		        	 var paymentInfo = {
+		            		  imp_uid : rsp.imp_uid,
+		            		  merchant_uid : rep.merchant_uid,
+		            		  paid_amount : rsp.paid_amound,
+		            		  apply_num : rsp.apply_num,
+		            		  paid_at : new Date()
+		              };
+		    		//location.href = "${context}/work/sell/updateFinalBuy.do?sellCode=" + paramSellCode + "&sellCount=" + paramSellCount + "&productCode=" + paramProductCode
+		        	 $.ajax({
+		            	  url :  "/paymentProcess.do",
+		            	  method : "post",
+		            	  contentTpye : "application/json",
+		            	  data :  JSON.stringify(paymentInfo),
+		            	  success : function (data, textStatus) {
+		            		  console.log(paymentInfo);
+		            		  location.href = "";
+							
+		            	  },
+		            	  error : function(e){
+		            		  console.log(e);
+		            	  
+						}
+		              });
+		        } else {
+		        	 alert("결제 실패:"+rsp.error_msg);
+		        }
+		    });	
+    	}
     }
+			  
+		  
+
+		
+		
+    
     </script>
 </head>
 <body>
@@ -146,12 +209,13 @@
 												$("img[name='image']").eq('${sellIdx.index}').attr("src", path.replace(existFolder, imageFolder));
 											</script>
 			                            </td>
+			                          
 			                            <td style="text-align: center; vertical-align: middle;">${dsSellList.PRODUCT_NAME}</td>
 			                            <td style="text-align: center; vertical-align: middle;">${dsSellList.PRODUCT_UNIT_PRICE}원</td>
 			                            <td style="text-align: center; vertical-align: middle;">${dsSellList.SELL_COUNT}</td>
 			                            <td style="text-align: center; vertical-align: middle;">${dsSellList.SELL_PRICE}원</td>
 			                            <td style="text-align: center; vertical-align: middle;">
-			                            	<button type="button" class="btn btn-primary" onclick="fn_finalBuy('${dsSellList.SELL_CODE}', '${dsSellList.SELL_COUNT}', '${dsSellList.PRODUCT_CODE}')">결제하기</button>
+			                            	<button type="button" class="btn btn-primary" onclick="fn_finalBuy('${dsSellList.SELL_CODE}', '${dsSellList.SELL_COUNT}', '${dsSellList.PRODUCT_CODE}','${dsSellList.PRODUCT_NAME}','${dsSellList.SELL_PRICE}')">결제하기</button>
 			                            </td>
 			                         </tr>
 			                        </c:forEach>
@@ -170,6 +234,7 @@
 			</div>
 		</div>
 	</div>
+	
 <jsp:include page="/common/footer.jsp"></jsp:include>
 </body>
 </html>

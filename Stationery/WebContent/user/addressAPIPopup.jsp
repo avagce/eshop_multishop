@@ -5,6 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title></title>
+<link rel='stylesheet' type='text/css' media='screen' href='${context}/css/bootstrap-3.3.2.min.css'>
+<script src="${context}/js/jquery-3.5.1.min.js"></script>
 <script>
 	<%-- 도로명 주소로 검색 api 연동을 ajax로 처리 합니다. --%>
 	function fn_search(){
@@ -62,7 +64,7 @@
 		var aParam = [];
 		aParam["roadAddr"] = roadAddr;
 		aParam["jibunAddr"] = roadAddr;
-		aParam["zipNo"] = roadAddr;
+		aParam["zipNo"] = zipNo;
 
 		opener.callback_openAddressPopup(aParam);
 		window.close();

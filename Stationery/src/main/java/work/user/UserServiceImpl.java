@@ -33,6 +33,10 @@ public class UserServiceImpl implements UserService{
 	public UserBean retrieveUser(String id)  {
 		return UserDAO.retrieveUser(id);
 	}
+	
+	public UserBean retrieveUser2(String usercode)  {
+		return UserDAO.retrieveUser2(usercode);
+	}
 
 	public UserBean retrieveSessionInfo(String id)  {
 		return UserDAO.retrieveSessionInfo(id);

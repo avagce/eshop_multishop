@@ -36,6 +36,10 @@ public class UserDAO {
 	public UserBean retrieveUser(String id)  {
 		return sqlSession.selectOne("user.retrieveUser", id);
 	}
+	
+	public UserBean retrieveUser2(String usercode)  {
+		return sqlSession.selectOne("user.retrieveUser2", usercode);
+	}
 
 	public boolean logincheck(String id, String pw){
 		boolean check = false;
