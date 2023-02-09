@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-		<meta name="description" content="userU.jsp">
+	<meta name="description" content="userU.jsp">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Insert title here</title>
 	<link href="${context}/css/bootstrap.min.css" rel="stylesheet">
@@ -148,7 +148,7 @@
 
 		if(confirm("수정하시겠습니까?")){
 			$("#phoneNum").val($("#phone1").val() + "-" + $("#phone2").val());
-	 		$("#postNum").val($("#postNum1").val() + "-" + $("#postNum2").val());
+	 		$("#postNum").val($("#postNum1").val());
 	 		$("#address").val($("#address1").val() + "/" + $("#address2").val());
 
 	 		$("#joinFrm").submit();
@@ -172,6 +172,19 @@
 	        }
 	    });
 	}
+	// 주소검색 팝업을 호출합니다
+	function fn_openAddressPopup() {
+		var url = "${context}/user/addressAPIPopup.jsp";
+		var name = "AddressPopup";
+		var option = "width=650, height=500, top=100, left=200, location=no"
+		window.open(url, name, option);
+	}
+	// 주소검색 팝업 호출 콜백 callback_openAddressPopup() 메서드 입니다
+	function callback_openAddressPopup(aParam) {
+		document.getElementById("address1").value = aParam["roadAddr"];
+		document.getElementById("postNum1").value = aParam["zipNo"];
+		
+	}
 
 </script>
 </head>
@@ -191,8 +204,8 @@
 				<div class="col-md-6">
 					<input class="form-control" type="text" name="id" id="id" disabled="disabled" required="required" autofocus="autofocus" onkeyup="idCheck();"/>
 				</div>
-				<p id="message"></p>
 			</div>
+				<p class="col-md-7" id="message" style="display: flex; justify-content: flex-end;"></p>
 
 			<div class="form-group" style="display: flex; justify-content: center; flex-wrap: wrap;">
 				<label for="pw" class="control-label col-md-2"><b>비밀번호</b></label>
@@ -201,7 +214,7 @@
 				</div>
 			</div>
 
-			<div class="form-group"style="display: flex; justify-content: center; flex-wrap: wrap;">
+			<div class="form-group" style="display: flex; justify-content: center; flex-wrap: wrap;">
 				<label for="email" class="control-label col-md-2"><b>이메일</b></label>
 				<div class="col-md-6">
 					<input class="form-control" type="email" name="email" id="email" required="required"/>
@@ -240,92 +253,61 @@
 			</div>
 
 			<div class="form-group" style="display: flex; justify-content: center;">
-				<label for="postnum1" class="control-label col-md-2"><b>주소</b></label>
-				<div class="col-md-2">
-					<input class="form-control" type="text" id="postNum1" disabled="disabled" required="required"/>
+				<label for="postnum1" class="control-label col-md-2"><b>우편번호</b></label>
+				<div class="col-md-3">
+					<input class="form-control" style="display: flex;" type="text" id="postNum1" disabled="disabled" required="required"/>
 	     		</div>
-				<div class="col-md-2">
-					<input class="form-control" type="text" id="postNum2" disabled="disabled" required="required"/>
-				</div>
-				<span class="col-md-2">
-					<button type="button" class="btn btn-info" data-toggle="modal" data-target="#searchPost" style="width: 100%;"><b>주소검색</b></button>
+				<span class="col-md-3">
+					<button type="button" class="btn btn-info"onclick="javascript:fn_openAddressPopup();"data-target="#searchPost"><b>주소검색</b></button>
 				</span>
 				<input type="hidden" id="postNum" name="postNum">
 			</div>
 
 			<div class="form-group" style="display: flex; justify-content: center; flex-wrap: wrap;">
-				<label for="address1" class="control-label col-md-2"><b>상세주소</b></label>
+				<label for="address1" class="control-label col-md-2"><b>주소</b></label>
 				<div class="col-md-6">
 					<input class="form-control" type="text" id="address1" disabled="disabled" required="required"/>
 				</div>
 			</div>
 
 			<div class="form-group" style="display: flex; justify-content: center; flex-wrap: wrap;">
-				<label for="address2" class="control-label col-md-2"></label>
+				<label for="address2" class="control-label col-md-2"><b>상세주소</b></label>
 				<div class="col-md-6">
 					<input class="form-control" type="text" id="address2"/>
 				</div>
 				<input type="hidden" id="address" name="address">
 			</div>
+
+			<div class="form-group" style="display: flex; justify-content: center; flex-wrap: wrap;">
+				<label class="control-label col-md-2"><b>사진</b></label>
+				<img class="col-md-2" id="pic" height="180px" width="150px" src="${context}/backgroundImage/defaultpic.png"><br/>
+				<div class="col-md-4">
+					<input type="hidden" id="userImage" name="userImage" required="required">
+				</div>
+			</div>
 			<input type="hidden" id="flag" name="flag" value="false">
 		</div>
 	</form>
 		<form id="ajaxform" action="${context}/work/product/saveFile.do" method="post" enctype="multipart/form-data" role="form">
-		<br>
-		<div class="form-group" style="display: flex;justify-content: center; flex-wrap: wrap;">
+		<div class="form-group" style="display: flex; justify-content: center; flex-wrap: wrap;">
+		<label class="control-label col-md-2"></label>
+			<div class="col-md-6">
+				<input class="form-control" type="file" id="imageFile" name="imageFile" onchange="fn_upload()"/>
+				<input type="hidden" id="imageFolder" name="imageFolder" value="userImg">
+			</div>
+		</div>
+		<br><br><br>
+		<div class="form-group" style="display: flex; justify-content: center; flex-wrap: wrap;">
 			<div class="col-md-3">
 				<button type="button" class="btn btn-success" onclick="fn_back()" style="width: 100%; height: 50px; border-radius: 10px; margin-top: 5%; ">뒤로가기</button>
 			</div>
 			<div class="col-md-3">
-				<button class="btn btn-primary" type="button" name="btnSubmit" id="btnSubmit" onclick="fn_save()" style="width: 100%; height: 50px; border-radius: 10px; margin-top: 5%;">회원가입</button>
+				<button class="btn btn-primary" type="button" name="btnSubmit" id="btnSubmit" onclick="fn_save()" style="width: 100%; height: 50px; border-radius: 10px; margin-top: 5%;">등록하기</button>
 			</div>
 		</div>
 	</form>
 	</div>
-		<div class="container">
-		<!-- Modal -->
-		<div class="modal fade" id="searchPost" role="dialog">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<h4 class="modal-title">주소검색</h4>
-					</div>
-						<div class="modal-body" style="height: 50px; display: flex; margin-bottom: 20px;">
-							<div class="col-md-9">
-								<input class="form-control" type="text" id="dong" name="dong" placeholder="동을 입력하세요.ex)역삼1동"/>
-							</div>
-							<div class="col-md-3">
-								<button id="postCheck" type="button" class="btn btn-primary" onclick = "fn_postCheck()">확인</button>
-							</div>
-						</div>
-
-					<div class="modal-footer">
-						<div class="col-md-12">
-			            <div class="table-responsive">
-			                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-			                    <thead>
-			                        <tr>
-			                        	<th style="text-align: center; vertical-align: middle; ">주소</th>
-			                        </tr>
-			                    </thead>
-			                    <tbody id="postBody">
-			                    </tbody>
-			                </table>
-			            </div>
-			            <!-- /.table-responsive -->
-			        </div>
-			        <!-- /.panel-body -->
-			        <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
-			    </div>
-			    <!-- /.panel -->
-			</div>
-		</div>
-			    <!-- /.panel -->
-			</div>
-
-					</div>
-
+		
 	<jsp:include page="../common/footer.jsp"></jsp:include>
 </body>
 </html>
