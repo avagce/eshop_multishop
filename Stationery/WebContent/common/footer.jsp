@@ -27,7 +27,7 @@
     <link href="${context}/css/style.css" rel="stylesheet">
 <!-- Footer Start -->
     <div class="container-fluid bg-light text-secondary">
-        <div class="row px-xl-5 pt-5 footer-wrap">
+        <div class="row px-xl-5 pt-5 footer-wrap mt-3">
             <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
                 <nav class="navbar navbar-light bg-light">
   <a class="navbar-brand" href="#">
