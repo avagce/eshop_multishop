@@ -17,113 +17,95 @@
 <jsp:include page="../common/header.jsp"></jsp:include>
 
 <div class="container">
-    <div id="accordion">
-        <div class="card">
-            <div class="card-header" id="headingOne">
-                <h5 class="mb-0 d-inline">
-                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                      	배송문의
-                    </button>
-                 </h5>
-            </div>
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="card-body" id="child1">
-                    <div class="card">
-                        <div class="card-header">
-                            <a href="#" data-toggle="collapse" data-target="#collapseOneA">[상품누락] 상품을 구매했는데 일부만 배송되었어요.</a>
-                        </div>
-                        <div class="card-body collapse" data-parent="#child1" id="collapseOneA">
-                          	  상품이 누락되었다면 교환을 통해 상품을 다시 받거나, 반품하고 환불 받을 수 있습니다.
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <a href="#" data-toggle="collapse" data-target="#collapseOneA">Child A</a>
-                        </div>
-                        <div class="card-body collapse" data-parent="#child1" id="collapseOneA">
-                            Crunch wolf moon tempor, sunt aliqua put a bird.
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <a href="#" data-toggle="collapse" data-target="#collapseOneA">Child A</a>
-                        </div>
-                        <div class="card-body collapse" data-parent="#child1" id="collapseOneA">
-                            Crunch wolf moon tempor, sunt aliqua put a bird.
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <a href="#" data-toggle="collapse" data-target="#collapseOneB">Child B</a>
-                        </div>
-                        <div class="card-body collapse" data-parent="#child1" id="collapseOneB">
-                            Another flipp runch wolf moon tempor, sunt aliqua put a bird.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-header" id="headingOne">
-                <h5 class="mb-0 d-inline">
-                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                      faq 2
-                    </button>
-                 </h5>
-            </div>
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="card-body" id="child1">
-                    <div class="card">
-                        <div class="card-header">
-                            <a href="#" data-toggle="collapse" data-target="#collapseOneA">Child A</a>
-                        </div>
-                        <div class="card-body collapse" data-parent="#child1" id="collapseOneA">
-                            Crunch wolf moon tempor, sunt aliqua put a bird.
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <a href="#" data-toggle="collapse" data-target="#collapseOneB">Child B</a>
-                        </div>
-                        <div class="card-body collapse" data-parent="#child1" id="collapseOneB">
-                            Another flipp runch wolf moon tempor, sunt aliqua put a bird.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-header" id="headingOne">
-                <h5 class="mb-0 d-inline">
-                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                      faq3
-                    </button>
-                 </h5>
-            </div>
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="card-body" id="child1">
-                    <div class="card">
-                        <div class="card-header">
-                            <a href="#" data-toggle="collapse" data-target="#collapseOneA">Child A</a>
-                        </div>
-                        <div class="card-body collapse" data-parent="#child1" id="collapseOneA">
-                            Crunch wolf moon tempor, sunt aliqua put a bird.
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <a href="#" data-toggle="collapse" data-target="#collapseOneB">Child B</a>
-                        </div>
-                        <div class="card-body collapse" data-parent="#child1" id="collapseOneB">
-                            Another flipp runch wolf moon tempor, sunt aliqua put a bird.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div id="accordion">
+  <div class="card">
+    <div class="card-header" id="heading-1">
+      <h5 class="mb-0">
+        <a role="button" data-toggle="collapse" href="#collapse-1" aria-expanded="true" aria-controls="collapse-1">
+          1. My Account
+        </a>
+      </h5>
     </div>
-</div>
+    <div id="collapse-1" class="collapse show" data-parent="#accordion" aria-labelledby="heading-1">
+      <div class="card-body">
 
+        <div id="accordion-1">
+          <div class="card">
+            <div class="card-header" id="heading-1-1">
+              <h5 class="mb-0">
+                <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-1-1" aria-expanded="false" aria-controls="collapse-1-1">
+                  1.1 Opening an account
+                </a>
+              </h5>
+            </div>
+            <div id="collapse-1-1" class="collapse" data-parent="#accordion-1" aria-labelledby="heading-1-1">
+              <div class="card-body">
+				
+			</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="heading-1-2">
+              <h5 class="mb-0">
+                <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-1-2" aria-expanded="false" aria-controls="collapse-1-2">
+                  1.2 Sign in Details
+                </a>
+              </h5>
+            </div>
+            <div id="collapse-1-2" class="collapse" data-parent="#accordion-1" aria-labelledby="heading-1-2">
+              <div class="card-body">
+              </div>
+            </div>
+            <div class="card">
+            <div class="card-header" id="heading-1-3">
+              <h5 class="mb-0">
+                <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-1-3" aria-expanded="false" aria-controls="collapse-1-3">
+                  1.1 Opening an account
+                </a>
+              </h5>
+            </div>
+            <div id="collapse-1-3" class="collapse" data-parent="#accordion-1" aria-labelledby="heading-1-3">
+              <div class="card-body">
+			</div>
+            </div>
+          </div>
+          
+          </div>
+        </div>      
+      
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="heading-2">
+      <h5 class="mb-0">
+        <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+          2. Placing an Order
+        </a>
+      </h5>
+    </div>
+    <div id="collapse-2" class="collapse" data-parent="#accordion" aria-labelledby="heading-2">
+      <div class="card-body">
+        Text
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="heading-3">
+      <h5 class="mb-0">
+        <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+          3. Delivery
+        </a>
+      </h5>
+    </div>
+    <div id="collapse-3" class="collapse" data-parent="#accordion" aria-labelledby="heading-3">
+      <div class="card-body">
+        Text
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 <jsp:include page="../common/footer.jsp" ></jsp:include>
 </body>
 </html>
