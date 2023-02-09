@@ -118,12 +118,13 @@
             <div class="col-lg-6 text-center text-lg-right">
                 <div class="d-inline-flex align-items-center">
                         <c:if test="${sessionScope.id == null}">
-                            <button class="dropdown-item" type="button" onclick="location.href='${context}/user/login.jsp'">LOGIN</button>
-                            <button class="dropdown-item" type="button" onclick="location.href='${context}/work/user/createUser.do'">Sign up</button>
+                            <a class="dropdown-item" type="button" onclick="location.href='${context}/user/login.jsp'"><strong>LOGIN</strong></a>
+                            <a class="dropdown-item" type="button" onclick="location.href='${context}/work/user/createUser.do'"><strong>Sign up</strong></a>
                     	</c:if>
              	        <c:if test="${sessionScope.id != null}">
-                            <button class="dropdown-item" type="button" onclick="location.href='${context}/work/user/updateUser.do'">정보수정</button>
-                            <button class="dropdown-item" type="button" onclick="location.href='${context}/work/user/logout.do'">LOGOUT</button>
+                            <a class="dropdown-item" type="button" onclick="location.href='${context}/work/user/updateUser.do'">정보수정</a>
+                            <a class="dropdown-item" type="button" onclick="location.href='${context}/work/user/logout.do'"><strong>LOGOUT</strong></a>
+                            <a class="btn btn-default" type="button" onclick="location.href='${context}/work/cart/retrieveCartList.do'"><strong>장바구니</strong></a>
                     	</c:if>
                     </div>
                 </div>
@@ -155,13 +156,14 @@
                 <div id="headerSearch" class="input-group">
         			<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         			 <div class="input-group-append">
-          <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span id="searchSelected">Intranet</span> <span class="sr-only">Toggle Dropdown</span>
-            <div class="dropdown-menu">
-              <a class="dropdown-item intranet" href="#">Intranet</a>
-              <a class="dropdown-item people-finder" href="#">People Finder</a>
-            </div>
-          </button>
+				          <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					            <span id="searchSelected">Intranet</span>
+					            <span class="sr-only">Toggle Dropdown</span>
+					            <div class="dropdown-menu">
+						              <a class="dropdown-item intranet" href="#">Intranet</a>
+						              <a class="dropdown-item people-finder" href="#">People Finder</a>
+					            </div>
+				          </button>
         			</div>
         			</div>
         			<button class="btn search-button" type="submit">Search</button>
@@ -180,16 +182,9 @@
 			  <figcaption class=header-icon-text">
 			    	마이페이지
 			  </figcaption>
-			  
-			  
 			  </a>
-			 
-			  
 			<!-- 이미지 버튼 종료 -->
 			  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-		
-               
-                   
                        <c:if test="${sessionScope.id == null}">
                            <button class="btn btn-default" type="button" onclick="location.href='${context}/user/login.jsp'"><strong>LOGIN</strong></button>
                            <button class="btn btn-default" type="button" onclick="location.href='${context}/work/user/createUser.do'"><strong>Sign up</strong></button>
@@ -197,7 +192,7 @@
             	        <c:if test="${sessionScope.id != null}">
                            <button class="btn btn-default" type="button" onclick="location.href='${context}/work/user/updateUser.do'"><strong>정보수정</strong></button>
                            <button class="btn btn-default" type="button" onclick="location.href='${context}/work/user/logout.do'"><strong>LOGOUT</strong></button>
-                           <button class="btn btn-default" type="button" onclick="location.href='${context}/work/cart/retrieveCartList.do'"><strong>장바구니</strong></button>
+                          
                    	</c:if>
                    	<c:if test="${sessionScope.id != null && sessionScope.grade == 'A'}">
                            <button class="btn btn-default" type="button" onclick="location.href='${context}/work/product/retrieveProductListForManage.do'"><strong>재고관리</strong></button>
