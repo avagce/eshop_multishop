@@ -106,32 +106,32 @@
 		        pg : 'html5_inicis', // version 1.1.0부터 지원.
 		        pay_method : 'card',
 		        merchant_uid : 'merchant_' + new Date().getTime(),
-		        name : '주문명:'+paramProductName,
+		        name : paramProductName,
 		        amount : paramSellPrice,
 		        buyer_email :email,
 		        buyer_name : name,
 		        buyer_tel : phonenum,
 		        buyer_addr :address,
 		        buyer_postcode : postnum,
-		        m_redirect_url :"${context}/work/sell/updateFinalBuy.do?sellCode=" + paramSellCode + "&sellCount=" + paramSellCount + "&productCode=" + paramProductCode
+		        m_redirect_url :"/paymentDone.do"
 		    }, function(rsp) {
 		        if ( rsp.success ) {
 		        	 var paymentInfo = {
 		            		  imp_uid : rsp.imp_uid,
-		            		  merchant_uid : rep.merchant_uid,
+		            		  merchant_uid : rsp.merchant_uid,
 		            		  paid_amount : rsp.paid_amound,
 		            		  apply_num : rsp.apply_num,
 		            		  paid_at : new Date()
 		              };
 		    		//location.href = "${context}/work/sell/updateFinalBuy.do?sellCode=" + paramSellCode + "&sellCount=" + paramSellCount + "&productCode=" + paramProductCode
 		        	 $.ajax({
-		            	  url :  "/paymentProcess.do",
-		            	  method : "post",
+		            	  url :  "/iamport/paymentProcess.do",
+		            	  method : "POST",
 		            	  contentTpye : "application/json",
 		            	  data :  JSON.stringify(paymentInfo),
 		            	  success : function (data, textStatus) {
 		            		  console.log(paymentInfo);
-		            		  location.href = "";
+		            		  location.href = "/iamport/paymentDone.do";
 							
 		            	  },
 		            	  error : function(e){

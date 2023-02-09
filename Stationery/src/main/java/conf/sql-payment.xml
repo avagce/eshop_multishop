@@ -10,7 +10,8 @@
    </resultMap>
 
    <insert id="insertPaymentSuccess">
+   <![CDATA[
       insert into pay_import values(#{imp_uid}, #{merchant_uid}, #{paid_amount}, #{apply_num}, #{paid_at})
+   ]]>
    </insert>   
-   
 </mapper>
