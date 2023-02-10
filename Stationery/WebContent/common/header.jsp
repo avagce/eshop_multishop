@@ -124,7 +124,7 @@
              	        <c:if test="${sessionScope.id != null}">
                             <a class="dropdown-item" type="button" onclick="location.href='${context}/work/user/updateUser.do'">정보수정</a>
                             <a class="dropdown-item" type="button" onclick="location.href='${context}/work/user/logout.do'"><strong>LOGOUT</strong></a>
-                            <a class="btn btn-default" type="button" onclick="location.href='${context}/work/cart/retrieveCartList.do'"><strong>장바구니</strong></a>
+                            <a class="dropdown-item" type="button" onclick="location.href='${context}/work/cart/retrieveCartList.do'"><strong>장바구니</strong></a>
                     	</c:if>
                     </div>
                 </div>
