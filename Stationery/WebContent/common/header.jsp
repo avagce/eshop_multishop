@@ -112,45 +112,20 @@
                     <a class="text-body mr-3" onclick="location.href='${context}/location/location.jsp'" style="cursor: pointer;">location</a>
                     <a class="text-body mr-3" href="">Help</a>
                     <a class="text-body mr-3" href="">FAQs</a>
-                    
-                          <li><a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/board/retrieveBoardList.do')">공지사항</a></li>
-                         
-                          
-                          <li><a onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/board/retrieveBoardList2.do')">유저게시판</a></li>
                           
                 </div>
             </div>
             <div class="col-lg-6 text-center text-lg-right">
                 <div class="d-inline-flex align-items-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">My Account</button>
-                        <div class="dropdown-menu dropdown-menu-right">
                         <c:if test="${sessionScope.id == null}">
-                            <button class="dropdown-item" type="button" onclick="location.href='${context}/user/login.jsp'">LOGIN</button>
-                            <button class="dropdown-item" type="button" onclick="location.href='${context}/work/user/createUser.do'">Sign up</button>
+                            <a class="dropdown-item" type="button" onclick="location.href='${context}/user/login.jsp'"><strong>LOGIN</strong></a>
+                            <a class="dropdown-item" type="button" onclick="location.href='${context}/work/user/createUser.do'"><strong>Sign up</strong></a>
                     	</c:if>
              	        <c:if test="${sessionScope.id != null}">
-                            <button class="dropdown-item" type="button" onclick="location.href='${context}/work/user/updateUser.do'">정보수정</button>
-                            <button class="dropdown-item" type="button" onclick="location.href='${context}/work/user/logout.do'">LOGOUT</button>
+                            <a class="dropdown-item" type="button" onclick="location.href='${context}/work/user/updateUser.do'">정보수정</a>
+                            <a class="dropdown-item" type="button" onclick="location.href='${context}/work/user/logout.do'"><strong>LOGOUT</strong></a>
+                            <a class="btn btn-default" type="button" onclick="location.href='${context}/work/cart/retrieveCartList.do'"><strong>장바구니</strong></a>
                     	</c:if>
-                    	
-                        </div>
-                    </div>
-                    <div class="btn-group mx-2">
-                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">USD</button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button">EUR</button>
-                            <button class="dropdown-item" type="button">GBP</button>
-                            <button class="dropdown-item" type="button">CAD</button>
-                        </div>
-                    </div>
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">EN</button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button">FR</button>
-                            <button class="dropdown-item" type="button">AR</button>
-                            <button class="dropdown-item" type="button">RU</button>
-                        </div>
                     </div>
                 </div>
                 <div class="d-inline-flex align-items-center d-block d-lg-none">
@@ -167,7 +142,7 @@
         </div>
          
         <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
-            <div class="col-lg-4">
+            <div class="col-lg-12">
 
         <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex outside-search-box">
             <div class="col-lg-2">
@@ -181,111 +156,103 @@
                 <div id="headerSearch" class="input-group">
         			<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         			 <div class="input-group-append">
-          <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span id="searchSelected">Intranet</span> <span class="sr-only">Toggle Dropdown</span>
-            <div class="dropdown-menu">
-              <a class="dropdown-item intranet" href="#">Intranet</a>
-              <a class="dropdown-item people-finder" href="#">People Finder</a>
-            </div>
-          </button>
+				          <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					            <span id="searchSelected">Intranet</span>
+					            <span class="sr-only">Toggle Dropdown</span>
+					            <div class="dropdown-menu">
+						              <a class="dropdown-item intranet" href="#">Intranet</a>
+						              <a class="dropdown-item people-finder" href="#">People Finder</a>
+					            </div>
+				          </button>
         			</div>
         			</div>
         			<button class="btn search-button" type="submit">Search</button>
       			</form>
             </div>
-            
-            			
-            		   <!-- 드롭다운 부분 -->
-						          <!--    <div class="col-lg-4 col-6 text-right">
-						                <div class="btn-group" role="group" aria-label="Basic example">
-						  <button type="button" class="btn btn-primary header-icon-wrap">
-						  	-->
-						  	<div class="dropdown">
-						  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-						  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
-						</svg>
-						  <figcaption class=header-icon-text">
-						    	마이페이지
-						  </figcaption>
-						  
-						  
-						  </a>
-						 
-						  
-						<!-- 이미지 버튼 종료 -->
-						  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-					
-		                
-		                    
-		                        <c:if test="${sessionScope.id == null}">
-		                            <button class="btn btn-default" type="button" onclick="location.href='${context}/user/login.jsp'"><strong>LOGIN</strong></button>
-		                            <button class="btn btn-default" type="button" onclick="location.href='${context}/work/user/createUser.do'"><strong>Sign up</strong></button>
-		                    	</c:if>
-		             	        <c:if test="${sessionScope.id != null}">
-		                            <button class="btn btn-default" type="button" onclick="location.href='${context}/work/user/updateUser.do'"><strong>정보수정</strong></button>
-		                            <button class="btn btn-default" type="button" onclick="location.href='${context}/work/user/logout.do'"><strong>LOGOUT</strong></button>
-		                            <button class="btn btn-default" type="button" onclick="location.href='${context}/work/cart/retrieveCartList.do'"><strong>장바구니</strong></button>
-		                    	</c:if>
-		                    	<c:if test="${sessionScope.id != null && sessionScope.grade == 'A'}">
-		                            <button class="btn btn-default" type="button" onclick="location.href='${context}/work/product/retrieveProductListForManage.do'"><strong>재고관리</strong></button>
-		                			<button class="btn btn-default" type="button" onclick="location.href='${context}/work/sell/retrieveStatisticsForProduct.do'"><strong>매출통계</strong></button>
-		                			<button class="btn btn-default" type="button" onclick="location.href='${context}/work/product/retrieveStatisticsForStock.do?productCategoryCd=P'"><strong>재고현황</strong></button>
-		                		</c:if>
-		                   
-		                
-								  </div>
-						 
-    					<!-- 드롭다운 버튼 부분 종료 -->
-    					</div>
-						  
-						  
-            		   <!-- 드롭다운 부분 -->
-						  <div class="dropdown">
-						  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-chat-left-dots-fill" viewBox="0 0 16 16">
-						  <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4.414a1 1 0 0 0-.707.293L.854 15.146A.5.5 0 0 1 0 14.793V2zm5 4a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
-						</svg>
-						<figcaption class=header-icon-text>
-						    	게시판
-						  </figcaption>
-						  </button>
-						  </a>
-						  
-						  <!-- 드롭다운메뉴 -->
-						    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-						  	<a class="dropdown-item" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/board/retrieveBoardList.do')">공지사항</a>
-						  	 <a class="dropdown-item" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/board/retrieveBoardList2.do')">자유게시판</a>
-	                    <a class="dropdown-item" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/board/retrieveBoardList3.do')">커뮤니티게시판</a>
-	                    <a class="dropdown-item" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/board/retrieveBoardList4.do')">상담신청게시판</a>
-						  </div>
-						  </div>
-						 
-    					<!-- 드롭다운 버튼 부분 종료 -->
-						  
-						  
-						  <button type="button" class="btn btn-primary header-icon-wrap">
-						  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-gift-fill" viewBox="0 0 16 16">
-						  <path d="M3 2.5a2.5 2.5 0 0 1 5 0 2.5 2.5 0 0 1 5 0v.006c0 .07 0 .27-.038.494H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h2.038A2.968 2.968 0 0 1 3 2.506V2.5zm1.068.5H7v-.5a1.5 1.5 0 1 0-3 0c0 .085.002.274.045.43a.522.522 0 0 0 .023.07zM9 3h2.932a.56.56 0 0 0 .023-.07c.043-.156.045-.345.045-.43a1.5 1.5 0 0 0-3 0V3zm6 4v7.5a1.5 1.5 0 0 1-1.5 1.5H9V7h6zM2.5 16A1.5 1.5 0 0 1 1 14.5V7h6v9H2.5z"/>
-						</svg>
-						  <figcaption class=header-icon-text>
-						    	주문조회
-						  </figcaption>
-						  </button>
-						  
-						  
-						   <button type="button" class="btn btn-primary header-icon-wrap">
-						  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
-						  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-						</svg>
-						<figcaption class=header-icon-text>
-						    	장바구니
-						  </figcaption>
-						   </button>
-						</div>
-						            </div>
-						        </div>
-						    </div>
+         		   <!-- 드롭다운 부분 -->
+			          <!--    <div class="col-lg-4 col-6 text-right">
+			                <div class="btn-group" role="group" aria-label="Basic example">
+			  <button type="button" class="btn btn-primary header-icon-wrap">
+			  	-->
+			  	<div class="dropdown">
+			  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+			  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+			</svg>
+			  <figcaption class=header-icon-text">
+			    	마이페이지
+			  </figcaption>
+			  </a>
+			<!-- 이미지 버튼 종료 -->
+			  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                       <c:if test="${sessionScope.id == null}">
+                           <button class="btn btn-default" type="button" onclick="location.href='${context}/user/login.jsp'"><strong>LOGIN</strong></button>
+                           <button class="btn btn-default" type="button" onclick="location.href='${context}/work/user/createUser.do'"><strong>Sign up</strong></button>
+                   	</c:if>
+            	        <c:if test="${sessionScope.id != null}">
+                           <button class="btn btn-default" type="button" onclick="location.href='${context}/work/user/updateUser.do'"><strong>정보수정</strong></button>
+                           <button class="btn btn-default" type="button" onclick="location.href='${context}/work/user/logout.do'"><strong>LOGOUT</strong></button>
+                          
+                   	</c:if>
+                   	<c:if test="${sessionScope.id != null && sessionScope.grade == 'A'}">
+                           <button class="btn btn-default" type="button" onclick="location.href='${context}/work/product/retrieveProductListForManage.do'"><strong>재고관리</strong></button>
+               			<button class="btn btn-default" type="button" onclick="location.href='${context}/work/sell/retrieveStatisticsForProduct.do'"><strong>매출통계</strong></button>
+               			<button class="btn btn-default" type="button" onclick="location.href='${context}/work/product/retrieveStatisticsForStock.do?productCategoryCd=P'"><strong>재고현황</strong></button>
+               		</c:if>
+                  
+               
+					  </div>
+			 
+ 					<!-- 드롭다운 버튼 부분 종료 -->
+ 					</div>
+			  
+			  
+         		   <!-- 드롭다운 부분 -->
+			  <div class="dropdown">
+			  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-chat-left-dots-fill" viewBox="0 0 16 16">
+			  <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4.414a1 1 0 0 0-.707.293L.854 15.146A.5.5 0 0 1 0 14.793V2zm5 4a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+			</svg>
+			<figcaption class=header-icon-text>
+			    	게시판
+			  </figcaption>
+			  </button>
+			  </a>
+			  
+			  <!-- 드롭다운메뉴 -->
+			    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+			  	<a class="dropdown-item" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/board/retrieveBoardList.do')">공지사항</a>
+			  	 <a class="dropdown-item" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/board/retrieveBoardList2.do')">자유게시판</a>
+                  <a class="dropdown-item" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/board/retrieveBoardList3.do')">커뮤니티게시판</a>
+                  <a class="dropdown-item" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/board/retrieveBoardList4.do')">상담신청게시판</a>
+			  </div>
+			  </div>
+			 
+ 					<!-- 드롭다운 버튼 부분 종료 -->
+			  
+			  
+			  <button type="button" class="btn btn-primary header-icon-wrap">
+			  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-gift-fill" viewBox="0 0 16 16">
+			  <path d="M3 2.5a2.5 2.5 0 0 1 5 0 2.5 2.5 0 0 1 5 0v.006c0 .07 0 .27-.038.494H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h2.038A2.968 2.968 0 0 1 3 2.506V2.5zm1.068.5H7v-.5a1.5 1.5 0 1 0-3 0c0 .085.002.274.045.43a.522.522 0 0 0 .023.07zM9 3h2.932a.56.56 0 0 0 .023-.07c.043-.156.045-.345.045-.43a1.5 1.5 0 0 0-3 0V3zm6 4v7.5a1.5 1.5 0 0 1-1.5 1.5H9V7h6zM2.5 16A1.5 1.5 0 0 1 1 14.5V7h6v9H2.5z"/>
+			</svg>
+			  <figcaption class=header-icon-text>
+			    	주문조회
+			  </figcaption>
+			  </button>
+			  
+			  
+			   <button type="button" class="btn btn-primary header-icon-wrap">
+			  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+			  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+			</svg>
+			<figcaption class=header-icon-text>
+			    	장바구니
+			  </figcaption>
+			   </button>
+			</div>
+			            </div>
+			        </div>
+			    </div>
     <!-- Topbar End -->
 
 
