@@ -3,16 +3,68 @@
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var ="context"><%=request.getContextPath()%></c:set>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
-<%@ include file="../common/header.jsp" %>
+   <script src="${context}/js/jquery-2.2.4.min.js"></script>
+    <script src="${context}/js/jquery.cookie.js"></script>
+    <script>
+        $(function(){
+            if($.cookie('popup') == 'none'){
+                $("#cookie").hide();
+            }
+            var $expiresChk = $("#expiresChk");
+            $(".closeBtn").on("click", closePop );
+            function closePop(){
+                if($expiresChk.is(":checked")){
+                    $.cookie("popup","none",{expires:3, path:"/"});
+                }
+                $("#cookie").fadeOut("fast");
+            }
+        });
+    </script>
+<style>
+#cookie{
+	width: 700px;
+	height: 500px;
+	position: absolute;
+	z-index: 99999;
+	top: 50px;
+	left: 50px;
+}
+#cookie img{
+	width: 100%;
+	height: 100%;
+}
+.closeWrap{
+	text-align: right;
+	background: #000;
+	vertical-align: middle;
+	color: #fff;
+	font-weight: bold;
+	padding-right: 10px;
+}
+.closeWrap input{
+	vertical-align: middle;
+}
+</style>
+
+<%@ include file="../common/header_userc.jsp" %>
+  <div id="cookie">
+        <img src="${context}/img/product-6.jpg" alt="공지사항이미지" width="300px" height="300px"> 
+        <p class="closeWrap">
+            <input type="checkbox" name="expiresChk" id="expiresChk">
+            <label for="expiresChk">3일 동안 이 창 열지 않기</label>
+            <button class="closeBtn">닫기</button>
+        </p>
+    </div>
+		
 <c:set var="loginUrl">${context}/user/login.jsp</c:set>
     <!-- Carousel Start -->
     <div class="container-fluid mb-3">
         <div class="row px-xl-5">
         <div class="col-lg-2 main-carousel">
                 <div class="product-offer mb-30" style="height: 430px;">
-                    <img class="img-fluid" src="/Stationery//img//offer-1.jpg" alt="">
+                    <img class="img-fluid" src="${context}/img//offer-1.jpg" alt="">
                     <div class="offer-text">
                         <h6 class="text-white text-uppercase">Save 20%</h6>
                         <h3 class="text-white mb-3">Special Offer</h3>
@@ -627,4 +679,6 @@
         </div>
     </div>
     <!-- Vendor End -->
+    
+  
 <%@ include file="../common/footer.jsp"%>

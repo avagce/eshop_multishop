@@ -36,6 +36,10 @@
 	    	dateFormat: 'yy-mm-dd',
 	    	changeMonth: true,
 	        changeYear: true,
+	        nextText: true,
+	        prevText: true,
+	        showOtherMonths : true,
+	        language : "ko",
 	        yearRange: "1980:2015"
 	    });
 
@@ -230,7 +234,7 @@
 			<div class="form-group" style="display: flex; justify-content: center; flex-wrap: wrap;">
 				<label for="birth" class="control-label col-md-2"><b>생년월일</b></label>
 				<div class="col-md-6">
-					<input class="form-control" type="text" id="birth" name="birth" required="required" maxlength="10"/>
+					<input class="form-control" type="text" id="birth" name="birth" required="required" maxlength="10" autocomplete="off"/>
 				</div>
 			</div>
 
