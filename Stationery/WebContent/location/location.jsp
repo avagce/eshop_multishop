@@ -48,15 +48,35 @@
 	<div id="jumbotron" class="container" >
 		<div class="jumbotron jumbotron-info" style="background-color: lightgray" >
 			<div class="container-fluid" >
-                    <div id="map" ></div>
+                    <div id="map" ></div><br><br>
                     <div class="row mt-3" style="width:100%">
                         <div class="col-md-12 lctx" >
-                            <h3>GKYK mall 오시는 길</h3>
+                           
+                        <img alt="" src="${context}/img/gps.svg" class="mobile-link"><hr><br>
+                            <h3>GKYK mall 오시는 길<br><br></h3>
                             <p>
                                	 이메일 : GKYKmall@gmail.com<br>
                                	 전화번호 : 02-1234-5678<br>
-                              	  주소 : 행복시 행복동 123번지 2층
-                            </p>
+                              	  주소 : 행복시 행복동 123번지 2층<br><hr><br>
+                              	  
+                              	  [버스 이용시]
+									가든5 하차: 402
+									장지역 하차:302, 303, 320, 360, 363, 3418, 3423, 9403
+									<br>
+									[지하철 이용시]
+									장지역 하차(8호선): 4번출구(가든5방향) - TOOL관(연결통로)
+									(분당, 수서방면에서 오실때 복정역에서 환승- 장지역 하차)
+									<br>
+									[자가용 이용시]
+									잠실방면에서 오실경우
+									잠실역-송파대로-성남방면 직진- 장지역-우회전-가든5
+									(잠실에서 뚝방길 이용하시면 편리합니다)
+									성남방면에서 오실 경우
+									성남대로-복정역-송파, 잠실대교방면 직진-장지역-좌회전-가든5
+									<br><hr><br>
+									고객센터 : 1577-3355<br>
+									업무시간 : 09시 ~ 18시(명절당일 휴무)<br>
+									Email : GKYKmall@gmail.com
                         </div>
                     </div>
                 </div>
