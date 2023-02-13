@@ -5,7 +5,40 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%@ include file="../common/header.jsp" %>
+	<script src="${context}/js/jquery.cookie.js"></script>
+	<script src="${context}/js/jquery-2.2.4.min.js"></script>
+	  <script>
+			$(function(){
+			    //쿠키("popup")의 값이 'none'이면
+			    //id값이 'notice_wrap'인 요소를 숨깁니다.
+			    if($.cookie('popup') == 'none'){
+			        $("#notice_wrap").hide();
+			    }
+			    //class 값이 'closeBtn'인 요소를 클릭하면
+			    //체크박스의 체크 유무에 따라 
+			    //쿠키를 생성하여 3일간만 저장합니다.
+			    var $expiresChk = $("#expiresChk");
+			    $(".closeBtn").on("click", closePop );
+			    function closePop(){
+			        if($expiresChk.is(":checked")){
+			            $.cookie("popup","none",{expires:3, path:"/"});
+			        }
+			        $("#notice_wrap").fadeOut("fast");
+			    }
+			});
+		</script>
+<%@ include file="../common/header_userc.jsp" %>
+		
+<!-- cookie start -->
+	<div id="notice_wrap">
+        <img src="images/sky.jpg" alt="공지사항이미지" width="300px" height="300px"> 
+        <p class="closeWrap">
+            <input type="checkbox" name="expiresChk" id="expiresChk">
+            <label for="expiresChk">3일 동안 이 창 열지 않기</label>
+            <button class="closeBtn">닫기</button>
+        </p>
+    </div>
+    <!-- cookie end -->
 <c:set var="loginUrl">${context}/user/login.jsp</c:set>
     <!-- Carousel Start -->
     <div class="container-fluid mb-3">
@@ -627,4 +660,6 @@
         </div>
     </div>
     <!-- Vendor End -->
+    
+  
 <%@ include file="../common/footer.jsp"%>
