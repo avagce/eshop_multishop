@@ -1,6 +1,7 @@
 package work.iamport;
 
 import java.io.Reader;
+import java.util.Map;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -21,6 +22,11 @@ public class PaymentDAO {
 	
 	@Autowired
 	private SqlSessionTemplate sqlSession;
+	
+	public void insertPaymentSuccess(Map<String, String> vodata) {
+
+	sqlSession.insert("payment.insertPaymentSuccess",vodata);
+}
 	/*
 	private static SqlSessionFactory sqlMapper;
 	private static SqlSessionFactory getInstance() {
@@ -37,11 +43,11 @@ public class PaymentDAO {
 		return sqlMapper;
 	}
 	*/
-	public void insertPaymentSuccess(PaymentVO vo) {
+	/*public void insertPaymentSuccess(PaymentVO vo) {
 		/*sqlMapper = getInstance();
 		SqlSession session = sqlMapper.openSession();
 		session.insert("payment.insertPaymentSuccess",vo);
 		session.commit();*/
-		sqlSession.insert("payment.insertPaymentSuccess",vo);
-	}
+		/*sqlSession.insert("payment.insertPaymentSuccess",vo);
+	}*/
 }

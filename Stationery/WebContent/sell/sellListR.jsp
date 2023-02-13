@@ -84,6 +84,23 @@
 		}
     }
 
+    function dateFormat(date) {
+        let month = date.getMonth() + 1;
+        let day = date.getDate();
+        let hour = date.getHours();
+        let minute = date.getMinutes();
+        let second = date.getSeconds();
+
+        month = month >= 10 ? month : '0' + month;
+        day = day >= 10 ? day : '0' + day;
+        hour = hour >= 10 ? hour : '0' + hour;
+        minute = minute >= 10 ? minute : '0' + minute;
+        second = second >= 10 ? second : '0' + second;
+
+        return date.getFullYear() + '-' + month + '-' + day;
+       // + ' ' + hour + ':' + minute + ':' + second;
+	}
+    
     function fn_finalBuy(paramSellCode, paramSellCount, paramProductCode,paramProductName,paramSellPrice){
     	
     	var email = "${userparam.email}";
@@ -91,7 +108,7 @@
 		var phonenum = "${userparam.phoneNum}";
 		var address = "${userparam.address}";
 		var postnum = "${userparam.postNum}";
-    	
+		let today = new Date();
     	
 		if(confirm("결제하시겠습니까?")){
 			//location.href = "${context}/work/sell/updateFinalBuy.do?sellCode=" + paramSellCode + "&sellCount=" + paramSellCount + "&productCode=" + paramProductCode;
@@ -113,28 +130,31 @@
 		        buyer_tel : phonenum,
 		        buyer_addr :address,
 		        buyer_postcode : postnum,
-		        m_redirect_url :"/paymentDone.do"
+		        m_redirect_url :"${context}/work/iamport/paymentDone.do"
 		    }, function(rsp) {
 		        if ( rsp.success ) {
 		        	 var paymentInfo = {
 		            		  imp_uid : rsp.imp_uid,
 		            		  merchant_uid : rsp.merchant_uid,
-		            		  paid_amount : rsp.paid_amound,
+		            		  paid_amount : rsp.paid_amount,
 		            		  apply_num : rsp.apply_num,
-		            		  paid_at : new Date()
+		            		  paid_at : dateFormat(today)
 		              };
 		    		//location.href = "${context}/work/sell/updateFinalBuy.do?sellCode=" + paramSellCode + "&sellCount=" + paramSellCount + "&productCode=" + paramProductCode
 		        	 $.ajax({
-		            	  url :  "/iamport/paymentProcess.do",
-		            	  method : "POST",
-		            	  contentTpye : "application/json",
+		            	  url :  "${context}/work/iamport/paymentProcess.do",
+		            	  //method : "POST",
+		            	   type:"POST", 	  
+		            	  contentType: "application/json",
 		            	  data :  JSON.stringify(paymentInfo),
 		            	  success : function (data, textStatus) {
 		            		  console.log(paymentInfo);
-		            		  location.href = "/iamport/paymentDone.do";
-							
+		            		  location.href = "${context}/work/sell/updateFinalBuy.do?sellCode=" + paramSellCode + "&sellCount=" + paramSellCount + "&productCode=" + paramProductCode;
+		            		  //"/paymentDone.do";
+							//"/paymentProcess.do",
 		            	  },
 		            	  error : function(e){
+		            		  console.log(paymentInfo);
 		            		  console.log(e);
 		            	  
 						}
