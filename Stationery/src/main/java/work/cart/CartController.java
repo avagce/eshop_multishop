@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import work.product.ProductService;
+import work.user.UserBean;
 import work.user.UserService;
 
 @Controller
@@ -111,6 +112,10 @@ public class CartController {
 		String userCode = (String)session.getAttribute("userCode");
 
 		Map<String, String> cartParam = new HashMap<String, String>();
+		
+		UserBean userparam = userService.retrieveUser2(userCode);
+		
+		mv.addObject("userparam", userparam);
 
 		cartParam.put("userCode", userCode);
 
