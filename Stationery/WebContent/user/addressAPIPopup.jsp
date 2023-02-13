@@ -70,6 +70,12 @@
 		window.close();
 	}
 </script>
+<style type="text/css">
+	#searchForm{
+	    display: flex;
+   		flex-direction: column;
+	}
+</style>
 </head>
 <div class="container" style="margin-top:25px;">
 	<div id="memberSearchDiv" class="text-center">
