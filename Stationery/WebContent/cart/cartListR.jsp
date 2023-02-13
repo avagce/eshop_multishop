@@ -40,44 +40,92 @@
         $('#dataTables-example').dataTable();
 
     });
+    
+    function dateFormat(date) {
+        let month = date.getMonth() + 1;
+        let day = date.getDate();
+        let hour = date.getHours();
+        let minute = date.getMinutes();
+        let second = date.getSeconds();
 
+        month = month >= 10 ? month : '0' + month;
+        day = day >= 10 ? day : '0' + day;
+        hour = hour >= 10 ? hour : '0' + hour;
+        minute = minute >= 10 ? minute : '0' + minute;
+        second = second >= 10 ? second : '0' + second;
+
+        return date.getFullYear() + '-' + month + '-' + day;
+       // + ' ' + hour + ':' + minute + ':' + second;
+	}
+    
     function fn_buy(paramSellCode, paramSellCount, paramProductCode,paramProductName,paramSellPrice){
+    	var email = "${userparam.email}";
+		var name = "${userparam.name}";
+		var phonenum = "${userparam.phoneNum}";
+		var address = "${userparam.address}";
+		var postnum = "${userparam.postNum}";
+		let today = new Date();
+    	
 		if(confirm("결제하시겠습니까?")){
 			//location.href = "${context}/work/sell/updateFinalBuy.do?sellCode=" + paramSellCode + "&sellCount=" + paramSellCount + "&productCode=" + paramProductCode;
 			
 			//========================================
-			
+		
+				
+				
 			var IMP = window.IMP;  
 		    IMP.init("imp27037718");  // IMP.init( ) 메서드 가맹점코드 수정 바랍니다.
 		    IMP.request_pay({
 		        pg : 'html5_inicis', // version 1.1.0부터 지원.
 		        pay_method : 'card',
 		        merchant_uid : 'merchant_' + new Date().getTime(),
-		        name : '주문명:'+paramProductName,
+		        name : paramProductName,
 		        amount : paramSellPrice,
-		        buyer_email : 'iamport@siot.do',
-		        buyer_name : '구매자이름',
-		        buyer_tel : '010-1234-5678',
-		        buyer_addr : '서울특별시 강남구 삼성동',
-		        buyer_postcode : '123-456',
-		        m_redirect_url : "${context}/work/sell/updateFinalBuy.do?sellCode=" + paramSellCode + "&sellCount=" + paramSellCount + "&productCode=" + paramProductCode
+		        buyer_email :email,
+		        buyer_name : name,
+		        buyer_tel : phonenum,
+		        buyer_addr :address,
+		        buyer_postcode : postnum,
+		        m_redirect_url :"${context}/work/iamport/paymentDone.do"
 		    }, function(rsp) {
 		        if ( rsp.success ) {
-		            var msg = '결제가 완료되었습니다.';
-		            msg += '고유ID : ' + rsp.imp_uid;
-		            msg += '상점 거래ID : ' + rsp.merchant_uid;
-		            msg += '결제 금액 : ' + rsp.paid_amount;
-		            msg += '카드 승인번호 : ' + rsp.apply_num;
-			        alert(msg);
-		    		location.href = "${context}/work/sell/updateFinalBuy.do?sellCode=" + paramSellCode + "&sellCount=" + paramSellCount + "&productCode=" + paramProductCode
+		        	 var paymentInfo = {
+		            		  imp_uid : rsp.imp_uid,
+		            		  merchant_uid : rsp.merchant_uid,
+		            		  paid_amount : rsp.paid_amount,
+		            		  apply_num : rsp.apply_num,
+		            		  paid_at : dateFormat(today)
+		              };
+		    		//location.href = "${context}/work/sell/updateFinalBuy.do?sellCode=" + paramSellCode + "&sellCount=" + paramSellCount + "&productCode=" + paramProductCode
+		        	 $.ajax({
+		            	  url :  "${context}/work/iamport/paymentProcess.do",
+		            	  //method : "POST",
+		            	   type:"POST", 	  
+		            	  contentType: "application/json",
+		            	  data :  JSON.stringify(paymentInfo),
+		            	  success : function (data, textStatus) {
+		            		  console.log(paymentInfo);
+		            		  location.href = "${context}/work/sell/updateFinalBuy.do?sellCode=" + paramSellCode + "&sellCount=" + paramSellCount + "&productCode=" + paramProductCode;
+		            		  //"/paymentDone.do";
+							//"/paymentProcess.do",
+		            	  },
+		            	  error : function(e){
+		            		  console.log(paymentInfo);
+		            		  console.log(e);
+		            	  
+						}
+		              });
 		        } else {
-		            var msg = '결제에 실패하였습니다.';
-		            msg += '에러내용 : ' + rsp.error_msg;
-			        alert(msg);
+		        	 alert("결제 실패:"+rsp.error_msg);
 		        }
 		    });	
     	}
     }
+			  
+		  
+
+		
+		
 
     function fn_delete(paramCartCode, paramProductCode, paramSellCount){
     	if(confirm("정말로 삭제하시겠습니까?")){
