@@ -8,21 +8,7 @@
 		<meta name="description" content="userC.jsp">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>GKYK mall Sign Up</title>
-	<link href="${context}/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
-	<link href="${context}/css/plugins/social-buttons.css" rel="stylesheet">
-	<link href="${context}/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<link href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" rel="stylesheet" >
-    <link href="${context}/css/process.css" rel="stylesheet">
-<script src="${context}/js/jquery-3.5.1.min.js"></script>
-
-	<script src="${context}/js/jquery-1.9.1.js"></script>
-	<script src="${context}/js/jquery.form.js"></script>
-    <script src="${context}/js/plugins/metisMenu/metisMenu.min.js"></script>
-
-	<script src="${context}/js/plugins/dataTables/jquery.dataTables.js"></script>
-    <script src="${context}/js/plugins/dataTables/dataTables.bootstrap.js"></script>
-
-    <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+	
 	<script type="text/javascript">
 
 	var dong;
@@ -289,7 +275,7 @@
 				<button type="button" class="btn btn-success" onclick="fn_back()" style="width: 100%; height: 50px; border-radius: 10px; margin-top: 5%; ">뒤로가기</button>
 			</div>
 			<div class="col-md-3">
-				<button class="btn btn-primary" type="button" name="btnSubmit" id="btnSubmit" onclick="fn_save()" style="width: 100%; height: 50px; border-radius: 10px; margin-top: 5%;">등록하기</button>
+				<button class="btn btn-info" type="button" name="btnSubmit" id="btnSubmit" onclick="fn_save()" style="width: 100%; height: 50px; border-radius: 10px; margin-top: 5%; ">등록하기</button>
 			</div>
 		</div>
 	</form>
