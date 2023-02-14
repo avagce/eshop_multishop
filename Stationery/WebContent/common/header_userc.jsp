@@ -87,6 +87,11 @@
                             <button class="btn btn-default" type="button" onclick="location.href='${context}/work/cart/retrieveCartList.do'"><strong>장바구니</strong></button>
                             <button class="btn btn-default" type="button" onclick="location.href='${context}/work/sell/retrieveBuyList.do'"><strong>구입목록</strong></button>
                     	</c:if>
+                    	<c:if test="${sessionScope.id != null && sessionScope.grade == 'A'}">
+							<button class="btn btn-default" type="button" onclick="location.href='${context}/work/product/retrieveProductListForManage.do'"><strong>재고관리</strong></button>
+							<button class="btn btn-default" type="button" onclick="location.href='${context}/work/sell/retrieveStatisticsForProduct.do'"><strong>매출통계</strong></button>
+							<button class="btn btn-default" type="button" onclick="location.href='${context}/work/product/retrieveStatisticsForStock.do?productCategoryCd=P'"><strong>재고현황</strong></button>
+						</c:if>
                     </div>
                 </div>
                 <div class="d-inline-flex align-items-center d-block d-lg-none">
