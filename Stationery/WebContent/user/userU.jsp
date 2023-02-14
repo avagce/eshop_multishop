@@ -7,7 +7,7 @@
 <head>
 		<meta name="description" content="userU.jsp">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Insert title here</title>
+	<title>GKYK mall Sign Up</title>
 	<link href="${context}/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
 	<link href="${context}/css/plugins/social-buttons.css" rel="stylesheet">
 	<link href="${context}/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">

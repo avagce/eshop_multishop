@@ -4,7 +4,7 @@
 <c:set var ="context"><%=request.getContextPath()%></c:set>
 <!DOCTYPE html>
 <html lang="ko">
-
+<title>Welcome GKYK mall</title>
    <script src="${context}/js/jquery-2.2.4.min.js"></script>
     <script src="${context}/js/jquery.cookie.js"></script>
     <script>
