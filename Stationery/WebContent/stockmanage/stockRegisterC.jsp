@@ -159,12 +159,12 @@
 		</div>
 		<br><br><br>
 		<div class="form-group" style="display: flex; justify-content: center; text-align: center;">
-			<div class="col-md-3 col-md-offset-8">
-				<button type="button" class="btn btn-success" onclick="fn_save()">등록하기</button>
-			</div>	
 			<div class="col-md-3">
-				<button type="button" class="btn btn-success" onclick="fn_back()">뒤로가기</button>
+				<button type="button" class="btn btn-success" onclick="fn_back()" style="width: 100%; height: 50px; border-radius: 10px; margin-top: 5%;">뒤로가기</button>
 			</div>
+			<div class="col-md-3 col-md-offset-8">
+				<button type="button" class="btn btn-info" onclick="fn_save()" style="width: 100%; height: 50px; border-radius: 10px; margin-top: 5%;">등록하기</button>
+			</div>	
 		</div>
 	</form>
 
