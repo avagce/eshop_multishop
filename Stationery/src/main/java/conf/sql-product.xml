@@ -206,7 +206,7 @@
 			  AND PRODUCT_CATEGORY_CD = 'R'
 			  ORDER BY PRODUCT_REG_DATE DESC
 			) T
-			WHERE ROWNUM <= 2
+			WHERE ROWNUM <= 10
 			]]>
 	</select>
 	

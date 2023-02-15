@@ -271,8 +271,8 @@
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="/Stationery//img//product-5.jpg" alt="">
+                    <div class="product-img position-relative overflow-hidden" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${officeUrl}')">
+                        <img class="img-fluid w-100" src="${context}/dressImg/${dsDressList[0].PRODUCT_IMAGE}" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                             <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -298,8 +298,8 @@
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="/Stationery//img//product-6.jpg" alt="">
+                    <div class="product-img position-relative overflow-hidden" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${officeUrl}')">
+                        <img class="img-fluid w-100" src="${context}/dressImg/${dsDressList[1].PRODUCT_IMAGE}" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                             <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -325,8 +325,8 @@
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="/Stationery//img//product-7.jpg" alt="">
+                    <div class="product-img position-relative overflow-hidden" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${officeUrl}')">
+                        <img class="img-fluid w-100" src="${context}/dressImg/${dsDressList[2].PRODUCT_IMAGE}" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                             <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -352,8 +352,8 @@
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="/Stationery//img//product-8.jpg" alt="">
+                    <div class="product-img position-relative overflow-hidden"onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${officeUrl}')">
+                        <img class="img-fluid w-100" src="${context}/dressImg/${dsDressList[3].PRODUCT_IMAGE}" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                             <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
