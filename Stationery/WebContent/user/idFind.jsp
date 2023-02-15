@@ -51,7 +51,7 @@
 </script>
 </head>
 <body>
-	<jsp:include page="../common/header.jsp"></jsp:include>
+	<jsp:include page="../common/header_userc.jsp"></jsp:include>
 	<div class="container">
 		<div class="jumbotron jumbotron-info" style="background-color: lightgray;">
 			<h1><font color="black"><strong>ID찾기</strong>&nbsp;<span class="glyphicon glyphicon glyphicon-pencil"></span></font></h1>

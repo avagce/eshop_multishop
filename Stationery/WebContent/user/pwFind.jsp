@@ -8,8 +8,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="description" content="pwFind.jsp">
 <title>Insert title here</title>
-<link href="../css/bootstrap.min.css" rel="stylesheet">
-<link href="../css/bootstrap-theme.css" rel="stylesheet">
 <link href="../css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
 <link href="../css/plugins/social-buttons.css" rel="stylesheet">
 <link href="../font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -53,7 +51,7 @@
 </script>
 </head>
 <body>
-	<jsp:include page="../common/header.jsp"></jsp:include>
+	<jsp:include page="../common/header_userc.jsp"></jsp:include>
 	<div class="container">
 		<div class="jumbotron jumbotron-info" style="background-color: lightgray;">
 			<h1><font color="black"><strong>PW찾기</strong>&nbsp;<span class="glyphicon glyphicon glyphicon-pencil"></span></font></h1>

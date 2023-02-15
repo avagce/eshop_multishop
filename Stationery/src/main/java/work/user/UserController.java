@@ -113,7 +113,7 @@ public class UserController implements HttpSessionListener{
 					+ "<p>해당하는 ID가 존재하지 않습니다</p>"
 					+ "</div>";
 		}else{
-			checkMsg = "<div class='col-md-5 col-md-offset-2'>"
+			checkMsg = "<div class='col-md-6 col-md-offset-2'>"
 					+ "<p>회원님의 ID는 <font color='red'><strong>" + id + "</strong></font>입니다."
 					+ " <a href='login.jsp'>로그인 페이지로 이동</a>|<a href='pwFind.jsp'>PW찾기</a></p>"
 					+ "</div>";
@@ -142,7 +142,7 @@ public class UserController implements HttpSessionListener{
 					+ "<p>해당하는 ID가 존재하지 않습니다</p>"
 					+ "</div>";
 		}else{
-			checkMsg = "<div class='col-md-4 col-md-offset-2'>"
+			checkMsg = "<div class='col-md-5 col-md-offset-2'>"
 					+ "<p>회원님의 PW는 <font color='blue'><strong>" + pw + "</strong></font>입니다."
 					+ " <a href='login.jsp'>로그인 페이지로 이동</a></p>"
 					+ "</div>";
