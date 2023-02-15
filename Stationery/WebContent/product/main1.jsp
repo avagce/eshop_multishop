@@ -173,9 +173,9 @@
                         </div>
                     </div>
                     <div class="text-center py-4">
-                        <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
+                        <a class="h6 text-decoration-none text-truncate" href="">${dsShirtsList[0].PRODUCT_NAME }</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                            <h5>￦${dsShirtsList[0].PRODUCT_UNIT_PRICE }</h5><h6 class="text-muted ml-2"><del>￦${dsShirtsList[0].PRODUCT_UNIT_PRICE }</del></h6>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mb-1">
                             <small class="fa fa-star text-primary mr-1"></small>
@@ -200,9 +200,9 @@
                         </div>
                     </div>
                     <div class="text-center py-4">
-                        <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
+                        <a class="h6 text-decoration-none text-truncate" href="">${dsShirtsList[1].PRODUCT_NAME }</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                            <h5>￦${dsShirtsList[1].PRODUCT_UNIT_PRICE }</h5><h6 class="text-muted ml-2"><del>￦${dsShirtsList[1].PRODUCT_UNIT_PRICE }</del></h6>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mb-1">
                             <small class="fa fa-star text-primary mr-1"></small>
@@ -227,9 +227,9 @@
                         </div>
                     </div>
                     <div class="text-center py-4">
-                        <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
+                        <a class="h6 text-decoration-none text-truncate" href="">${dsShirtsList[4].PRODUCT_NAME }</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                            <h5>￦${dsShirtsList[4].PRODUCT_UNIT_PRICE }</h5><h6 class="text-muted ml-2"><del>￦${dsShirtsList[4].PRODUCT_UNIT_PRICE }</del></h6>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mb-1">
                             <small class="fa fa-star text-primary mr-1"></small>
@@ -254,9 +254,9 @@
                         </div>
                     </div>
                     <div class="text-center py-4">
-                        <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
+                        <a class="h6 text-decoration-none text-truncate" href="">${dsShirtsList[5].PRODUCT_NAME }</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                            <h5>￦${dsShirtsList[5].PRODUCT_UNIT_PRICE }</h5><h6 class="text-muted ml-2"><del>￦${dsShirtsList[5].PRODUCT_UNIT_PRICE }</del></h6>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mb-1">
                             <small class="fa fa-star text-primary mr-1"></small>
@@ -286,9 +286,9 @@
                         </div>
                     </div>
                     <div class="text-center py-4">
-                        <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
+                        <a class="h6 text-decoration-none text-truncate" href="">${dsDressList[0].PRODUCT_NAME }</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                            <h5>￦${dsDressList[0].PRODUCT_UNIT_PRICE }</h5><h6 class="text-muted ml-2"><del>￦${dsDressList[0].PRODUCT_UNIT_PRICE }</del></h6>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mb-1">
                             <small class="fa fa-star text-primary mr-1"></small>
@@ -313,9 +313,9 @@
                         </div>
                     </div>
                     <div class="text-center py-4">
-                        <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
+                        <a class="h6 text-decoration-none text-truncate" href="">${dsDressList[1].PRODUCT_NAME }</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                            <h5>￦${dsDressList[1].PRODUCT_UNIT_PRICE }</h5><h6 class="text-muted ml-2"><del>￦${dsDressList[1].PRODUCT_UNIT_PRICE }</del></h6>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mb-1">
                             <small class="fa fa-star text-primary mr-1"></small>
@@ -340,9 +340,9 @@
                         </div>
                     </div>
                     <div class="text-center py-4">
-                        <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
+                        <a class="h6 text-decoration-none text-truncate" href="">${dsDressList[2].PRODUCT_NAME }</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                            <h5>￦${dsDressList[2].PRODUCT_UNIT_PRICE }</h5><h6 class="text-muted ml-2"><del>￦${dsDressList[2].PRODUCT_UNIT_PRICE }</del></h6>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mb-1">
                             <small class="fa fa-star text-primary mr-1"></small>
@@ -367,9 +367,9 @@
                         </div>
                     </div>
                     <div class="text-center py-4">
-                        <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
+                        <a class="h6 text-decoration-none text-truncate" href="">${dsDressList[3].PRODUCT_NAME }</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                            <h5>￦${dsDressList[3].PRODUCT_UNIT_PRICE }</h5><h6 class="text-muted ml-2"><del>￦${dsDressList[3].PRODUCT_UNIT_PRICE }</del></h6>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mb-1">
                             <small class="fa fa-star text-primary mr-1"></small>
