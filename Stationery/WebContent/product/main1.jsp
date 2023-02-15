@@ -50,7 +50,7 @@
 
 <%@ include file="../common/header_userc.jsp" %>
   <div id="cookie">
-        <img src="${context}/img/product-6.jpg" alt="공지사항이미지" width="300px" height="300px"> 
+        <img src="${context}/img/cookieImg.jpg" alt="공지사항이미지" width="300px" height="300px"> 
         <p class="closeWrap">
             <input type="checkbox" name="expiresChk" id="expiresChk">
             <label for="expiresChk">3일 동안 이 창 열지 않기</label>
@@ -71,7 +71,7 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item position-relative active" style="height: 430px;">
-                            <img class="position-absolute w-100 h-100" src="/stationery//img/carousel-1.jpg" style="object-fit: cover;">
+                            <img class="position-absolute w-100 h-100" src="/Stationery//img//carousel-1.jpg" style="object-fit: cover;">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
                                     <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Men Fashion</h1>
@@ -81,7 +81,7 @@
                             </div>
                         </div>
                         <div class="carousel-item position-relative" style="height: 430px;">
-                            <img class="position-absolute w-100 h-100" src="/stationery//img/carousel-2.jpg" style="object-fit: cover;">
+                            <img class="position-absolute w-100 h-100" src="/Stationery//img//carousel-2.jpg" style="object-fit: cover;">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
                                     <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Women Fashion</h1>
@@ -91,7 +91,7 @@
                             </div>
                         </div>
                         <div class="carousel-item position-relative" style="height: 430px;">
-                            <img class="position-absolute w-100 h-100" src="/stationery//img/carousel-3.jpg" style="object-fit: cover;">
+                            <img class="position-absolute w-100 h-100" src="/Stationery//img//carousel-3.jpg" style="object-fit: cover;">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
                                     <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Kids Fashion</h1>
@@ -105,7 +105,7 @@
             </div>
             <div class="col-lg-4">
                 <div class="product-offer mb-30" style="height: 200px;">
-                    <img class="img-fluid" src="/stationery//img/offer-1.jpg" alt="">
+                    <img class="img-fluid" src="/Stationery//img//offer-1.jpg" alt="">
                     <div class="offer-text">
                         <h6 class="text-white text-uppercase">Save 20%</h6>
                         <h3 class="text-white mb-3">Special Offer</h3>
@@ -113,7 +113,7 @@
                     </div>
                 </div>
                 <div class="product-offer mb-30" style="height: 200px;">
-                    <img class="img-fluid" src="/stationery//img/offer-2.jpg" alt="">
+                    <img class="img-fluid" src="/Stationery//img//offer-2.jpg" alt="">
                     <div class="offer-text">
                         <h6 class="text-white text-uppercase">Save 20%</h6>
                         <h3 class="text-white mb-3">Special Offer</h3>
@@ -159,11 +159,11 @@
 
     <!-- Products Start -->
     <div class="container-fluid pt-5 pb-3">
-        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Featured Products</span></h2>
+        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Shirts Products</span></h2>
         <div class="row px-xl-5">
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${officeUrl}')">
+                    <div class="product-img position-relative overflow-hidden" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/product/retrieveProductList.do?category=${dsProductList[6].PRODUCT_CATEGORY_CD}')">
                         <img class="img-fluid w-100" src="${context}/shirtsImg/${dsShirtsList[0].PRODUCT_IMAGE}" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
@@ -190,7 +190,7 @@
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${officeUrl}')">
+                    <div class="product-img position-relative overflow-hidden" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/product/retrieveProductList.do?category=${dsProductList[6].PRODUCT_CATEGORY_CD}')">
                         <img class="img-fluid w-100" src="${context}/shirtsImg/${dsShirtsList[1].PRODUCT_IMAGE}" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
@@ -217,7 +217,7 @@
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${officeUrl}')">
+                    <div class="product-img position-relative overflow-hidden" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/product/retrieveProductList.do?category=${dsProductList[6].PRODUCT_CATEGORY_CD}')">
                         <img class="img-fluid w-100" src="${context}/shirtsImg/${dsShirtsList[4].PRODUCT_IMAGE}" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
@@ -244,7 +244,7 @@
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${officeUrl}')">
+                    <div class="product-img position-relative overflow-hidden" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/product/retrieveProductList.do?category=${dsProductList[6].PRODUCT_CATEGORY_CD}')">
                         <img class="img-fluid w-100" src="${context}/shirtsImg/${dsShirtsList[5].PRODUCT_IMAGE}" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
@@ -269,9 +269,14 @@
                     </div>
                 </div>
             </div>
+        </div>	
+    </div>
+     <div class="container-fluid pt-5 pb-3">
+        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Dress Products</span></h2>
+        <div class="row px-xl-5">
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${officeUrl}')">
+                    <div class="product-img position-relative overflow-hidden" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/product/retrieveProductList.do?category=${dsProductList[5].PRODUCT_CATEGORY_CD}')">
                         <img class="img-fluid w-100" src="${context}/dressImg/${dsDressList[0].PRODUCT_IMAGE}" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
@@ -298,7 +303,7 @@
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${officeUrl}')">
+                    <div class="product-img position-relative overflow-hidden" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/product/retrieveProductList.do?category=${dsProductList[5].PRODUCT_CATEGORY_CD}')">
                         <img class="img-fluid w-100" src="${context}/dressImg/${dsDressList[1].PRODUCT_IMAGE}" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
@@ -325,7 +330,7 @@
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${officeUrl}')">
+                    <div class="product-img position-relative overflow-hidden" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/product/retrieveProductList.do?category=${dsProductList[5].PRODUCT_CATEGORY_CD}')">
                         <img class="img-fluid w-100" src="${context}/dressImg/${dsDressList[2].PRODUCT_IMAGE}" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
@@ -352,7 +357,7 @@
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden"onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${officeUrl}')">
+                    <div class="product-img position-relative overflow-hidden" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/product/retrieveProductList.do?category=${dsProductList[5].PRODUCT_CATEGORY_CD}')">
                         <img class="img-fluid w-100" src="${context}/dressImg/${dsDressList[3].PRODUCT_IMAGE}" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
@@ -378,7 +383,7 @@
                 </div>
             </div>
         </div>
-    </div>
+       </div>
     <!-- Products End -->
 
 
