@@ -136,12 +136,7 @@ public class SellController {
 		HttpSession session = request.getSession();
 
 		String userCode = (String)session.getAttribute("userCode");
-		
-		
-
-		
-		
-		
+				
 		UserBean userparam = userService.retrieveUser2(userCode);
 		
 		mv.addObject("userparam", userparam);

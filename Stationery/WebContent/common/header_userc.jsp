@@ -60,11 +60,11 @@
         <div class="row bg-secondary py-1 px-xl-5">
             <div class="col-lg-6 d-none d-lg-block">
                 <div class="d-inline-flex align-items-center h-100">
-                 <a class="text-body mr-3" onclick="location.href='${context}/user/login.jsp'" style="cursor: pointer;">About</a>
+                 <a class="text-body mr-3" onclick="location.href='${context}/about/introduction.jsp'" style="cursor: pointer;">About</a>
                     <!-- 메뉴를 누를때마다 user 의 등급과 로긴체크,로긴 됐을때 어디로 이동할지를 넣어준다 -->
                     <a class="text-body mr-3" href="">Contact</a>
                     <a class="text-body mr-3" href="">Help</a>
-                    <a class="text-body mr-3" href="">FAQs</a>
+                    <a class="text-body mr-3" onclick="location.href='${context}/faq/faq.jsp'">FAQs</a>
                     <button type="button" class="btn btn-sm btn-light dropdown-toggle text-body mr-3" data-toggle="dropdown"><strong>NOTICE</strong></button>
                   	<div class="dropdown-menu dropdown-menu-right">
 	                    <a class="text-body mr-3 dropdown-item" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/board/retrieveBoardList.do')">공지사항</a>
@@ -85,7 +85,13 @@
                             <button class="btn btn-default" type="button" onclick="location.href='${context}/work/user/updateUser.do'"><strong>정보수정</strong></button>
                             <button class="btn btn-default" type="button" onclick="location.href='${context}/work/user/logout.do'"><strong>LOGOUT</strong></button>
                             <button class="btn btn-default" type="button" onclick="location.href='${context}/work/cart/retrieveCartList.do'"><strong>장바구니</strong></button>
+                            <button class="btn btn-default" type="button" onclick="location.href='${context}/work/sell/retrieveBuyList.do'"><strong>구입목록</strong></button>
                     	</c:if>
+                    	<c:if test="${sessionScope.id != null && sessionScope.grade == 'A'}">
+							<button class="btn btn-default" type="button" onclick="location.href='${context}/work/product/retrieveProductListForManage.do'"><strong>재고관리</strong></button>
+							<button class="btn btn-default" type="button" onclick="location.href='${context}/work/sell/retrieveStatisticsForProduct.do'"><strong>매출통계</strong></button>
+							<button class="btn btn-default" type="button" onclick="location.href='${context}/work/product/retrieveStatisticsForStock.do?productCategoryCd=P'"><strong>재고현황</strong></button>
+						</c:if>
                     </div>
                 </div>
                 <div class="d-inline-flex align-items-center d-block d-lg-none">
@@ -120,7 +126,7 @@
             </div>
             <div class="col-lg-4 col-6 text-right">
                 <p class="m-0">Customer Service</p>
-                <h5 class="m-0">+012 345 6789</h5>
+                <h5 class="m-0">010 2580 2580</h5>
             </div>
         </div>
     </div>

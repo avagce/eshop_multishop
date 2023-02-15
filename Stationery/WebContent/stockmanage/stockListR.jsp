@@ -9,11 +9,10 @@
 	<meta name="description" content="stockListR.jsp">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>문구점</title>
+	<title>GKYK mall 재고관리</title>
 
 	<link href="${context}/css/bootstrap.min.css" rel="stylesheet">
-	<link href="${context}/css/bootstrap-theme.css" rel="stylesheet">
-	<link href="${context}/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
+		<link href="${context}/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
 	<link href="${context}/css/plugins/dataTables.bootstrap.css" rel="stylesheet">
 
     <link href="${context}/css/sb-admin-2.css" rel="stylesheet">
@@ -22,7 +21,6 @@
     <link href="${context}/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<script src="${context}/js/jquery-1.9.1.js"></script>
 	<script src="${context}/js/bootstrap.min.js"></script>
-
     <script src="${context}/js/plugins/metisMenu/metisMenu.min.js"></script>
 
     <script src="${context}/js/plugins/dataTables/jquery.dataTables.js"></script>
@@ -125,7 +123,7 @@
 			    <!-- /.panel -->
 			</div>
 			<!-- /.col-lg-12 -->
-			<div class="col-md-1 col-md-offset-11">
+			<div class="col-md-12">
 				<button type="button" class="btn btn-success btn-lg"  style="float:right;" onclick="fn_back()">뒤로가기</button>
 			</div>
 		</div>

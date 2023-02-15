@@ -10,10 +10,9 @@
 	<meta name="description" content="stockRegisterC.jsp">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>문구점</title>
+	<title>GKYK mall 재품등록</title>
 
 	<link href="${context}/css/bootstrap.min.css" rel="stylesheet">
-	<link href="${context}/css/bootstrap-theme.css" rel="stylesheet">
 	<link href="${context}/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
 	<link href="${context}/css/plugins/dataTables.bootstrap.css" rel="stylesheet">
 	<link href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" rel="stylesheet" >
@@ -109,16 +108,16 @@
 	<div class="container">
 	<form id="createProduct" method="post" action="${context}/work/product/createProduct.do" role="form">
 		<div class="form-horizontal">
-			<div class="form-group" style="margin-top: 5%;">
+			<div class="form-group" style="margin-top: 5%; display: flex; justify-content: center;">
 				<label for="productName" class="control-label col-md-2"><b>제품명</b></label>
-				<div class="col-md-4">
+				<div class="col-md-6">
 					<input class="form-control" type="text" name="productName" id="productName" required="required" autofocus="autofocus"/>
 				</div>
 			</div>
 
-			<div class="form-group">
+			<div class="form-group" style="display: flex; justify-content: center;">
 				<label for="productCategoryCd" class="control-label col-md-2"><b>분류</b></label>
-				<div class="col-md-2">
+				<div class="col-md-6">
 		        	<select class="form-control" id="productCategoryCd" name="productCategoryCd" required="required" onchange="fn_setProductCategoryCd()">
 						<c:forEach items="${dsCode1}" var="code1">
 							<option value="${code1.commCd}">${code1.commCdNm}</option>
@@ -127,23 +126,23 @@
 	     		</div>
 			</div>
 
-			<div class="form-group">
+			<div class="form-group" style="display: flex; justify-content: center;">
 				<label for="productUnitPrice" class="control-label col-md-2"><b>단가</b></label>
-				<div class="col-md-3">
+				<div class="col-md-6">
 					<input class="form-control" type="text" id="productUnitPrice" name="productUnitPrice" required="required" onkeydown="return fn_showKeyCode(event)"/>
 				</div>
 			</div>
 
-			<div class="form-group">
+			<div class="form-group" style="display: flex; justify-content: center;">
 				<label for="productCount" class="control-label col-md-2"><b>수량</b></label>
-				<div class="col-md-3">
+				<div class="col-md-6">
 					<input class="form-control" type="text" id="productCount" name="productCount" required="required" onkeydown="return fn_showKeyCode(event)"/>
 				</div>
 			</div>
-			<div class="form-group">
+			<div class="form-group" style="display: flex; justify-content: center;">
 				<label class="control-label col-md-2"><b>제품이미지</b></label>
-				<img id="pic" style="margin-left: 15px;" height="180px" width="150px" src="${context}/backgroundImage/defaultpic.png"><br/>
-				<div class="col-md-6">
+				<img id="pic" class="col-md-6" style="margin-left: 15px;" height="280px" width="150px" src="${context}/backgroundImage/defaultpic.png"><br/>
+				<div>
 					<input type="hidden" id="productImage" name="productImage" required="required">
 				</div>
 			</div>
@@ -151,7 +150,7 @@
 	</form>
 
 	<form id="ajaxform" action="${context}/work/product/saveFile.do" method="post" enctype="multipart/form-data" role="form">
-		<div class="form-group">
+		<div class="form-group" style="display: flex; justify-content: center;">
 		<label class="control-label col-md-2"></label>
 			<div class="col-md-6">
 				<input class="form-control" type="file" id="imageFile" name="imageFile" onchange="fn_upload()" onclick="return fn_checkCategory()"/>
@@ -159,14 +158,13 @@
 			</div>
 		</div>
 		<br><br><br>
-		<div class="form-group">
-		<label class="control-label col-md-12"></label>
-			<div class="col-md-1 col-md-offset-8">
-				<button type="button" class="btn btn-success" onclick="fn_save()">등록하기</button>
+		<div class="form-group" style="display: flex; justify-content: center; text-align: center;">
+			<div class="col-md-3">
+				<button type="button" class="btn btn-success" onclick="fn_back()" style="width: 100%; height: 50px; border-radius: 10px; margin-top: 5%;">뒤로가기</button>
 			</div>
-			<div class="col-md-1">
-				<button type="button" class="btn btn-success" onclick="fn_back()">뒤로가기</button>
-			</div>
+			<div class="col-md-3 col-md-offset-8">
+				<button type="button" class="btn btn-info" onclick="fn_save()" style="width: 100%; height: 50px; border-radius: 10px; margin-top: 5%;">등록하기</button>
+			</div>	
 		</div>
 	</form>
 

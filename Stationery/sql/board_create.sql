@@ -17,13 +17,17 @@ CREATE TABLE TB_BOARD(
 commit;
 
 
-CREATE TABLE tb_board_user AS
-
-SELECT * FROM tb_board WHERE 1=2; 
+CREATE TABLE tb_board_user AS SELECT * FROM tb_board WHERE 1=2; 
+alter table TB_BOARD_USER add constraint TB_BOARD_USER_PK primary key(BOARD_NO),
+alter table TB_BOARD_USER add constraint TB_BOARD_USER_FK_USER foreign key(USER_CODE) references TB_COM_USER(USER_CODE);
 
 create table tb_board_comu as select * from tb_board_user where 1=2;
+alter table TB_BOARD_COMU add constraint TB_BOARD_COMU_PK primary key(BOARD_NO),
+alter table TB_BOARD_COMU add constraint TB_BOARD_COMU_FK_USER foreign key(USER_CODE) references TB_COM_USER(USER_CODE);
  
 create table tb_board_producqus as select * from tb_board_user where 1=2;
+alter table TB_BOARD_PRODUCQUS add constraint TB_BOARD_PRODUCQUS_PK primary key(BOARD_NO),
+alter table TB_BOARD_PRODUCQUS add constraint TB_BOARD_PRODUCQUS_FK_USER foreign key(USER_CODE) references TB_COM_USER(USER_CODE);
 
 alter table tb_board_producqus add board_phone varchar(50)  null;
 
