@@ -29,11 +29,11 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="${context}/css/style.css" rel="stylesheet">
   	<link href="${context}/css/bootstrap.min.css" rel="stylesheet">
-	<script src="${context}/js/jquery-1.9.1.js"></script>
     
    <!--   <script src="${context}/js/jquery.js"></script>-->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>-->
+	<script src="${context}/js/jquery-1.9.1.js"></script>
     <script src="${context}/js/common.js"></script>
     
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
@@ -133,7 +133,7 @@
     <div class="container-fluid bg-dark mb-30">
         <div class="row px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
-                <a class="btn d-flex align-items-center justify-content-between bg-primary w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; padding: 0 30px;">
+                <a class="btn d-flex align-items-center justify-content-between bg-white w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; padding: 0 30px;">
                     <h6 class="text-dark m-0"><i class="fa fa-bars mr-2"></i>Categories</h6>
                     <i class="fa fa-angle-down text-dark"></i>
                 </a>
@@ -169,12 +169,12 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="index.html" class="nav-item nav-link active">Home</a>
+                            <a href="index.html" class="nav-item nav-link">Home</a>
                             <a href="shop.html" class="nav-item nav-link">Shop</a>
                             <a href="detail.html" class="nav-item nav-link">Shop Detail</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down mt-1"></i></a>
-                                <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
+                                <div class="dropdown-menu bg-gray-dark rounded-0 border-0 m-0">
                                     <a href="cart.html" class="dropdown-item">Shopping Cart</a>
                                     <a href="checkout.html" class="dropdown-item">Checkout</a>
                                 </div>
@@ -183,11 +183,11 @@
                         </div>
                         <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
                             <a href="" class="btn px-0">
-                                <i class="fas fa-heart text-primary"></i>
+                                <i class="fas fa-heart text-gray-dark"></i>
                                 <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
                             </a>
                             <a href="" class="btn px-0 ml-3">
-                                <i class="fas fa-shopping-cart text-primary"></i>
+                                <i class="fas fa-shopping-cart text-gray-dark"></i>
                                 <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
                             </a>
                         </div>

@@ -8,7 +8,7 @@
 	<meta name="description" content="userC.jsp">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>GKYK mall Sign Up</title>
-
+	<jsp:include page="../common/header_userc.jsp"></jsp:include>
 	<script type="text/javascript">
 
 	var dong;
@@ -160,7 +160,7 @@
 </script>
 </head>
 <body>
-<jsp:include page="../common/header_userc.jsp"></jsp:include>
+
 	<div id="jumbotron" class="container">
 		<div class="jumbotron jumbotron-info" style="background-color: lightgray;">
 			<h1><font color="black"><strong>회원가입</strong>&nbsp;<span class="glyphicon glyphicon glyphicon-pencil"></span></font></h1>
