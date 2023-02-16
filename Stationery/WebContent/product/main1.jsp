@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <title>Welcome GKYK mall</title>
-   <script src="${context}/js/jquery-2.2.4.min.js"></script>
+   <!-- <script src="${context}/js/jquery-2.2.4.min.js"></script>
     <script src="${context}/js/jquery.cookie.js"></script>
     <script>
         $(function(){
@@ -22,6 +22,7 @@
             }
         });
     </script>
+     --> 
 <style>
 #cookie{
 	width: 700px;
@@ -49,6 +50,7 @@
 </style>
 
 <%@ include file="../common/header_userc.jsp" %>
+<!-- 
   <div id="cookie">
         <img src="${context}/img/cookieImg.jpg" alt="공지사항이미지" width="300px" height="300px"> 
         <p class="closeWrap">
@@ -57,6 +59,7 @@
             <button class="closeBtn">닫기</button>
         </p>
     </div>
+     -->
 		
 <c:set var="loginUrl">${context}/user/login.jsp</c:set>
     <!-- Carousel Start -->
