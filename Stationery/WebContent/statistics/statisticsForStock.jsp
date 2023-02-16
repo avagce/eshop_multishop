@@ -11,8 +11,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>문구점</title>
 
-	<link href="${context}/css/bootstrap.min.css" rel="stylesheet">
-	<link href="${context}/css/bootstrap-theme.css" rel="stylesheet">
 	<link href="${context}/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
 	<link href="${context}/css/plugins/dataTables.bootstrap.css" rel="stylesheet">
 
@@ -119,7 +117,7 @@
 	    </div>
 
 		<div class="row">
-			<div class="col-md-1 col-md-offset-11">
+			<div class="col-md-12 col-md-offset-11">
 				<button type="button" class="btn btn-success btn-lg"  style="float:right;" onclick="fn_back()">뒤로가기</button>
 			</div>
 		</div>
