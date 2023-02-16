@@ -269,8 +269,8 @@
 
 			<div class="form-group" style="display: flex; justify-content: center; flex-wrap: wrap;">
 				<label class="control-label col-md-2"><b>사진</b></label>
-				<img id="pic" class="col-md-2" height="180px" width="150px" src="${context}/backgroundImage/defaultpic.png"><br/>
-				<div class="col-md-4">
+				<img id="pic" class="col-md-4" height="180px" width="150px" src="${context}/backgroundImage/defaultpic.png"><br/>
+				<div class="col-md-2">
 					<input type="hidden" id="userImage" name="userImage" required="required">
 				</div>
 			</div>
