@@ -223,7 +223,7 @@
 												}
 												path = $("img[name='image']").eq('${dsProductIdx.index}').attr("src");
 
-												existFolder = path.split("/")[2];
+												existFolder = path.split("/")[1];
 												$("img[name='image']").eq('${sellIdx.index}').attr("src", path.replace(existFolder, imageFolder));
 											</script>
 			                            </td>
