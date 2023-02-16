@@ -34,7 +34,9 @@
     
     <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>-->
 	<script src="${context}/js/jquery-1.9.1.js"></script>
+	<script src="${context}/js/jquery.form.js"></script>
     <script src="${context}/js/common.js"></script>
+    
     
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="${context}/lib/easing/easing.min.js"></script>
@@ -45,6 +47,7 @@
     <script src="${context}/mail/contact.js"></script>
 
     <!-- Template Javascript -->
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script src="${context}/js/main.js"></script>
    
 </head>
@@ -77,17 +80,23 @@
                 </div>
             </div>
             <div class="col-lg-6 text-center text-lg-right">
-                <div class="d-inline-flex align-items-center">
+                 <div class="d-inline-flex align-items-center">
                     <div class="btn-group">
                         <c:if test="${sessionScope.id == null}">
                             <button class="btn btn-default" type="button" onclick="location.href='${context}/user/login.jsp'"><strong>LOGIN</strong></button>
                             <button class="btn btn-default" type="button" onclick="location.href='${context}/work/user/createUser.do'"><strong>Sign up</strong></button>
-                    	</c:if>
-             	        <c:if test="${sessionScope.id != null}">
+                       </c:if>
+                        <c:if test="${sessionScope.id != null}">
                             <button class="btn btn-default" type="button" onclick="location.href='${context}/work/user/updateUser.do'"><strong>정보수정</strong></button>
                             <button class="btn btn-default" type="button" onclick="location.href='${context}/work/user/logout.do'"><strong>LOGOUT</strong></button>
                             <button class="btn btn-default" type="button" onclick="location.href='${context}/work/cart/retrieveCartList.do'"><strong>장바구니</strong></button>
-                    	</c:if>
+                            <button class="btn btn-default" type="button" onclick="location.href='${context}/work/sell/retrieveBuyList.do'"><strong>구입목록</strong></button>
+                       </c:if>
+                       <c:if test="${sessionScope.id != null && sessionScope.grade == 'A'}">
+	                     <button class="btn btn-default" type="button" onclick="location.href='${context}/work/product/retrieveProductListForManage.do'"><strong>재고관리</strong></button>
+	                     <button class="btn btn-default" type="button" onclick="location.href='${context}/work/sell/retrieveStatisticsForProduct.do'"><strong>매출통계</strong></button>
+	                     <button class="btn btn-default" type="button" onclick="location.href='${context}/work/product/retrieveStatisticsForStock.do?productCategoryCd=P'"><strong>재고현황</strong></button>
+	                  </c:if>
                     </div>
                 </div>
                 <div class="d-inline-flex align-items-center d-block d-lg-none">

@@ -8,7 +8,22 @@
 	<meta name="description" content="userC.jsp">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>GKYK mall Sign Up</title>
-	<jsp:include page="../common/header_userc.jsp"></jsp:include>
+	<link href="${context}/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
+	<link href="${context}/css/plugins/social-buttons.css" rel="stylesheet">
+	<link href="${context}/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" rel="stylesheet" >
+	<link href="${context}/css/plugins/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="${context}/css/process.css" rel="stylesheet">
+
+	<script src="${context}/js/jquery-1.9.1.js"></script>
+	<script src="${context}/js/jquery.form.js"></script>
+    <script src="${context}/js/plugins/metisMenu/metisMenu.min.js"></script>
+
+	<script src="${context}/js/plugins/dataTables/jquery.dataTables.js"></script>
+    <script src="${context}/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+
+    <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+	
 	<script type="text/javascript">
 
 	var dong;
@@ -158,8 +173,10 @@
 		
 	}
 </script>
+
 </head>
 <body>
+	<jsp:include page="../common/header_userc.jsp"></jsp:include>
 
 	<div id="jumbotron" class="container">
 		<div class="jumbotron jumbotron-info" style="background-color: lightgray;">
