@@ -42,7 +42,7 @@
 </head>
 <body>
 
-<jsp:include page="../common/header.jsp"></jsp:include>
+<jsp:include page="../common/header_userc.jsp"></jsp:include>
 	<div id="jumbotron" class="container" >
 		<div class="jumbotron jumbotron-info" style="background-color: lightgray" >
 			<div class="container-fluid" >

@@ -49,7 +49,50 @@
     <!-- Template Javascript -->
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script src="${context}/js/main.js"></script>
-   
+   </script>
+<!-- Channel Plugin Scripts -->
+<script>
+   (function() {
+      var w = window;
+      if (w.ChannelIO) {
+         return (window.console.error || window.console.log || function() {
+         })('ChannelIO script included twice.');
+      }
+      var ch = function() {
+         ch.c(arguments);
+      };
+      ch.q = [];
+      ch.c = function(args) {
+         ch.q.push(args);
+      };
+      w.ChannelIO = ch;
+      function l() {
+         if (w.ChannelIOInitialized) {
+            return;
+         }
+         w.ChannelIOInitialized = true;
+         var s = document.createElement('script');
+         s.type = 'text/javascript';
+         s.async = true;
+         s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
+         s.charset = 'UTF-8';
+         var x = document.getElementsByTagName('script')[0];
+         x.parentNode.insertBefore(s, x);
+      }
+      if (document.readyState === 'complete') {
+         l();
+      } else if (window.attachEvent) {
+         window.attachEvent('onload', l);
+      } else {
+         window.addEventListener('DOMContentLoaded', l, false);
+         window.addEventListener('load', l, false);
+      }
+   })();
+   ChannelIO('boot', {
+      "pluginKey" : "634ebfd4-9412-4ee3-89a8-ca5bac58fa25"
+   });
+</script>
+<!-- End Channel Plugin -->
 </head>
  
 
@@ -65,11 +108,12 @@
         <div class="row py-1 px-xl-5">
             <div class="col-lg-6 d-none d-lg-block">
                 <div class="d-inline-flex align-items-center h-100">
-                 <a class="text-body mr-3" onclick="location.href='${context}/user/login.jsp'" style="cursor: pointer;">About</a>
+                 <a class="text-body mr-3" onclick="location.href='${context}/about/introduction.jsp'" style="cursor: pointer;">About</a>
                     <!-- 메뉴를 누를때마다 user 의 등급과 로긴체크,로긴 됐을때 어디로 이동할지를 넣어준다 -->
-                    <a class="text-body mr-3" href="">Contact</a>
+                 <a class="text-body mr-3" onclick="location.href='${context}/location/location.jsp'" style="cursor: pointer;">location</a>
+                    
                     <a class="text-body mr-3" href="">Help</a>
-                    <a class="text-body mr-3" href="">FAQs</a>
+                    <a class="text-body mr-3" onclick="location.href='${context}/faq/faq.jsp'" style="cursor: pointer;">FAQ</a>
                     <button type="button" class="btn btn-sm btn-light dropdown-toggle text-body mr-3" data-toggle="dropdown"><strong>NOTICE</strong></button>
                   	<div class="dropdown-menu dropdown-menu-right">
 	                    <a class="text-body mr-3 dropdown-item" onclick="javascript:fn_isLogin('${sessionScope.userCode}','${loginUrl}','${context}/work/board/retrieveBoardList.do')">공지사항</a>

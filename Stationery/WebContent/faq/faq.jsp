@@ -13,6 +13,11 @@
 <script src="${context}/js/jquery-1.9.1.js"></script>
 <script src="${context}/js/bootstrap.min.js"></script>
 </head>
+<style>
+a{
+	color: #000 !important;
+}
+</style>
 <body>
 <jsp:include page="../common/header_userc.jsp"></jsp:include>
 
@@ -33,7 +38,7 @@
           <div class="card">
             <div class="card-header" id="heading-1-1">
               <h5 class="mb-0">
-                <a class="collapsed show" role="button" data-toggle="collapse" href="#collapse-1-1" aria-expanded="false" aria-controls="collapse-1-1">
+                <a class="collapsed show" role="button" data-toggle="collapse" href="#collapse-1-1" aria-expanded="false" aria-controls="collapse-1-1" color=>
                   [상품누락] 상품을 구매했는데 일부만 배송되었어요.
                 </a>
               </h5>
