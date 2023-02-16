@@ -5,10 +5,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-		<meta name="description" content="userC.jsp">
+	<meta name="description" content="userC.jsp">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>GKYK mall Sign Up</title>
-	
+
 	<script type="text/javascript">
 
 	var dong;
@@ -280,7 +280,6 @@
 		</div>
 	</form>
 	</div>
-	
 
 	<jsp:include page="../common/footer.jsp"></jsp:include>
 </body>
