@@ -1,3 +1,13 @@
+3-2. Oracle11g에 권한 부여 : sqlplus SYSTEM/System1234 접속 후 다음의 mini_admin (비밀번호 : mini_admin) 계정을 생성해줌. 
+
+CREATE USER mini_admin IDENTIFIED BY mini_admin;
+GRANT CONNECT, RESOURCE TO mini_admin;
+GRANT ALTER SESSION TO mini_admin;
+
+show user
+
+conn mini_admin/mini_admin
+
 -- 회원 시퀀스
 DROP SEQUENCE USER_SEQ;
 CREATE SEQUENCE USER_SEQ;
@@ -248,3 +258,89 @@ ZIPCODE VARCHAR2(10)
 );
 
 commit;
+
+--추가 판매제품 INSERT SQL
+insert into tb_product values('dr001','dr1.jpg','dress01',1000,20,'R',TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'));
+insert into tb_product values('dr002','dr2.jpg','dress02',1000,20,'R',TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'));
+insert into tb_product values('dr003','dr3.jpg','dress03',1000,20,'R',TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'));
+insert into tb_product values('dr004','dr4.jpg','dress04',1000,20,'R',TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'));
+insert into tb_product values('dr005','dr5.jpg','dress05',1000,20,'R',TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'));
+insert into tb_product values('dr006','dr6.jpg','dress06',1000,20,'R',TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'));
+insert into tb_product values('dr007','dr7.jpg','dress07',1000,20,'R',TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'));
+insert into tb_product values('dr008','dr8.jpg','dress08',1000,20,'R',TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'));
+insert into tb_product values('dr009','dr9.jpg','dress09',1000,20,'R',TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'));
+insert into tb_product values('dr010','dr10.jpg','dress10',1000,20,'R',TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'));
+
+insert into tb_product values('sh001','sh1.jpg','shirts01',1000,20,'SH',TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'));
+insert into tb_product values('sh002','sh2.jpg','shirts02',1000,20,'SH',TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'));
+insert into tb_product values('sh003','sh3.jpg','shirts03',1000,20,'SH',TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'));
+insert into tb_product values('sh004','sh4.jpg','shirts04',1000,20,'SH',TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'));
+insert into tb_product values('sh005','sh5.jpg','shirts05',1000,20,'SH',TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'));
+insert into tb_product values('sh006','sh6.jpg','shirts06',1000,20,'SH',TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'));
+insert into tb_product values('sh007','sh7.jpg','shirts07',1000,20,'SH',TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'));
+insert into tb_product values('sh008','sh8.jpg','shirts08',1000,20,'SH',TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'));
+insert into tb_product values('sh009','sh9.jpg','shirts09',1000,20,'SH',TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'));
+insert into tb_product values('sh010','sh10.jpg','shirts10',1000,20,'SH',TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI'));
+
+--제품코드 테이블에 제품 정보 인서트
+insert into tb_com_code values('CODE0101','R','드레스');
+
+insert into tb_com_code values('CODE0101','SH','셔츠');
+
+commit;
+
+-- 게시글 시퀀스
+DROP SEQUENCE BOARD_SEQ;
+CREATE SEQUENCE BOARD_SEQ;
+
+DROP TABLE TB_BOARD CASCADE CONSTRAINT;
+CREATE TABLE TB_BOARD(
+  BOARD_NO VARCHAR2(30),             -- 게시글번호
+  USER_CODE VARCHAR2(20),            -- 유저코드
+  BOARD_TITLE VARCHAR2(1000),        -- 게시글제목
+  BOARD_CONTENTS VARCHAR2(4000),     -- 게시글내용
+  BOARD_DATE VARCHAR2(30),           -- 게시글작성날짜
+  BOARD_HITS NUMBER DEFAULT 0,     -- 조회수
+  CONSTRAINT TB_BOARD_PK PRIMARY KEY(BOARD_NO),
+  CONSTRAINT TB_BOARD_FK_USER FOREIGN KEY(USER_CODE) REFERENCES TB_COM_USER(USER_CODE)
+);
+
+commit;
+
+--유저게시판 생성
+CREATE TABLE tb_board_user AS SELECT * FROM tb_board WHERE 1=2; 
+alter table TB_BOARD_USER add constraint TB_BOARD_USER_PK primary key(BOARD_NO),
+alter table TB_BOARD_USER add constraint TB_BOARD_USER_FK_USER foreign key(USER_CODE) references TB_COM_USER(USER_CODE);
+
+--커뮤니티 게시판 생성
+create table tb_board_comu as select * from tb_board_user where 1=2;
+alter table TB_BOARD_COMU add constraint TB_BOARD_COMU_PK primary key(BOARD_NO),
+alter table TB_BOARD_COMU add constraint TB_BOARD_COMU_FK_USER foreign key(USER_CODE) references TB_COM_USER(USER_CODE);
+ 
+--제품문의 게시판 생성
+create table tb_board_producqus as select * from tb_board_user where 1=2;
+alter table TB_BOARD_PRODUCQUS add constraint TB_BOARD_PRODUCQUS_PK primary key(BOARD_NO),
+alter table TB_BOARD_PRODUCQUS add constraint TB_BOARD_PRODUCQUS_FK_USER foreign key(USER_CODE) references TB_COM_USER(USER_CODE);
+
+--제품 문의 게시판 테이블에 사용자의 전화번호 저장공간 생성
+alter table tb_board_producqus add board_phone varchar(50)  null;
+
+commit;
+
+-- 결제 정보 저장을 위한 테이블 생성
+create table pay_import(
+	pay_id varchar2(50) not null primary key,
+	import_id varchar2(50),
+	pay_amount int,
+	per_num varchar2(50),
+	per_time date
+);
+
+create sequence idx_seq
+     minvalue 1
+     maxvalue 999999
+     start with 1
+     increment by 1
+     cache 20;
+     
+     commit;

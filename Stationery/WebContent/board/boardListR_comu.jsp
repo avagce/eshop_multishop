@@ -43,8 +43,8 @@
 <jsp:include page="../common/header.jsp"></jsp:include>
 	<div id="jumbotron" class="container">
 		<div class="jumbotron jumbotron-info" style="background-color: lightgreen;">
-			<h1><font color="green"><strong>Travel Interact</strong>&nbsp;<span class="glyphicon glyphicon-blackboard"></span></font></h1>
-			<p><font color="green">Welcome To Travel Interact</font></p>
+			<h1><font color="green"><strong>커뮤니티 게시판</strong>&nbsp;<span class="glyphicon glyphicon-blackboard"></span></font></h1>
+			<p><font color="green">GKYK MALL</font></p>
 		</div>
 		
 		<div class="row">
