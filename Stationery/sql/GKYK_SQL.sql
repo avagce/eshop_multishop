@@ -1,4 +1,4 @@
-3-2. Oracle11g에 권한 부여 : sqlplus SYSTEM/System1234 접속 후 다음의 mini_admin (비밀번호 : mini_admin) 계정을 생성해줌. 
+Oracle11g에 권한 부여 : sqlplus SYSTEM/System1234 접속 후 다음의 mini_admin (비밀번호 : mini_admin) 계정을 생성해줌. 
 
 CREATE USER mini_admin IDENTIFIED BY mini_admin;
 GRANT CONNECT, RESOURCE TO mini_admin;

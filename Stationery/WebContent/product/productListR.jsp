@@ -102,28 +102,29 @@
 			<div class="row">
 				<c:forEach items="${dsProductList}" var="dsProductList" varStatus="dsProductIdx">
 					<div class="col-md-6">
-						<a href="${context}/work/product/retrieveProduct.do?productCode=${dsProductList.PRODUCT_CODE}"><img name="image" src="${context}/binderImg/${dsProductList.PRODUCT_IMAGE}" class="img-thumbnail"></a>
+						<a href="${context}/work/product/retrieveProduct.do?productCode=${dsProductList.PRODUCT_CODE}"><img name="image" src="/${dsProductList.PRODUCT_IMAGE}" class="img-thumbnail"></a>
 						<script type="text/javascript">
 						 	var productCategoryCd = '${dsProductList.PRODUCT_CATEGORY_CD}';
 
 							if(productCategoryCd == 'O'){
-								imageFolder = "officeImg";
+								imageFolder = "/officeImg";
 							}else if(productCategoryCd == 'P'){
-								imageFolder = "penImg";
+								imageFolder = "/penImg";
 							}else if(productCategoryCd == 'S'){
-								imageFolder = "storageImg";
+								imageFolder = "/storageImg";
 							}else if(productCategoryCd == 'D'){
-								imageFolder = "designImg";
+								imageFolder = "/designImg";
 							}else if(productCategoryCd == 'B'){
-								imageFolder = "binderImg";
+								imageFolder = "/binderImg";
 							}else if(productCategoryCd == 'R'){
-								imageFolder = "dressImg";
+								imageFolder = "/dressImg";
 							}else if(productCategoryCd == 'SH'){
-								imageFolder = "shirtsImg";
+								imageFolder = "/shirtsImg";
 							}
 							path = $("img[name='image']").eq('${dsProductIdx.index}').attr("src");
-
-							existFolder = path.split("/")[2];
+							//existFolder,
+							existFolder = path.split("/")[0];
+							
 							$("img[name='image']").eq('${dsProductIdx.index}').attr("src", path.replace(existFolder, imageFolder));
 						</script>
 						<!--   <c:if test="${sessionScope.id == null}">

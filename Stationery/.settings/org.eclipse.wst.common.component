@@ -5,6 +5,10 @@
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/webapp"/>
         <property name="java-output-path" value="/Stationery/target/classes"/>
+<<<<<<< HEAD
         <property name="context-root" value="../Stationery"/>
+=======
+        <property name="context-root" value="/"/>
+>>>>>>> branch 'master' of https://github.com/avagce/eshop_multishop.git
     </wb-module>
 </project-modules>
