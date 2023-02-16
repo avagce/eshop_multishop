@@ -187,7 +187,7 @@
 												}
 												path = $("img[name='image']").eq('${cartIdx.index}').attr("src");
 
-												existFolder = path.split("/")[2];
+												existFolder = path.split("/")[1];
 												$("img[name='image']").eq('${cartIdx.index}').attr("src", path.replace(existFolder, imageFolder));
 											</script>
 			                            </td>
