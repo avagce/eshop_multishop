@@ -14,31 +14,32 @@
 <script src="${context}/js/bootstrap.min.js"></script>
 </head>
 <body>
-<jsp:include page="../common/header.jsp"></jsp:include>
+<jsp:include page="../common/header_userc.jsp"></jsp:include>
 
 <div class="container">
 <div id="accordion">
   <div class="card">
     <div class="card-header" id="heading-1">
       <h5 class="mb-0">
-        <a role="button" data-toggle="collapse" href="#collapse-1" aria-expanded="true" aria-controls="collapse-1">
+        <a role="button" data-toggle="collapse" href="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
           배송문의
         </a>
       </h5>
     </div>
-    <div id="collapse-1" class="collapse show" data-parent="#accordion" aria-labelledby="heading-1">
+    <div id="collapse-1" class="collapse show" data-parent="#collapse-1" aria-labelledby="heading-1">
       <div class="card-body">
 
         <div id="accordion-1">
           <div class="card">
             <div class="card-header" id="heading-1-1">
               <h5 class="mb-0">
-                <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-1-1" aria-expanded="false" aria-controls="collapse-1-1">
+                <a class="collapsed show" role="button" data-toggle="collapse" href="#collapse-1-1" aria-expanded="false" aria-controls="collapse-1-1">
                   [상품누락] 상품을 구매했는데 일부만 배송되었어요.
                 </a>
               </h5>
+              
             </div>
-            <div id="collapse-1-1" class="collapse" data-parent="#accordion-1" aria-labelledby="heading-1-1">
+            <div id="collapse-1-1" class="collapsed show" data-parent="#accordion-1" aria-labelledby="heading-1-1" href="#collapse-1-1-1" style="overflow: hidden">
               <div class="card-body">
 				1. 상품 수량이 누락되어 배송된 경우 <br>
 • 구매한 상품 중 일부 수량이 누락되어 배송되었다면, 누락된 수량은 반품으로 진행해 주셔야 합니다. <br> <br>

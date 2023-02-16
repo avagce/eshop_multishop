@@ -9,8 +9,6 @@
 	<meta name="description" content="productR.jsp">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Insert title here</title>
-	<link href="${context}/css/bootstrap.min.css" rel="stylesheet">
-	<link href="${context}/css/bootstrap-theme.css" rel="stylesheet">
 	<link href="${context}/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
 	<link href="${context}/css/plugins/social-buttons.css" rel="stylesheet">
 	<link href="${context}/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -163,12 +161,38 @@
 
 
     </script>
+    <style type="text/css">
+    	.panel-heading{
+    		padding: 15px;
+    		border-radius: 20px;
+    		margin-top: 30px;
+    	}
+    	.panel-title{
+    		margin: 0;
+    	}
+    	.panel-default > .panel-heading {
+		    background-image: -webkit-linear-gradient(top, #f5f5f5 0%, #e8e8e8 100%);
+		    background-image: -o-linear-gradient(top, #f5f5f5 0%, #e8e8e8 100%);
+		    background-image: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#e8e8e8));
+		    background-image: linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%);
+		    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#ffe8e8e8', GradientType=0);
+		    background-repeat: repeat-x;
+		    }
+    	.panel-info > .panel-heading {
+		    background-image: -webkit-linear-gradient(top, #d9edf7 0%, #c4e3f3 100%);
+		    background-image: -o-linear-gradient(top, #d9edf7 0%, #c4e3f3 100%);
+		    background-image: -webkit-gradient(linear, left top, left bottom, from(#d9edf7), to(#c4e3f3));
+		    background-image: linear-gradient(to bottom, #d9edf7 0%, #c4e3f3 100%);
+		    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9edf7', endColorstr='#ffc4e3f3', GradientType=0);
+		    background-repeat: repeat-x;
+	    }
+    </style>
 </head>
 <body>
-<jsp:include page="../common/top.jsp"></jsp:include>
+<jsp:include page="../common/header_userc.jsp"></jsp:include>
 	<div class="container">
       <div class="row">
-          <div class="panel panel-default">
+          <div class="col-lg-12 panel panel-default">
            <div class="panel-heading">
               <h3 class="panel-title"><b>[&nbsp;${dsProduct.PRODUCT_CATEGORY_CD_NM}&nbsp;]${dsProduct.PRODUCT_NAME}</b></h3>
             </div>
@@ -191,6 +215,8 @@
 							imageFolder = "binderImg";
 						}else if(productCategoryCd == 'R'){
 							imageFolder = "dressImg";
+						}else if(productCategoryCd == 'SH'){
+							imageFolder = "shirtsImg";
 						}
 						path = $("#image").attr("src");
 
@@ -229,11 +255,11 @@
                         <td>
 							<div class="input-group number-spinner" style="width: 200px;">
 								<span class="input-group-btn data-dwn">
-									<button class="btn btn-default btn-info" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
+									<button class="btn btn-default btn-info" data-dir="dwn" style="border-radius: 10px !important;"><?xml version="1.0" ?><svg baseProfile="tiny" height="24px" id="Layer_1" version="1.2" viewBox="0 0 24 24" width="24px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M18,11H6c-1.104,0-2,0.896-2,2s0.896,2,2,2h12c1.104,0,2-0.896,2-2S19.104,11,18,11z"/></svg></button>
 								</span>
 								<input type="text" class="form-control text-center" value="1" min="1" max="100" width="100%" disabled="disabled">
 								<span class="input-group-btn data-up">
-									<button class="btn btn-default btn-info" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
+									<button class="btn btn-default btn-info" data-dir="up" style="border-radius: 10px !important;"><?xml version="1.0" ?><svg baseProfile="tiny" height="24px" id="Layer_1" version="1.2" viewBox="0 0 24 24" width="24px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M18,10h-4V6c0-1.104-0.896-2-2-2s-2,0.896-2,2l0.071,4H6c-1.104,0-2,0.896-2,2s0.896,2,2,2l4.071-0.071L10,18  c0,1.104,0.896,2,2,2s2-0.896,2-2v-4.071L18,14c1.104,0,2-0.896,2-2S19.104,10,18,10z"/></svg></button>
 								</span>
 							</div>
 						</td>
@@ -242,8 +268,8 @@
                   </table>
                   <br><br>
                   <div>
-                	  <button id ="buyBtn" type="button" class="btn btn-primary btn-lg" onclick="fn_buy()"><i class="fa fa-credit-card fa-2x">&nbsp;바로구매</i></button>
-                      <button id ="cartBtn" type="button" class="btn btn-warning btn-lg" onclick="fn_cart()"><i class="fa fa-shopping-cart fa-2x">&nbsp;장바구니</i></button>
+                	  <button id ="buyBtn" type="button" class="btn btn-info btn-lg" onclick="fn_buy()" style="border-radius: 10px !important;"><i class="fa fa-credit-card fa-2x">&nbsp;바로구매</i></button>
+                      <button id ="cartBtn" type="button" class="btn btn-warning btn-lg" onclick="fn_cart()" style="border-radius: 10px !important;"><i class="fa fa-shopping-cart fa-2x">&nbsp;장바구니</i></button>
                   </div>
                 </div>
               </div>
@@ -290,7 +316,7 @@
 			<div class="col-md-12 toppad">
 				<div class="panel panel-info">
 					<div class="panel-heading">
-						<h1 class="panel-title">상품평  ${dsReplyList[0].REPLY_COUNT}</h1>
+						<h3 class="panel-title">상품평  ${dsReplyList[0].REPLY_COUNT}</h3>
 					</div>
 					<c:forEach items="${dsReplyList}" var="dsReplyList">
 					<div class="panel-body">
@@ -324,10 +350,10 @@
                 </div>
 			</c:forEach>
           </div>
+   		  <button class="btn btn-success btn-lg" style="float: right; margin-top: 30px;" onclick="fn_back()">뒤로가기</button>
         </div>
       </div>
-      <button class="btn btn-success btn-lg" style="float: right;" onclick="fn_back()">뒤로가기</button>
     </div>
-	<jsp:include page="../common/foot.jsp"></jsp:include>
+	<jsp:include page="../common/footer.jsp"></jsp:include>
 </body>
 </html>

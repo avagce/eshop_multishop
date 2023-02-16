@@ -137,7 +137,7 @@
     <div class="container-fluid bg-dark mb-30">
         <div class="row px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
-                <a class="btn d-flex align-items-center justify-content-between bg-primary w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; padding: 0 30px;">
+                <a class="btn d-flex align-items-center justify-content-between bg-primary w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; padding: 0 30px; background: #fff !important; border-bottom: 1px solid #ddd; border-top: 1px solid #ddd;">
                     <h6 class="text-dark m-0"><i class="fa fa-bars mr-2"></i>Categories</h6>
                     <i class="fa fa-angle-down text-dark"></i>
                 </a>
@@ -176,7 +176,7 @@
                             <a href="detail.html" class="nav-item nav-link">Shop Detail</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down mt-1"></i></a>
-                               <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
+                                <div class="dropdown-menu bg-primary rounded-0 border-0 m-0" style="background-color: #fff !important; border-bottom: 1px solid #ddd;">
                                     <a href="cart.html" class="dropdown-item">Shopping Cart</a>
                                     <a href="checkout.html" class="dropdown-item">Checkout</a>
                                 </div>
@@ -185,12 +185,12 @@
                         </div>
                         <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
                             <a href="" class="btn px-0">
-                                 <i class="fas fa-heart text-primary"></i>
-                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
+                                <i class="fas fa-heart text-primary upper-icon"></i>
+                                <span class="badge text-secondary border border-secondary rounded-circle inside-circle" style="padding-bottom: 2px;">0</span>
                             </a>
                             <a href="" class="btn px-0 ml-3">
-                                 <i class="fas fa-shopping-cart text-primary"></i>
-                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
+                                <i class="fas fa-shopping-cart text-primary upper-icon"></i>
+                                <span class="badge text-secondary border border-secondary rounded-circle inside-circle" style="padding-bottom: 2px;">0</span>
                             </a>
                         </div>
                     </div>

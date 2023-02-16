@@ -12,8 +12,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>HS VOTE</title>
 
-	<link href="${context}/css/bootstrap.min.css" rel="stylesheet">
-	<link href="${context}/css/bootstrap-theme.css" rel="stylesheet">
 	<link href="${context}/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
 	<link href="${context}/css/plugins/dataTables.bootstrap.css" rel="stylesheet">
 
