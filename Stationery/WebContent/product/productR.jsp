@@ -215,6 +215,8 @@
 							imageFolder = "binderImg";
 						}else if(productCategoryCd == 'R'){
 							imageFolder = "dressImg";
+						}else if(productCategoryCd == 'SH'){
+							imageFolder = "shirtsImg";
 						}
 						path = $("#image").attr("src");
 
